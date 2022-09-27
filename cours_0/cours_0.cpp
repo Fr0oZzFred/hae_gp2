@@ -2,19 +2,59 @@
 //
 
 #include <iostream>
+#include <string>
+#include <cstdint>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
+    printf("12345\n");
+    printf("0\n \n");
+
+    std::string zero = "0";
+    char zeroC[] = "0";
+    std::cout << zeroC << " c++ style \n";
+    printf("%s c style\n", zeroC);
+    printf("%0.1lf \n", 0.6666666f);
+    printf("%f \n", 0.666666f);
+    printf("%f \n \n", 0.66666666f);
+
+
+    float half = 0.5f;
+    printf("%f c style\n", half);
+    std::cout <<  std::to_string(half) << " c++ style\n\n";
+
+
+    printf("toto\n\n");
+
+
+    int val = 123456789123456789; // Supérieur à 32 Bits
+    printf("%i c style\n", val);
+    std::cout << std::to_string(val) << " c++ style\n\n";
+
+    std::uint64_t int64 = 123456789123456789;
+    printf("%lld c style\n", int64);
+    cout << std::to_string(int64) << " c++ style\n";
+    cout << int64 << " c++ style\n\n";
+
+
+    cout << "12345" << endl;
+    cout << "12345\n";
+    cout << to_string(12345) << "\n\n";
+
+
+    struct Toto {
+        float x = 0.777f;
+    };
+
+    Toto toto;
+    cout << to_string(toto.x) << "\n";
+
+    struct {
+        float x = 0.777f;
+    }tutu;
+    
+    cout << to_string(tutu.x);
 }
-
-// Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
-// Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
-
-// Astuces pour bien démarrer : 
-//   1. Utilisez la fenêtre Explorateur de solutions pour ajouter des fichiers et les gérer.
-//   2. Utilisez la fenêtre Team Explorer pour vous connecter au contrôle de code source.
-//   3. Utilisez la fenêtre Sortie pour voir la sortie de la génération et d'autres messages.
-//   4. Utilisez la fenêtre Liste d'erreurs pour voir les erreurs.
-//   5. Accédez à Projet > Ajouter un nouvel élément pour créer des fichiers de code, ou à Projet > Ajouter un élément existant pour ajouter des fichiers de code existants au projet.
-//   6. Pour rouvrir ce projet plus tard, accédez à Fichier > Ouvrir > Projet et sélectionnez le fichier .sln.
