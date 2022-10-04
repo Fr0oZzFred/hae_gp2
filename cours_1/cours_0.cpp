@@ -117,22 +117,159 @@ struct Vec4 {
 		w += v.w;
 	}
 
+	static Vec4 ZERO;
 };
+Vec4 Vec4::ZERO = Vec4(0, 0, 0, 0);
 
-struct Array {
-	int top = 0;
+class IntArray {
+public: 
+	
+	IntArray(int maxsize) {
+		size = maxsize;
+		//data = (int*) malloc(size * sizeof(int)); c style
+		data = new int[maxsize]; // c++ style
+		for(int i = 0; i < size; i++) {
+			data[i] = 0; // == *(data + i) = 0;
+		}
+	};
 
-	void add(int value) {
+	int get(int idx) {
+		if (idx < 0) throw "out of bounds, less than 0";
+		if (idx >= size) throw "out of bounds, more than " + size;
+		return data[idx]; // == return *(data + idx);
+	};
 
+	void set(int idx, int value) {
+		if (idx < 0) throw "out of bounds, less than 0";
+		if (idx >= size) throw "out of bounds, more than " + size;
+		data[idx] = value; // == *(data + idx) = value;
+	};
+
+	void resize(int nuSize) {
+		if (nuSize == size)
+			return;
+
+		bool grow = nuSize > size;
+
+		auto ndata = new int[nuSize];
+		for (int i = 0; i < nuSize; ++i)
+			ndata[i] = 0;
+
+		int targetSize = (grow) ? size : nuSize;
+		for (int i = 0; i < targetSize; ++i)
+			ndata[i] = data[i];
+
+		int* odata = data;
+		data = ndata;
+		size = nuSize;
+		delete[]odata;
+	};
+
+	~IntArray() {
+		//free(data); // c style
+		delete[] data; //c++ Style
+		size = 0;
+	};
+
+	//Invariant : mon tableau est trié
+	void insertOrderInferior(int val) {
+		resize(getSize() + 1);
+		int idx = 0;
+		while (val != data[idx]) {
+			idx++;
+			if (idx > size) break;
+		}
+
+		for (int i = size; i > idx; i--)
+		{
+			data[i] = data[i - 1];
+		}
+
+
+		//aggrandir de 1
+		//trouver l'endroit de l'insertion
+		//décaller de 1 vers la droite à l'endroit de l'insertion
+		//inserer la nouvelle valeur
 	}
 
+
+	int getSize() {
+		return size;
+	};
+
+
+protected:
+	int* data = nullptr;
+	int size = 0;
 };
 
-struct intPerso {
 
+/*
+[][][][][][][][][0] <- fin de la chaîne de caracter
+\0 ~= '0'
+0
+char => int sur 8 bit
+*/
+
+int Strlen(const char* str) {
+	int idx = 0;
+	while (str[idx] != 0)
+	{
+		idx++;
+	}
+	return idx;
 };
 
-int main() {
+int Strlen2(const char* str) {
+	const char* start = str;
+	while (*str != 0)
+		str++;
+	return str - start;
+};
+
+int Strlen3(const char* str) {
+	const char* start = str;
+	while (*str) str++;
+	return str - start;
+};
+
+int Countc(const char* str, char c) {
+	int length = 0;
+	int count = 0;
+	while (str[length] != 0)
+	{
+		length++;
+		if (str[length] == c) {
+			count++;
+		}
+	}
+	return count;
+};
+
+void Strcpy(char* dst, const char* src) {
+	while (*src)
+	{
+		*dst = *src;
+		src++;
+		dst++;
+	}
+};
+
+void Strncpy(char* dst, const char* src, int nchars) {
+	for (int i = 0; i < nchars; i++)
+	{
+		dst[i] = src[i];
+	}
+};
+
+
+static void assert(bool test) {
+	if (!test)
+		throw "assert";
+};
+
+
+void testVec4() {
 	{
 		Vec3 sapin;
 		//int here = 0;
@@ -186,5 +323,86 @@ int main() {
 		if (res.x != 0) throw "assert";
 		if (res.y != 0) throw "assert";
 		int here = 0;
+
+		Vec4 v2 = Vec4::ZERO;
+		here = 0;
 	}
+
+	{
+		Vec4* r0 = new Vec4();
+		//int here = 0;
+
+		Vec4* r1 = new Vec4;
+		Vec4* r2 = nullptr;
+		//int here = 0;
+
+		Vec4* r3 = new Vec4[16];
+		r3[4].incr(Vec4(666, 0, 0, 0));
+
+		auto r34 = r3[4];
+		auto r34bis = *(r3 + 4);
+
+		int here = 0;
+	}
+
+}
+
+void TestArray() {
+
+	{
+		IntArray a(16);
+		a.set(0, 3);
+		a.set(15, 4);
+		if (a.get(4) != 0)throw "assert";
+		int here = 0;
+	}
+	{
+		IntArray a(8);
+		if (a.get(0) != 0)throw "assert";
+		a.set(2, 666);
+		a.set(a.getSize() - 1, 777);
+
+		a.resize(5);
+		if (a.getSize() != 5)throw "assert";
+		if (a.get(2) != 666)throw "assert";
+
+		a.resize(1024);
+		assert(a.get(256) == 0);
+		assert(a.get(2) == 666);
+		assert(a.get(512) == 0);
+
+		int here = 0;
+	}
+
+	{
+		IntArray a(8);
+		for(int i = 0; i < 8;++i)
+			a.set(i, i*i);
+		a.insertOrderInferior( 21 ); // order sur A par le predicat f : a[i] < a[i+1]
+
+
+		/*
+		auto predicate = [](int & e0,int & e1) {
+			return e0 < e1;
+		};
+		a.insert(21, predicate);
+		*/
+	}
+}
+
+int main() {
+	//testVec4();
+	TestArray();
+
+	/*int l = Strlen("Tutu0");
+	int l1 = Strlen("T");
+	int l2 = Strlen("Toto");
+	int c = Countc("Tutu", 'u');*/
+
+
+	/*char test[256] = {};
+	//Strcpy(test, "Toto");
+	Strncpy(test, "Toto", 2);
+	int here = 0;*/
+	
 }
