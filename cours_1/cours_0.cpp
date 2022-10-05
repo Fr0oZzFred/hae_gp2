@@ -174,16 +174,22 @@ public:
 	//Invariant : mon tableau est trié
 	void insertOrderInferior(int val) {
 		resize(getSize() + 1);
+
 		int idx = 0;
-		while (val != data[idx]) {
+		while (!(val >= data[idx] && val < data[idx + 1])) {
 			idx++;
-			if (idx > size) break;
+			if (idx >= size - 1) {
+				data[idx] = val;
+				return;
+			}
 		}
 
-		for (int i = size; i > idx; i--)
+		for (int i = size - 1 ; i > idx; i--)
 		{
 			data[i] = data[i - 1];
 		}
+
+		data[idx+1] = val;
 
 
 		//aggrandir de 1
@@ -378,15 +384,16 @@ void TestArray() {
 		IntArray a(8);
 		for(int i = 0; i < 8;++i)
 			a.set(i, i*i);
-		a.insertOrderInferior( 21 ); // order sur A par le predicat f : a[i] < a[i+1]
+		a.insertOrderInferior( 21); // order sur A par le predicat f : a[i] < a[i+1]
 
+		int here = 0;
 
-		/*
-		auto predicate = [](int & e0,int & e1) {
-			return e0 < e1;
-		};
-		a.insert(21, predicate);
-		*/
+		
+		//auto predicate = [](int & e0,int & e1) {
+		//	return e0 < e1;
+		//};
+		//a.insertOrderInferior(21);
+		
 	}
 }
 
