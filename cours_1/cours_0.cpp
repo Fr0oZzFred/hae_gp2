@@ -171,33 +171,60 @@ public:
 		size = 0;
 	};
 
+	//Tableau est trié
+	int searchOrderInferior(int val) {
+		int idx = 0;
+		while ((data[idx] < val) && (idx < size)) {
+			idx++;
+		}
+		return idx;
+	};
+
+	//Warning this function breaks the invariant by inserting a sentient
+	void shiftRight(int idx) {
+		if ((idx < 0) || (idx >= size))
+			return;
+		for (int i = size - 1; i > idx; --i)
+			data[i] = data[i - 1];
+		data[idx] = 0;
+	};
+
 	//Invariant : mon tableau est trié
 	void insertOrderInferior(int val) {
+		int idx = searchOrderInferior(val);
 		resize(getSize() + 1);
-
-		int idx = 0;
-		while (!(val >= data[idx] && val < data[idx + 1])) {
-			idx++;
-			if (idx >= size - 1) {
-				data[idx] = val;
-				return;
-			}
-		}
-
-		for (int i = size - 1 ; i > idx; i--)
-		{
-			data[i] = data[i - 1];
-		}
-
-		data[idx+1] = val;
-
-
-		//aggrandir de 1
-		//trouver l'endroit de l'insertion
-		//décaller de 1 vers la droite à l'endroit de l'insertion
-		//inserer la nouvelle valeur
+		shiftRight(idx);
+		data[idx] = val;
 	}
 
+	bool isSorted() {
+		for (int i = 0; i < size - 1; i++)
+			if (data[i] > data[i + 1]) return false;
+		return true;
+	};
+
+	void Sort() {
+		qsort(data, size, sizeof(int), compAscending);
+	};
+
+	static int compAscending(const void* elem1, const void* elem2) {
+		int* x = (int*)elem1;
+		int* y = (int*)elem2;
+		//(int)elem1 = l'adresse de elem1 converti en int
+
+		//on pourrait faire
+		//int xValue = *x;
+		//int yValue = *y;
+		//return xValue - yValue;
+
+		return *x - *y;
+	}
+
+	static int compDescending(const void* elem1, const void* elem2) {
+		int* x = (int*)elem1;
+		int* y = (int*)elem2;
+		return *y - *x;
+	}
 
 	int getSize() {
 		return size;
@@ -382,18 +409,47 @@ void TestArray() {
 
 	{
 		IntArray a(8);
-		for(int i = 0; i < 8;++i)
+		for (int i = 0; i < 8; ++i) {
 			a.set(i, i*i);
-		a.insertOrderInferior( 21); // order sur A par le predicat f : a[i] < a[i+1]
-
+			printf("%d ", a.get(i));
+		}
+		printf("\n");
 		int here = 0;
+		printf("%d\n", a.searchOrderInferior(-1));
+		printf("%d\n", a.searchOrderInferior(8));
+		printf("%d\n", a.searchOrderInferior(50));
+
+
+
+		a.insertOrderInferior(-1); // order sur A par le predicat f : a[i] < a[i+1]
+		a.insertOrderInferior(8); // order sur A par le predicat f : a[i] < a[i+1]
+		a.insertOrderInferior(9); // order sur A par le predicat f : a[i] < a[i+1]
+		a.insertOrderInferior(50); // order sur A par le predicat f : a[i] < a[i+1]
+
+		assert(a.isSorted());
+		here = 0;
 
 		
 		//auto predicate = [](int & e0,int & e1) {
 		//	return e0 < e1;
 		//};
 		//a.insertOrderInferior(21);
-		
+	}
+
+	{
+		IntArray b(4);
+		b.set(0, 5);
+		b.set(1, -5);
+		b.set(2, 50);
+		b.set(3, 7);
+
+		int beforeSort = 0;
+		b.Sort();
+
+		int sorted = 0;
+
+		assert(b.isSorted());
+
 	}
 }
 
