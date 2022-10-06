@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cours_0.cpp" />
+    <ClCompile Include="IntArray.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IntArray.hpp" />
