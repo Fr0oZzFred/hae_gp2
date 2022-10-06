@@ -8,6 +8,7 @@
 #include "IntArray.hpp"
 #include "Vec.hpp"
 #include "StringFunctions.hpp"
+#include "LinkedListInt.hpp"
 
 using namespace std;
 
@@ -179,8 +180,28 @@ void testString() {
 	int here = 0;
 }
 
+void testLinkedList() {
+	LinkedListInt tutu;
+
+	tutu.insert(0);
+	tutu.insert(0);
+	tutu.insert(5);
+	tutu.insert(9);
+	tutu.insert(7);
+
+	tutu.remove(4);
+	tutu.remove(5);
+	tutu.remove(0);
+	tutu.remove(7);
+
+	tutu.print();
+
+	int here = 0;
+}
+
 int main() {
 	testVec4();
 	testArray();
 	testString();
+	testLinkedList();
 }
