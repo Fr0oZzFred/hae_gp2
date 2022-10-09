@@ -141,12 +141,14 @@
   <ItemGroup>
     <ClCompile Include="cours_0.cpp" />
     <ClCompile Include="IntArray.cpp" />
+    <ClCompile Include="IntTree.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkedListInt.cpp" />
     <ClCompile Include="Vec.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IntArray.hpp" />
+    <ClInclude Include="IntTree.hpp" />
     <ClInclude Include="LinkedListInt.hpp" />
     <ClInclude Include="StringFunctions.hpp" />
     <ClInclude Include="Vec.hpp" />

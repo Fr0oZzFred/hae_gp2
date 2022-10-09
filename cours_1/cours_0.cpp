@@ -9,6 +9,7 @@
 #include "Vec.hpp"
 #include "StringFunctions.hpp"
 #include "LinkedListInt.hpp"
+#include "IntTree.hpp"
 
 using namespace std;
 
@@ -199,9 +200,23 @@ void testLinkedList() {
 	int here = 0;
 }
 
+void testIntTree() {
+	IntTreeController treeController;
+
+	treeController.insert(2); 
+	treeController.insert(1);
+	treeController.insert(12);
+	treeController.insert(13);
+	treeController.insert(-5);
+
+	treeController.remove(1);
+	treeController.print();
+}
+
 int main() {
-	testVec4();
-	testArray();
-	testString();
-	testLinkedList();
+	//testVec4();
+	//testArray();
+	//testString();
+	//testLinkedList();
+	testIntTree();
 }
