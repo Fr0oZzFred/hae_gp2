@@ -41,11 +41,9 @@ IntTree* IntTree::remove(int val) {
 			left->value = val;
 			left = left->remove(val);
 		}
-		if (right) {
-			value = right->value;
-			right->value = val;
-			right = right->remove(val);
-		}
+		//if (right) {
+		//	right = right->insert(right->value);
+		//}
 	}
 	return this;
 }

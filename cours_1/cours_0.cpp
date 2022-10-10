@@ -211,8 +211,10 @@ void testIntTree() {
 
 
 	treeController.insert(2);
-	treeController.insert(1);
+	treeController.insert(-1);
 	treeController.insert(13);
+	treeController.insert(1);
+	treeController.insert(-4);
 	treeController.insert(-5);
 	treeController.insert(666);
 	treeController.insert(86);
@@ -222,7 +224,7 @@ void testIntTree() {
 	treeController.insert(4);
 
 
-	treeController.remove(13); 
+	treeController.remove(2);
 	treeController.print();
 }
 
