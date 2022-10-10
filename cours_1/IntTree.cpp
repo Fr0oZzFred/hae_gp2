@@ -22,21 +22,29 @@ IntTree* IntTree::insert(int val) {
 }
 
 IntTree* IntTree::remove(int val) {
-	if (val < value) 
+	if (val < value) {
 		if (left)
 			left = left->remove(val);
-	else
+	}
+	else {
 		if (right)
 			right = right->remove(val);
+	}
 
 	if (value == val) {
+		if (!left && !right) {
 		delete this;
 		return nullptr;
+		}
 		if (left) {
-			left = left->remove(left->value);
+			value = left->value;
+			left->value = val;
+			left = left->remove(val);
 		}
 		if (right) {
-			right = right->remove(right->value);
+			value = right->value;
+			right->value = val;
+			right = right->remove(val);
 		}
 	}
 	return this;

@@ -203,13 +203,26 @@ void testLinkedList() {
 void testIntTree() {
 	IntTreeController treeController;
 
-	treeController.insert(2); 
+	//treeController.insert(2); 
+	//treeController.insert(1);
+	//treeController.insert(12);
+	//treeController.insert(13);
+	//treeController.insert(-5);
+
+
+	treeController.insert(2);
 	treeController.insert(1);
-	treeController.insert(12);
 	treeController.insert(13);
 	treeController.insert(-5);
+	treeController.insert(666);
+	treeController.insert(86);
+	treeController.insert(-7);
+	treeController.insert(42);
+	treeController.insert(2077);
+	treeController.insert(4);
 
-	treeController.remove(1);
+
+	treeController.remove(13); 
 	treeController.print();
 }
 
