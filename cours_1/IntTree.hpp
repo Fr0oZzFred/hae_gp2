@@ -7,9 +7,8 @@ public:
 	IntTree*	right = nullptr;
 
 	IntTree*	insert(int val);
-	IntTree*	remove(int val, IntTree* root);
+	IntTree*	remove(int val);
 	void		print();
-	~IntTree();
 };
 
 class IntTreeController {
@@ -29,7 +28,7 @@ public:
 	};
 
 	void remove(int val) {
-		root = root->remove(val, root);
+		root = root->remove(val);
 	};
 
 	void print() {

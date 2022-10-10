@@ -21,30 +21,23 @@ IntTree* IntTree::insert(int val) {
 	return this;
 }
 
-IntTree* IntTree::remove(int val, IntTree* root) {
+IntTree* IntTree::remove(int val) {
 	if (val < value) 
 		if (left)
-			left = left->remove(val, root);
+			left = left->remove(val);
 	else
 		if (right)
-			right = right->remove(val, root);
+			right = right->remove(val);
 
 	if (value == val) {
-		value = NULL;
+		delete this;
+		return nullptr;
 		if (left) {
-			IntTree* _left = left;
-			int nuVal = _left->value;
-			this->~IntTree();
-			_left = _left->remove(_left->value, root);
-			root->insert(nuVal);
+			left = left->remove(left->value);
 		}
 		if (right) {
-			this->~IntTree();
-			int value = right->value;
-			right = right->remove(right->value, root);
-			root->insert(value);
+			right = right->remove(right->value);
 		}
-		this->~IntTree();
 	}
 	return this;
 }
@@ -55,7 +48,4 @@ void IntTree::print() {
 	printf("%d ", value);
 	if (right)
 		right->print();
-}
-
-IntTree::~IntTree() {
 }
