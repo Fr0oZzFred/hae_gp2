@@ -274,7 +274,7 @@ void testC() {
 	//program pointer
 	{
 		int o = 0;//sp+=4; [sp] = 0;
-		int* sapin = (int*)malloc(8);
+		int* sapin = (int*)malloc(8); //sp+=sizeof(int*); [sp] = [malloc(8)]
 	}
 }
 
