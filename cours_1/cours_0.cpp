@@ -10,7 +10,10 @@
 #include "StringFunctions.hpp"
 #include "LinkedListInt.hpp"
 #include "IntTree.hpp"
-
+#include <stdlib.h>
+#include <time.h>
+#include <functional>
+#include "FloatArray.hpp"
 using namespace std;
 
 static void assert(bool test) {
@@ -199,8 +202,6 @@ void testLinkedList() {
 
 	int here = 0;
 }
-#include <stdlib.h>
-#include <time.h>
 
 void testIntTree() {
 	IntTreeController treeController;
@@ -253,11 +254,70 @@ void testIntTree() {
 	treeController.print();
 }
 
+void testC() {
+	int* data = data = (int*)malloc(150 * sizeof(int));
+	//int tata[150] = {}; //Allocations Statiques (supprimé de la mémoire après la sortie de la func)
+	//int* toto = new int[150]; //Allocations Dynamiques (reste en mémoire après la sortie de la func)
+
+	//new int [150] fait l'équivalent de new (((int*)malloc(150 * sizeof(int))) (int) (150);
+
+	for (int i = 0; i < 150; i++) {
+		data[i] = i * i;
+	}
+	for (int i = 149; i > 0; i--) {
+		printf("%d ", data[i]);
+	}
+
+
+	//stack pointer => pointeur sur le debut de la memoire local
+	//program pointer
+	{
+		int o = 0;//sp+=4; [sp] = 0;
+		int* sapin = (int*)malloc(8);
+	}
+}
+
+void testFloatArray() {
+	FloatArray arr(16);
+	arr.push_first(1);
+	arr.push_back(16);
+	arr.push_back(15);
+	arr.push_first(14);
+	arr.resize(150);
+	arr.push_back(666);
+	arr.push_first(-666);
+	arr.print();
+
+	float totalSum = 0;
+	auto maFonction = [&totalSum](float val) {
+		totalSum += val;
+	};
+	arr.iter(maFonction);
+	printf("-------SUM--------\n");
+	printf("%f ", totalSum);
+	printf("\n");
+	int here = 0;
+
+
+	float abc[3] = { 66, 67, 68 };
+
+	FloatArray nu = arr.fromArray(arr.getData(), arr.getSize());
+	nu.print();
+
+}
 int main() {
 	//testVec4();
+	// 
 	//testArray();
+	// 
 	//testString();
+	// 
 	//testLinkedList();
-	clock_t init = clock();
-	testIntTree();
+	// 
+	//clock_t init = clock();
+	//testIntTree();
+	//
+	//testC();
+	//
+	testFloatArray();
 }

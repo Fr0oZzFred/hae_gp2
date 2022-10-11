@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cours_0.cpp" />
+    <ClCompile Include="FloatArray.cpp" />
     <ClCompile Include="IntArray.cpp" />
     <ClCompile Include="IntTree.cpp" />
     <ClCompile Include="LinkedList.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="Vec.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FloatArray.hpp" />
     <ClInclude Include="IntArray.hpp" />
     <ClInclude Include="IntTree.hpp" />
     <ClInclude Include="LinkedListInt.hpp" />
