@@ -14,6 +14,7 @@
 #include <time.h>
 #include <functional>
 #include "FloatArray.hpp"
+#include "Lib.hpp"
 using namespace std;
 
 static void assert(bool test) {
@@ -305,6 +306,14 @@ void testFloatArray() {
 	nu.print();
 
 }
+
+void testLib() {
+	char sapin[6] = "sapin";
+	char buffer[512] = {};
+	Lib::Memcpy(buffer, sapin, 5);
+	int here = 0;
+}
+
 int main() {
 	//testVec4();
 	// 
@@ -319,5 +328,7 @@ int main() {
 	//
 	//testC();
 	//
-	testFloatArray();
+	//testFloatArray();
+	//
+	testLib();
 }

@@ -143,6 +143,7 @@
     <ClCompile Include="FloatArray.cpp" />
     <ClCompile Include="IntArray.cpp" />
     <ClCompile Include="IntTree.cpp" />
+    <ClCompile Include="Lib.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkedListInt.cpp" />
     <ClCompile Include="Vec.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="FloatArray.hpp" />
     <ClInclude Include="IntArray.hpp" />
     <ClInclude Include="IntTree.hpp" />
+    <ClInclude Include="Lib.hpp" />
     <ClInclude Include="LinkedListInt.hpp" />
     <ClInclude Include="StringFunctions.hpp" />
     <ClInclude Include="Vec.hpp" />
