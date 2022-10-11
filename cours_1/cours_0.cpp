@@ -199,6 +199,8 @@ void testLinkedList() {
 
 	int here = 0;
 }
+#include <stdlib.h>
+#include <time.h>
 
 void testIntTree() {
 	IntTreeController treeController;
@@ -210,21 +212,44 @@ void testIntTree() {
 	//treeController.insert(-5);
 
 
-	treeController.insert(2);
-	treeController.insert(-1);
-	treeController.insert(13);
-	treeController.insert(1);
-	treeController.insert(-4);
-	treeController.insert(-5);
-	treeController.insert(666);
-	treeController.insert(86);
-	treeController.insert(-7);
-	treeController.insert(42);
-	treeController.insert(2077);
-	treeController.insert(4);
+	//treeController.insert(2);
+	//treeController.insert(-1);
+	//treeController.insert(13);
+	//treeController.insert(1);
+	//treeController.insert(-4);
+	//treeController.insert(-5);
+	//treeController.insert(666);
+	//treeController.insert(86);
+	//treeController.insert(-7);
+	//treeController.insert(42);
+	//treeController.insert(2077);
+	//treeController.insert(4);
+	//treeController.remove(2);
+
+	//for (int i = 0; i < 10; i++) {
+	//	treeController.insert(5);
+	//}
+	//treeController.remove(5);
+
+	//treeController.print();
 
 
-	treeController.remove(2);
+	clock_t now = clock();
+	srand(now);
+	std::vector<int> data;
+	for (int i = 0; i < 10; ++i) {
+		data.push_back(rand() % 20 - 10);
+	}
+	treeController.print();
+	for (auto v : data) {
+		treeController.insert(v);
+	}
+	treeController.print();
+	for (auto v : data) {
+		cout << "\n removing " << std::to_string(v) << "\n";
+		treeController.remove(v);
+		treeController.print();
+	}
 	treeController.print();
 }
 
@@ -233,5 +258,6 @@ int main() {
 	//testArray();
 	//testString();
 	//testLinkedList();
+	clock_t init = clock();
 	testIntTree();
 }

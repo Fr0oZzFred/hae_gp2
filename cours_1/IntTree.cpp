@@ -21,7 +21,8 @@ IntTree* IntTree::insert(int val) {
 	return this;
 }
 
-IntTree* IntTree::remove(int val) {
+//Exo
+/*IntTree* IntTree::remove(int val) {
 	if (val < value) {
 		if (left)
 			left = left->remove(val);
@@ -33,8 +34,8 @@ IntTree* IntTree::remove(int val) {
 
 	if (value == val) {
 		if (!left && !right) {
-		delete this;
-		return nullptr;
+			delete this;
+			return nullptr;
 		}
 		if (left) {
 			value = left->value;
@@ -45,6 +46,37 @@ IntTree* IntTree::remove(int val) {
 		//	right = right->insert(right->value);
 		//}
 	}
+	return this;
+}*/
+
+
+//Correction
+IntTree* IntTree::remove(int val) {
+	if (val == value) {
+		auto oldLeft = left;
+		auto oldRight = right;
+
+		if (!oldRight && !oldLeft) {
+			delete this;
+			return nullptr;
+		}
+		else if (!oldRight) {
+			delete this;
+			return oldLeft;
+		}
+		else if (!oldLeft) {
+			delete this;
+			return oldRight;
+		}
+		while (left) {
+			auto lval = left->value;
+			left = left->remove(lval);
+			right->insert(lval);
+		}
+		return right;
+	}
+	if (left && (val <= value)) left = left->remove(val);
+	if (right && (val >= value)) right = right->remove(val);
 	return this;
 }
 
