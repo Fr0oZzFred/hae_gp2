@@ -5,10 +5,11 @@ public:
 	StringTree* left;
 	StringTree* right;
 
-	StringTree* insert(char* val);
-	StringTree* remove(char* val);
+	StringTree* insert		(char* val);
+	StringTree* remove		(char* val);
+	bool searchMatch		(char* val);
 	void print();
-	bool compare(char* val);
+	int compare				(char* val);
 };
 
 class StringTreeController {
@@ -34,4 +35,7 @@ public:
 			root->print();
 	}
 
+	bool searchMatch(char* val) {
+		return root->searchMatch(val);
+	}
 };

@@ -1,7 +1,7 @@
 #include "StringTree.hpp"
 #include <iostream>
 StringTree* StringTree::insert(char* val) {
-	if (compare(val)) {
+	if (compare(val) == 1) {
 		if (left)
 			left = left->insert(val);
 		else {
@@ -44,9 +44,15 @@ StringTree* StringTree::remove(char* val) {
 		}
 		return right;
 	}
-	if (left && (val <= value)) left = left->remove(val);
-	if (right && (val >= value)) right = right->remove(val);
+	if (left && ((compare(val) == 1)	|| (compare(val) == 0))) left = left->remove(val);
+	if (right && ((compare(val) == -1)	|| (compare(val) == 0))) right = right->remove(val);
 	return this;
+}
+bool StringTree::searchMatch(char* val) {
+	if (left && (compare(val) == 1))	return left->searchMatch(val);
+	if (right && (compare(val) == -1))	return right->searchMatch(val);
+	if (compare(val) == 0)				return true;
+										return false;
 };
 
 void StringTree::print() {
@@ -57,8 +63,7 @@ void StringTree::print() {
 		right->print();
 };
 
-//False = val est supérieur
-bool StringTree::compare(char* val) {
+int StringTree::compare(char* val) {
 	int idx = 0;
 	int len = 0;
 	int len1 = 0;
@@ -70,8 +75,9 @@ bool StringTree::compare(char* val) {
 	}
 	int minLen = len < len1 ? len : len1;
 	for (int i = 0; i < minLen; i++) {
-		if		(value[i] < val[i])		return false;
-		else if (value[i] > val[i])		return true;
+		if		(value[i] < val[i])		return -1;
+		else if (value[i] > val[i])		return 1;
 	}
-	return true;
+	if (value == val) return 0;
+	return -1;
 };

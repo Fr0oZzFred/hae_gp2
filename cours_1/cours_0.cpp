@@ -336,6 +336,11 @@ void testStringTree() {
 	stc.insert((char*)"d");
 	stc.remove((char*)"d");
 	stc.print();
+	printf("\n");
+	printf("%d", stc.searchMatch((char*)"b"));
+	printf("\n");
+	printf("%d", stc.searchMatch((char*)"a"));
+	printf("\n");
 }
 
 int main() {
