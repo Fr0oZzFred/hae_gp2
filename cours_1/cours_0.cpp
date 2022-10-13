@@ -329,7 +329,13 @@ void testLib() {
 }
 
 void testStringTree() {
-	//StringTreeController stc;
+	StringTreeController stc;
+	stc.insert((char*)"b");
+	stc.insert((char*)"a");
+	stc.insert((char*)"c");
+	stc.insert((char*)"d");
+	stc.remove((char*)"d");
+	stc.print();
 }
 
 int main() {
@@ -348,7 +354,7 @@ int main() {
 	//
 	//testFloatArray();
 	//
-	testLib();
+	//testLib();
 	//
-	//testStringTree();
+	testStringTree();
 }

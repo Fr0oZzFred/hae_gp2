@@ -15,7 +15,7 @@ char* Lib::StrChr(const char* src, const char trg) {
 	int len = 0;
 	while (*src) {
 		if (*src == trg) {
-			char* ptr = new char[srcLen - len]; //YOLO
+			char* ptr = new char[(srcLen - len)]; //YOLO
 			int idx = 0;
 			while (*src) {
 				ptr[idx] = *src;
