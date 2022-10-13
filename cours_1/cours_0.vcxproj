@@ -146,6 +146,7 @@
     <ClCompile Include="Lib.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkedListInt.cpp" />
+    <ClCompile Include="StringTree.cpp" />
     <ClCompile Include="Vec.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +156,7 @@
     <ClInclude Include="Lib.hpp" />
     <ClInclude Include="LinkedListInt.hpp" />
     <ClInclude Include="StringFunctions.hpp" />
+    <ClInclude Include="StringTree.hpp" />
     <ClInclude Include="Vec.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

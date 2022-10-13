@@ -15,6 +15,7 @@
 #include <functional>
 #include "FloatArray.hpp"
 #include "Lib.hpp"
+#include "StringTree.hpp"
 using namespace std;
 
 static void assert(bool test) {
@@ -315,11 +316,20 @@ void testLib() {
 
 
 	char* test = Lib::StrChr("Sapin", 'a');
+	printf("%s", test);
 	int here1 = 0;
 
-	//char* test1 = Lib::StrStr("one two three", "one");
-	char* test1 = Lib::StrStr("one two three", "three");
+	printf("\n");
+	char* test1 = Lib::StrStr("one two three", "one");
+	char* test2 = Lib::StrStr("one two three", "three");
+	printf("%s", test1);
+	printf("\n");
+	printf("%s", test2);
 	int here2 = 0;
+}
+
+void testStringTree() {
+	//StringTreeController stc;
 }
 
 int main() {
@@ -339,4 +349,6 @@ int main() {
 	//testFloatArray();
 	//
 	testLib();
+	//
+	//testStringTree();
 }

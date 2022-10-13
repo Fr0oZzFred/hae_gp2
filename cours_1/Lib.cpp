@@ -7,13 +7,26 @@ void Lib::Memcpy(char* dest, const char* src, int size) {
 }
 
 char* Lib::StrChr(const char* src, const char trg) {
-	do {
+	int srcLen = 0;
+	while (src[srcLen] != 0) {
+		srcLen++;
+	}
+
+	int len = 0;
+	while (*src) {
 		if (*src == trg) {
-			printf(src);
-			printf("\n");
-			//return nuStr;
+			char* ptr = new char[srcLen - len]; //YOLO
+			int idx = 0;
+			while (*src) {
+				ptr[idx] = *src;
+				*src++;
+				idx++;
+			}
+			return ptr;
 		}
-	} while (*src++);
+		*src++;
+		len++;
+	}
 	return nullptr;
 }
 
@@ -32,10 +45,22 @@ char* Lib::StrStr(const char* src, const char* substr) {
 			for (int i = 0; i < subLen; i++) {
 				if (src[idx + i] != substr[i]) {
 					same = false;
+					break;
 				}
 			}
-			printf("\n");
-			printf("%d", same);
+			char* ptr = new char[20]; //YOLO
+			if (same) {
+				for (int i = 0; i < idx; i++) {
+					*src++;
+				}
+				int i = 0;
+				while (*src) {
+					ptr[i] = *src;
+					i++;
+					*src++;
+				}
+				return ptr;
+			}
 		}
 		idx++;
 	}
