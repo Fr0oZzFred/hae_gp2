@@ -310,8 +310,16 @@ void testFloatArray() {
 void testLib() {
 	char sapin[6] = "sapin";
 	char buffer[512] = {};
-	Lib::Memcpy(buffer, sapin, 5);
+	Lib::Memcpy(buffer, "sapin", 5);
 	int here = 0;
+
+
+	char* test = Lib::StrChr("Sapin", 'a');
+	int here1 = 0;
+
+	//char* test1 = Lib::StrStr("one two three", "one");
+	char* test1 = Lib::StrStr("one two three", "three");
+	int here2 = 0;
 }
 
 int main() {
