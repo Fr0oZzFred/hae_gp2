@@ -53,6 +53,30 @@ bool StringTree::searchMatch(char* val) {
 	if (right && (compare(val) == -1))	return right->searchMatch(val);
 	if (compare(val) == 0)				return true;
 										return false;
+}
+void StringTree::searchPrefix(char* val) {
+	if (left && ((compare(val) == 1) || (compare(val) == 0))) left->searchPrefix(val);
+	if (right && ((compare(val) == -1) || (compare(val) == 0))) right->searchPrefix(val);
+
+
+	if (value[0] != val[0]) return;
+
+	int len = 0;
+	while (val[len] != 0) {
+		len++;
+	}
+	bool gotPrefix = true;
+	for (int i = 0; i < len; i++) {
+		if (value[i] != val[i]) {
+			gotPrefix = false;
+			return;
+		}
+	}
+	if (gotPrefix) {
+		printf("%s", value);
+		printf("\n");
+	}
+
 };
 
 void StringTree::print() {

@@ -341,6 +341,13 @@ void testStringTree() {
 	printf("\n");
 	printf("%d", stc.searchMatch((char*)"a"));
 	printf("\n");
+
+	StringTreeController stc1;
+	stc1.insert((char*)"Lilia");
+	stc1.insert((char*)"Livai");
+	stc1.insert((char*)"Lola");
+	stc1.insert((char*)"Lord");
+	stc1.searchPrefix((char*)"L");
 }
 
 int main() {

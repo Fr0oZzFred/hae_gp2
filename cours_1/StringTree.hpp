@@ -8,6 +8,7 @@ public:
 	StringTree* insert		(char* val);
 	StringTree* remove		(char* val);
 	bool searchMatch		(char* val);
+	void searchPrefix		(char* val);
 	void print();
 	int compare				(char* val);
 };
@@ -37,5 +38,9 @@ public:
 
 	bool searchMatch(char* val) {
 		return root->searchMatch(val);
+	}
+
+	void searchPrefix(char* val) {
+		root->searchPrefix(val);
 	}
 };
