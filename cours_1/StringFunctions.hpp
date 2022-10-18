@@ -7,7 +7,7 @@
 char => int sur 8 bit
 */
 
-int Strlen(const char* str) {
+static int Strlen(const char* str) {
 	int idx = 0;
 	while (str[idx] != 0)
 	{
@@ -16,20 +16,20 @@ int Strlen(const char* str) {
 	return idx;
 };
 
-int Strlen2(const char* str) {
+static int Strlen2(const char* str) {
 	const char* start = str;
 	while (*str != 0)
 		str++;
 	return str - start;
 };
 
-int Strlen3(const char* str) {
+static int Strlen3(const char* str) {
 	const char* start = str;
 	while (*str) str++;
 	return str - start;
 };
 
-int Countc(const char* str, char c) {
+static int Countc(const char* str, char c) {
 	int length = 0;
 	int count = 0;
 	while (str[length] != 0)
@@ -42,7 +42,7 @@ int Countc(const char* str, char c) {
 	return count;
 };
 
-void Strcpy(char* dst, const char* src) {
+static void Strcpy(char* dst, const char* src) {
 	while (*src)
 	{
 		*dst = *src;
@@ -51,7 +51,7 @@ void Strcpy(char* dst, const char* src) {
 	}
 };
 
-void Strncpy(char* dst, const char* src, int nchars) {
+static void Strncpy(char* dst, const char* src, int nchars) {
 	for (int i = 0; i < nchars; i++)
 	{
 		dst[i] = src[i];

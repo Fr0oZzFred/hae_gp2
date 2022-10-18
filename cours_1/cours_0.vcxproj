@@ -147,6 +147,7 @@
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkedListInt.cpp" />
     <ClCompile Include="StringTree.cpp" />
+    <ClCompile Include="StringTreeCorrection.cpp" />
     <ClCompile Include="Vec.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +158,7 @@
     <ClInclude Include="LinkedListInt.hpp" />
     <ClInclude Include="StringFunctions.hpp" />
     <ClInclude Include="StringTree.hpp" />
+    <ClInclude Include="StringTreeCorrection.hpp" />
     <ClInclude Include="Vec.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

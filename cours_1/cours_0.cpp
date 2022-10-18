@@ -16,6 +16,7 @@
 #include "FloatArray.hpp"
 #include "Lib.hpp"
 #include "StringTree.hpp"
+#include "StringTreeCorrection.hpp"
 using namespace std;
 
 static void assert(bool test) {
@@ -315,17 +316,29 @@ void testLib() {
 	int here = 0;
 
 
-	char* test = Lib::StrChr("Sapin", 'a');
+	const char* test = Lib::StrChr("Sapin", 'a');
 	printf("%s", test);
 	int here1 = 0;
 
 	printf("\n");
-	char* test1 = Lib::StrStr("one two three", "one");
-	char* test2 = Lib::StrStr("one two three", "three");
+	const char* one = "one";
+	const char* test1 = Lib::StrStr("one two three", one);
+	const char* test2 = Lib::StrStr("one two three", "three");
 	printf("%s", test1);
 	printf("\n");
 	printf("%s", test2);
 	int here2 = 0;
+
+	printf("\n");
+	int buf[512] = {};
+	int buf2[512] = {0,1,2,3,4,0,1,2,3,4,0,1,2,3,4 };
+	Lib::MemcpyRec((char*)buf, (char*) buf2, sizeof(buf2));
+	int here3 = 0;
+	printf("\n");
+
+	const char* test3 = Lib::StrChrRec("Sapin", 'a');
+	printf("%s", test3);
+	printf("\n");
 }
 
 void testStringTree() {
@@ -350,6 +363,28 @@ void testStringTree() {
 	stc1.searchPrefix((char*)"L");
 }
 
+void correctionStringTree() {
+	StringTreeControllerCorrection ctlr;
+
+	std::string to("toto");
+	std::string tu("tutu");
+	std::string ta("tata");
+
+	ctlr.insert(to);
+	ctlr.insert(tu);
+	ctlr.insert(ta);
+	ctlr.print();
+
+	auto res = ctlr.searchString(tu);
+
+	if (res) cout << res->value << "\n";
+	
+
+	std::string tu1("tu");
+	auto res1 = ctlr.searchPattern(tu1);
+	if (res1) cout << res1->value << "\n";
+}
+
 int main() {
 	//testVec4();
 	// 
@@ -366,7 +401,9 @@ int main() {
 	//
 	//testFloatArray();
 	//
-	//testLib();
+	testLib();
 	//
-	testStringTree();
+	//testStringTree();
+	//
+	//correctionStringTree();
 }

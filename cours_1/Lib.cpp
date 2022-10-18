@@ -1,67 +1,71 @@
 #include"Lib.hpp"
-
+#include "StringFunctions.hpp"
 void Lib::Memcpy(char* dest, const char* src, int size) {
 	for (int i = 0; i < size; i++)
 		dest[i] = src[i];
-}
+};
 
-char* Lib::StrChr(const char* src, const char trg) {
-	int srcLen = 0;
-	while (src[srcLen] != 0) {
-		srcLen++;
+void Lib::MemcpyRec(char* dest, const char* src, int size) {
+	if (size > 0) {
+		*dest = *src;
+		Memcpy(dest+1, src+1, size-1);
 	}
+};
 
-	int len = 0;
-	while (*src) {
-		if (*src == trg) {
-			char* ptr = new char[(srcLen - len)]; //YOLO
-			int idx = 0;
-			while (*src) {
-				ptr[idx] = *src;
-				*src++;
-				idx++;
-			}
-			return ptr;
-		}
-		*src++;
-		len++;
-	}
-	return nullptr;
-}
+//Renvoie nullptr si le char c n'est pas trouvé
+//Sinon renvoie le ptr vers là où est le character
+const char* Lib::StrChr(const char* src, const char c) {
+	while (*src && (*src != c))
+		src++;
+	if (!*src)
+		return nullptr;
+	return src;
+};
 
-char* Lib::StrStr(const char* src, const char* substr) {
-	
-	//Pourquoi je ne peux pas include StringFunctions ?
-	int subLen = 0;
-	while (substr[subLen] != 0) {
-		subLen++;
-	}
+const char* Lib::StrChrRec(const char* src, const char c) {
+	if (!*src)return nullptr;
+	if (*src != c) return StrChrRec(src + 1, c);
+	return src;
+};
+
+const char* Lib::StrStr(const char* src, const char* substr) {
+	int subLen = Strlen(substr);
 
 	int idx = 0;
-	while (src[idx]) {
-		if (src[idx] == substr[0]) {
+	while (*src) {
+		if (*src == substr[0]) {
 			bool same = true;
-			for (int i = 0; i < subLen; i++) {
-				if (src[idx + i] != substr[i]) {
+			for (int i = 1; i < subLen; i++) {
+				src++;
+				if (*src != substr[i]) {
 					same = false;
-					break;
 				}
 			}
-			char* ptr = new char[20]; //YOLO
-			if (same) {
-				for (int i = 0; i < idx; i++) {
-					*src++;
-				}
-				int i = 0;
-				while (*src) {
-					ptr[i] = *src;
-					i++;
-					*src++;
-				}
-				return ptr;
-			}
+			if (same) return substr;
+			src -= subLen - 1;
 		}
-		idx++;
+		src++;
 	}
 	return nullptr;
-}
+};
+
+const char* Lib::StrStrRec(const char* src, const char* substr) {
+	int subLen = Strlen(substr);
+
+	int idx = 0;
+	while (*src) {
+		if (*src == substr[0]) {
+			bool same = true;
+			for (int i = 1; i < subLen; i++) {
+				src++;
+				if (*src != substr[i]) {
+					same = false;
+				}
+			}
+			if (same) return substr;
+			src -= subLen - 1;
+		}
+		src++;
+	}
+	return nullptr;
+};

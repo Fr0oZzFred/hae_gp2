@@ -1,9 +1,9 @@
 #pragma once
 class StringTree {
 public:
-	char* value;
-	StringTree* left;
-	StringTree* right;
+	char* value = nullptr;
+	StringTree* left = nullptr;
+	StringTree* right = nullptr;
 
 	StringTree* insert		(char* val);
 	StringTree* remove		(char* val);
