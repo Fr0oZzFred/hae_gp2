@@ -339,6 +339,12 @@ void testLib() {
 	const char* test3 = Lib::StrChrRec("Sapin", 'a');
 	printf("%s", test3);
 	printf("\n");
+
+	const char* test4 = Lib::StrStrRec("one two three", one);
+	const char* test5 = Lib::StrStrRec("one two three", "three");
+	printf("%s", test4);
+	printf("\n");
+	printf("%s", test5);
 }
 
 void testStringTree() {

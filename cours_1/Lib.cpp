@@ -50,22 +50,18 @@ const char* Lib::StrStr(const char* src, const char* substr) {
 };
 
 const char* Lib::StrStrRec(const char* src, const char* substr) {
-	int subLen = Strlen(substr);
-
-	int idx = 0;
-	while (*src) {
-		if (*src == substr[0]) {
-			bool same = true;
-			for (int i = 1; i < subLen; i++) {
-				src++;
-				if (*src != substr[i]) {
-					same = false;
-				}
-			}
-			if (same) return substr;
-			src -= subLen - 1;
-		}
-		src++;
+	if (!*src) return nullptr;
+	if (StrPrefix(src, substr)) return substr;
+	return StrStrRec(src + 1, substr);
+}
+bool Lib::StrPrefix(const char* src, const char* tok) {
+	int i = 0;
+	while (tok[i]) {
+		if (tok[i] != src[i])
+			return false;
+		else
+			i++;
 	}
-	return nullptr;
+	return true;
 };
+

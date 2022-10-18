@@ -7,4 +7,5 @@ public:
 	static const char* StrChrRec(const char* src, const char c);
 	static const char* StrStr(const char* src, const char* substr);
 	static const char* StrStrRec(const char* src, const char* substr);
+	static bool StrPrefix(const char* src, const char* tok);
 };
