@@ -63,5 +63,39 @@ bool Lib::StrPrefix(const char* src, const char* tok) {
 			i++;
 	}
 	return true;
+}
+int Lib::add(int a, int b) {
+	if (b == 0) return a;
+	if (a == 0) return b;
+
+	if (b < 0) return add(a-1, b+1);
+	return add(a+1, b-1);
+}
+int Lib::sub(int a, int b) {
+	return add(a, -b);
+}
+int Lib::mul(int a, int b) {
+	if((a == 0) || (b == 0)) return 0;
+	if (a == 1) return b;
+	if (b == 1)	return a;
+	if (b > 0)	return add(a, mul(a, b - 1));
+				return add(b, mul(a - 1, b));
+}
+int Lib::div(int a, int b) {
+	if ((a == 0) || (b == 0)) return 0;
+	if (b == 1) return a;
+	if (a == b) return 1;
+
+	if (b < 0) return -div(a, -b);
+	if (a < 0) return div(-a, b);
+
+	return add(1 ,div(sub(a, b), b));
+}
+int Lib::mod(int a, int b) {
+	if ((a == 0) || (b == 0)) return 0;
+
+	if (a < b) return a;
+
+	return mod(sub(a,b) , b);
 };
 

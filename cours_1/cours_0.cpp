@@ -337,7 +337,10 @@ void testLib() {
 	printf("\n");
 
 	const char* test3 = Lib::StrChrRec("Sapin", 'a');
+	const char* test6 = Lib::StrChrRec("Sapin", 'c');
 	printf("%s", test3);
+	printf("\n"); 
+	printf("%s", test6);
 	printf("\n");
 
 	const char* test4 = Lib::StrStrRec("one two three", one);
@@ -345,6 +348,20 @@ void testLib() {
 	printf("%s", test4);
 	printf("\n");
 	printf("%s", test5);
+
+
+
+	printf("\n");
+	printf("%d", Lib::add(0, 5));
+	printf("\n");
+	printf("%d", Lib::sub(0, 5));
+	printf("\n");
+	printf("%d", Lib::mul(50, 10));
+	printf("\n");
+	printf("%d", Lib::div(2, 2));
+	printf("\n");
+	printf("%d", Lib::mod(5, 3));
+	printf("\n");
 }
 
 void testStringTree() {
