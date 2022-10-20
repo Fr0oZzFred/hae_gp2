@@ -362,6 +362,29 @@ void testLib() {
 	printf("\n");
 	printf("%d", Lib::mod(5, 3));
 	printf("\n");
+
+
+	printf("%d", Lib::StrlenRec("Tutu"));
+	printf("\n");
+
+	char buff[512] = {};
+	Lib::StrcpyRec(buff, "Truc");
+	printf("%s", buff);
+	printf("\n");
+
+	char buffe[512] = {};
+	Lib::StrcpyRec(buffe, "Machin");
+	printf("%s", buffe);
+	printf("\n");
+
+	printf("%d", Lib::StrCmp("a", "b"));
+	printf("\n");
+
+	printf("%d", Lib::mulTerminalRecursion(2, 5, 0));
+	printf("\n");
+
+	printf("%d", Lib::divTerminalRecursion(4, 24, 0));
+	printf("\n");
 }
 
 void testStringTree() {

@@ -97,5 +97,54 @@ int Lib::mod(int a, int b) {
 	if (a < b) return a;
 
 	return mod(sub(a,b) , b);
+}
+int Lib::StrlenRec(const char* str) {
+	if (!*str) return 0;
+	return 1 + StrlenRec(str + 1);
+}
+void Lib::StrcpyRec(char* dest, const char* src) {
+	if (!*src) return;
+
+	*dest = *src;
+	StrcpyRec(dest + 1, src + 1);
 };
 
+void Lib::StrncpyRec(char* dest, const char* src, int size) {
+	if (!*src) return;
+	if (size == 0) return;
+	*dest = *src;
+	StrncpyRec(dest + 1, src + 1, size - 1);
+}
+void Lib::ZeroMemory(char* dest, int size) {
+	if (size <= 0) return;
+	dest = 0;
+	ZeroMemory(dest + 1, size - 1);
+}
+int Lib::StrCmp(const char* str1, const char* str2) {
+	if (!*str1 && !*str2) return 0;
+	if (!str1) return -1;
+	if (!str2) return 1;
+	if (*str1 < *str2) return -1;
+	if (*str1 > *str2) return 1;
+	return StrCmp(str1 + 1, str2 + 1);
+}
+int Lib::mulTerminalRecursion(int a, int b, int res = 0) {
+	if ((a == 0) || (b == 0)) return res;
+	if (a == 1) return res + a;
+	if (a == 1) return res + b;
+	if (b > 0) return mulTerminalRecursion(a, b - 1, res + a);
+	else return mulTerminalRecursion(a, -b, -res);
+}
+
+int Lib::divTerminalRecursion(int a, int b, int res) {
+	if (b == 0) return res;
+	if (a == 0) return res;
+	if (b == 1) return res + a;
+
+	if (b < 0) return -divTerminalRecursion(a, -b, -res);
+	if (a < 0) return divTerminalRecursion(-a, b, -res);
+
+	if (a < b) return res;
+
+	return divTerminalRecursion(a-b, b, res + 1);
+};

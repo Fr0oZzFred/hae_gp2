@@ -13,4 +13,11 @@ public:
 	static int mul(int a, int b);
 	static int div(int a, int b);
 	static int mod(int a, int b);
+	static int StrlenRec(const char* str);
+	static void StrcpyRec(char* dest, const char* src);
+	static void StrncpyRec(char* dest, const char* src, int size);
+	static void ZeroMemory(char* dest, int size);
+	static int StrCmp(const char* str1, const char* str2);
+	static int mulTerminalRecursion(int a, int b, int res);
+	static int divTerminalRecursion(int a, int b, int res);
 };
