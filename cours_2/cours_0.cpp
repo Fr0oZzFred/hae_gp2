@@ -11,8 +11,14 @@ static void assert(bool test) {
 
 void testInt64Array() {
 	Int64Array arr64(0);
-	arr64.resize(10);
-	arr64.resize(32);
+	arr64.push_back(1);
+	arr64.push_back(2);
+	//arr64.push_back(3);
+	arr64.push_back(4);
+	arr64.push_back(5);
+	arr64.push_front(0);
+	//arr64.set(3, 3);
+	arr64.insert(3, 3);
 	int here = 0;
 }
 
