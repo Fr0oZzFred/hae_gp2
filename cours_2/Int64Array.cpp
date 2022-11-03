@@ -30,7 +30,7 @@ void Int64Array::push_back(int64_t elem) {
 void Int64Array::push_front(int64_t elem) {
 	ensure(cursor + 1);
 	cursor++;
-	shift(cursor, 0);
+	shift_right(cursor, 0);
 	data[0] = elem;
 };
 
@@ -50,7 +50,7 @@ void Int64Array::insert(int pos, int64_t elem) {
 		return;
 	}
 
-	shift(cursor, pos);
+	shift_right(cursor, pos);
 	data[pos] = elem;
 };
 
@@ -62,8 +62,52 @@ void Int64Array::set(int pos, int64_t elem) {
 		data[0] = elem;
 		return;
 	}
-
+	cursor++;
 	set_unsafe(pos, elem);
+}
+void Int64Array::fillWithRandom(int nbElem) {
+	if (nbElem <= 0) return;
+	push_front(Int64Array::rand());
+	fillWithRandom(nbElem - 1);
+}
+int Int64Array::searchPosition(int elem) {
+	return searchPosition(elem, 0);
+};
+
+void Int64Array::removeOne(int elem) {
+	removeOne(elem, 0);
+}
+void Int64Array::removeAll(int elem) {
+	removeAll(elem, 0);
+};
+
+//protected
+
+int Int64Array::searchPosition(int elem, int idx) {
+	if (cursor < idx) return -1;
+	if (elem == data[idx]) return idx;
+	return searchPosition(elem, idx + 1);
+}
+
+bool Int64Array::removeOne(int elem, int idx) {
+	if (idx > cursor) return false;
+	if (data[idx] != elem) removeOne(elem, idx + 1);
+	else {
+		shift_left(idx, cursor);
+		data[cursor] = 0;
+		cursor--;
+		return true;
+	}
+}
+
+void Int64Array::removeAll(int elem, int idx) {
+	if (removeOne(elem, idx)) removeAll(elem, 0);
+};
+
+void Int64Array::shift_left(int from, int to) {
+	if ((from + 1) > to) return;
+	data[from] = data[from + 1];
+	shift_left(from + 1, to);
 };
 
 void Int64Array::shift_right(int from, int to) {

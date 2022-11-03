@@ -16,10 +16,19 @@ void testInt64Array() {
 	//arr64.push_back(3);
 	arr64.push_back(4);
 	arr64.push_back(5);
-	arr64.push_front(0);
 	//arr64.set(3, 3);
 	arr64.insert(3, 3);
+	arr64.fillWithRandom(5);
+	arr64.push_front(0);
+	arr64.push_front(1);
+	arr64.push_front(0);
 	int here = 0;
+	printf("%d", arr64.searchPosition(5));
+	printf("\n");
+	arr64.removeAll(0);
+	arr64.removeAll(4);
+	arr64.removeAll(3);
+	int here1 = 0;
 }
 
 int main() {
