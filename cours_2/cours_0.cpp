@@ -25,9 +25,18 @@ void testInt64Array() {
 	int here = 0;
 	printf("%d", arr64.searchPosition(5));
 	printf("\n");
-	arr64.removeAll(0);
-	arr64.removeAll(4);
-	arr64.removeAll(3);
+	//arr64.removeAll(0);
+	//arr64.removeAll(4);
+	//arr64.removeAll(3);
+
+
+	Int64Array test(3);
+	test.push_back(3);
+	test.push_back(1);
+	test.push_back(2);
+
+
+	Int64Array* sorted = Int64Array::sort(arr64);
 	int here1 = 0;
 }
 
