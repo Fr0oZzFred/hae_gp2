@@ -34,11 +34,6 @@ void Int64Array::push_front(int64_t elem) {
 	data[0] = elem;
 };
 
-void Int64Array::shift(int from, int to) {
-	if ((from - 1) < to) return;
-	data[from] = data[from - 1];
-	shift(from - 1, to);
-};
 
 void Int64Array::insert(int pos, int64_t elem) {
 	if (pos < 0) throw "idx négatif";
@@ -68,9 +63,14 @@ void Int64Array::set(int pos, int64_t elem) {
 		return;
 	}
 
-	data[pos] = elem;
+	set_unsafe(pos, elem);
 };
 
+void Int64Array::shift_right(int from, int to) {
+	if ((from - 1) < to) return;
+	data[from] = data[from - 1];
+	shift_right(from - 1, to);
+};
 
 void Int64Array::setZero(int start, int end) {
 	if (start >= end) return;

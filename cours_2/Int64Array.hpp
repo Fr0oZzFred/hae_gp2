@@ -15,11 +15,11 @@ public :
 	void ensure(int size);//s’assure que le tableau fait au moins size
 	void push_back(int64_t elem);
 	void push_front(int64_t elem);
-	void shift(int from, int to);
 	void insert(int pos, int64_t elem);//coder memcpy/memmoveen rec?  inserer et decaller
 	void set(int pos, int64_t elem);
 
 protected:
+	void shift_right(int from, int to);
 	void setZero(int start, int end);
 	void set_unsafe(int pos, int64_t elem);
 };
