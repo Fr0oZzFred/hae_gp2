@@ -38,6 +38,17 @@ void testInt64Array() {
 
 	Int64Array* sorted = Int64Array::sort(arr64);
 	int here1 = 0;
+	{
+		Int64Array nu(0);
+		//nu.insert(0, 1);
+		//nu.insert(0, 2);
+		//nu.insert(0, 3);
+		//nu.insert(0, 4);
+		//nu.insert(0, 5);
+		nu.fillWithRandom(5);
+		nu.InsertionSort();
+		int here = 0;
+	}
 }
 
 int main() {

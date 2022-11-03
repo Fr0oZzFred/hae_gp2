@@ -27,6 +27,7 @@ public:
 	int searchPosition(int elem);
 	void removeOne(int elem);
 	void removeAll(int elem);
+	void InsertionSort();
 
 	static Int64Array* sort(Int64Array& ref);
 protected:
