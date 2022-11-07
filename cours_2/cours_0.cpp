@@ -2,11 +2,23 @@
 //
 
 #include <iostream>
+#include <chrono>
+#include <ctime>
+#include <limits>
 #include "Int64Array.hpp"
 
+using namespace std;
+using namespace std::chrono;
 static void assert(bool test) {
 	if (!test)
 		throw "assert";
+};
+
+double getTimeStamp() //retourne le temps actuel en seconde
+{
+	nanoseconds ns =
+		duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
+	return ns.count() / 1000000000.0;
 };
 
 void testInt64Array() {
@@ -47,6 +59,31 @@ void testInt64Array() {
 		//nu.insert(0, 5);
 		nu.fillWithRandom(5);
 		nu.InsertionSort();
+		int here = 0;
+	}
+
+
+	//Chrono
+	{
+		typedef std::numeric_limits< double > dbl;
+		cout.precision(dbl::max_digits10);
+
+		double start = getTimeStamp();
+		Int64Array nu(0);
+		nu.fillWithRandom(5);
+		nu.InsertionSort();
+		cout << "Nano sec 1er tab : " << (getTimeStamp() - start);
+		printf("\n");
+
+
+
+		double start2 = getTimeStamp();
+		Int64Array nu2(0);
+		nu2.fillWithRandom(2000);
+		nu2.InsertionSort();
+		cout << "Nano sec 2er tab : " << (getTimeStamp() - start2);
+		printf("\n");
+
 		int here = 0;
 	}
 }

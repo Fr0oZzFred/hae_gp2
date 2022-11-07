@@ -1,4 +1,2 @@
-﻿  Lib.cpp
-D:\Projet cours\Visual Studio\hae_gp2\cours_1\StringFunctions.hpp(23,13): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\cours_1\StringFunctions.hpp(29,13): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
-  cours_0.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\cours_1\x64\Debug\cours_0.exe
+﻿  cours_0.cpp
+  cours_0.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\cours_2\x64\Debug\cours_0.exe
