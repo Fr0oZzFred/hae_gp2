@@ -86,7 +86,22 @@ void Int64Array::InsertionSort() {
 			j--;
 		}
 	}
+}
+void Int64Array::Qsort() {
+	qsort(data, cursor, sizeof(int64_t), compare);
 };
+int Int64Array::bsearch(int64_t val) {
+	return bsearch(0, cursor, val);
+}
+int Int64Array::linearsearch(int64_t val) {
+	for (int i = 0; i < cursor; i++) {
+		if (data[i] == val) {
+			return data[i];
+		}
+	}
+	return -1;
+};
+
 Int64Array* Int64Array::sort(Int64Array& ref) {
 	if (ref.size() == 0) return new Int64Array(1);
 
@@ -97,7 +112,26 @@ Int64Array* Int64Array::sort(Int64Array& ref) {
 	return res;
 };
 
+int Int64Array::compare(const void * val1, const void * val2) {
+	int64_t val1Int = *(const int64_t*)val1;
+	int64_t val2Int = *(const int64_t*)val2;
+	if (val2Int < val1Int)		return 1;
+	else if(val2Int > val1Int)	return -1;
+								return 0;
+}
+
 //protected
+int Int64Array::bsearch(int start, int end, int64_t val) {
+	if (start > end)		return -1;
+	if (data[start] == val)	return start;
+	if (data[end] == val)	return end;
+
+	int mid = (start + end) >> 1;
+	if (data[mid] == val)	return data[mid];
+
+	if (data[mid] > val)	return bsearch(start + 1, mid - 1, val);
+	else					return bsearch(mid + 1, end, val);
+};
 void Int64Array::AddElementsInOrderedArray(Int64Array& ref, int idx) {
 	if (idx >= ref.size()) return;
 	int nuIdx = searchOrderPos(ref.data[idx]);

@@ -67,23 +67,57 @@ void testInt64Array() {
 	{
 		typedef std::numeric_limits< double > dbl;
 		cout.precision(dbl::max_digits10);
+	
+		int sz = 1600;
 
 		double start = getTimeStamp();
 		Int64Array nu(0);
-		nu.fillWithRandom(5);
+		nu.fillWithRandom(sz);
 		nu.InsertionSort();
-		cout << "Nano sec 1er tab : " << (getTimeStamp() - start);
+		double base = (getTimeStamp() - start);
+		cout << "Nano sec 1er tab : " << base;
 		printf("\n");
-
-
-
+	
+	
 		double start2 = getTimeStamp();
 		Int64Array nu2(0);
-		nu2.fillWithRandom(2000);
+		nu2.fillWithRandom(sz);
 		nu2.InsertionSort();
-		cout << "Nano sec 2er tab : " << (getTimeStamp() - start2);
+		double time1 = (getTimeStamp() - start2);
+		cout << "Nano sec 2er tab : " << time1 << "   % : " << time1 / base;
+		printf("\n");
+	
+		double start3 = getTimeStamp();
+		Int64Array nu3(0);
+		nu3.fillWithRandom(sz);
+		nu3.Qsort();
+		double time2 = (getTimeStamp() - start2);
+		cout << "Nano sec 3er tab : " << time2 << "   % : " << time2 / time1;
+		printf("\n");
+	
+		int here = 0;
+	}
+
+	{
+		int sz = 1600;
+
+		Int64Array nu(0);
+		nu.insert(0, 5);
+		nu.fillWithRandom(sz);
+		nu.InsertionSort();
+
+		double start = getTimeStamp();
+		int tutu = nu.bsearch(5);
+		double base = (getTimeStamp() - start);
+		cout << "Nano sec bsearch : " << base << " " << tutu;
 		printf("\n");
 
+		double start2 = getTimeStamp();
+		tutu = nu.linearsearch(5);
+		double time1 = (getTimeStamp() - start2);
+		cout << "Nano sec linearsearch : " << time1 << "   % : " << time1 / base << " /" << tutu;
+		printf("\n");
+	
 		int here = 0;
 	}
 }

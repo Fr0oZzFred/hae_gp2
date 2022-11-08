@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <random>
 #include <ctime>
+#include <stdlib.h>
 
 //Predicat ordre partiel <=
 class Int64Array {
@@ -28,9 +29,14 @@ public:
 	void removeOne(int elem);
 	void removeAll(int elem);
 	void InsertionSort();
+	void Qsort();
+	int bsearch(int64_t val);
+	int linearsearch(int64_t val);
 
 	static Int64Array* sort(Int64Array& ref);
 protected:
+	static int compare(const void* val1, const void* val2);
+	int bsearch(int start, int end, int64_t val);
 	void AddElementsInOrderedArray(Int64Array& ref, int idx);
 	int searchOrderPos(int elem);
 	int searchBetween(int elem, int idx = 0);

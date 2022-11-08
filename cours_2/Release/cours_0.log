@@ -1,0 +1,16 @@
+﻿  Int64Array.cpp
+C:\Projet Human\hae_gp2\cours_2\Int64Array.cpp(20,40): warning C4244: 'argument' : conversion de 'float' en 'const _Ty', perte possible de données
+          with
+          [
+              _Ty=int
+          ]
+C:\Projet Human\hae_gp2\cours_2\Int64Array.cpp(115,10): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+C:\Projet Human\hae_gp2\cours_2\Int64Array.cpp(118,17): warning C4244: 'return' : conversion de 'int64_t' en 'int', perte possible de données
+C:\Projet Human\hae_gp2\cours_2\Int64Array.cpp(122,41): warning C4244: 'argument' : conversion de 'int64_t' en 'int', perte possible de données
+  cours_0.cpp
+  Génération de code en cours
+  6 of 49 functions (12.2%) were compiled, the rest were copied from previous compilation.
+    4 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Fin de la génération du code
+  cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_2\Release\cours_0.exe
