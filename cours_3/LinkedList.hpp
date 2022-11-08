@@ -2,13 +2,16 @@ using namespace std;
 
 template<typename T>
 struct Node {
+
+public:
+
 	Node(T val) {
 		key = val;
 	};
 	~Node() {
 		cout << "Removed" << "\n";
 	};
-public:
+
 	T		key = {};
 	Node*	next = nullptr;
 };
@@ -22,8 +25,8 @@ public:
 	void push_back(T val);
 	void push_back(Node<T> * n);
 	Node<T> * get(T val);
-	int remove(T val);
-	int remove(Node<T>* n);
+	int removeOne(T val);
+	int removeOne(Node<T>* n);
 protected:
 	Node<T> *	head = nullptr;
 };
@@ -88,14 +91,14 @@ inline Node<T>* LinkedList<T>::get(T val) {
 };
 
 template<typename T>
-inline int LinkedList<T>::remove(T val) {
+inline int LinkedList<T>::removeOne(T val) {
 	Node<T>* n = get(val);
-	if(n)	return remove(get(val));
+	if(n)	return removeOne(get(val));
 	return -1;
 };
 
 template<typename T>
-inline int LinkedList<T>::remove(Node<T>* n) {
+inline int LinkedList<T>::removeOne(Node<T>* n) {
 	if (n == head) {
 		Node <T>* next = head->next;
 		head = next;
@@ -103,13 +106,17 @@ inline int LinkedList<T>::remove(Node<T>* n) {
 		return 1;
 	}
 
-	//Node<T>* cur = head;
-	//while (cur->next) {
-	//	if (cur == n) {
-	//
-	//	}
-	//}
-
-
+	Node<T>* cur = head->next;
+	Node<T>* prev = head;
+	while (cur) {
+		if (cur == n) {
+			if (cur->next) prev->next = cur->next;
+			else prev->next = nullptr;
+			delete cur;
+			return 1;
+		}
+		prev = cur;
+		cur = cur->next;
+	}
 	return -1;
 };

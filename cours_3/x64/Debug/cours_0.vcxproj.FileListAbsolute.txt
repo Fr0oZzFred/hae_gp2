@@ -1,2 +1,3 @@
 D:\Projet cours\Visual Studio\hae_gp2\cours_1\x64\Debug\cours_0.exe
 D:\Projet cours\Visual Studio\hae_gp2\cours_2\x64\Debug\cours_0.exe
+D:\Projet cours\Visual Studio\hae_gp2\cours_3\x64\Debug\cours_0.exe
