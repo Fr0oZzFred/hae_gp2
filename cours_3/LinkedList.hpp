@@ -27,6 +27,8 @@ public:
 	Node<T> * get(T val);
 	int removeOne(T val);
 	int removeOne(Node<T>* n);
+	int removeAll(T val);
+	int removeAll(Node<T>* n);
 protected:
 	Node<T> *	head = nullptr;
 };
@@ -113,6 +115,41 @@ inline int LinkedList<T>::removeOne(Node<T>* n) {
 			if (cur->next) prev->next = cur->next;
 			else prev->next = nullptr;
 			delete cur;
+			return 1;
+		}
+		prev = cur;
+		cur = cur->next;
+	}
+	return -1;
+}
+template<typename T>
+inline int LinkedList<T>::removeAll(T val) {
+	Node<T>* n = get(val);
+	if (n)	return removeAll(get(val));
+	return -1;
+};
+template<typename T>
+inline int LinkedList<T>::removeAll(Node<T>* n) {
+	if (n == head) {
+		while (head->next) {
+			Node <T>* next = head->next;
+			delete head;
+			head = next;
+		}
+		head = nullptr;
+		return 1;
+	}
+
+	Node <T>* cur = head->next;
+	Node <T>* prev = head;
+	while (cur) {
+		if (cur == n) {
+			while (cur->next) {
+				Node <T>* next = cur->next;
+				delete cur;
+				cur = next;
+			}
+			prev->next = nullptr;
 			return 1;
 		}
 		prev = cur;

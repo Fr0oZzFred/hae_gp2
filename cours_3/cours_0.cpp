@@ -34,8 +34,8 @@ void testLinkedList() {
 	test.push_back(25);
 	test.print();
 
-	//test.remove(6);
-	test.removeOne(25);
+	test.removeOne(66);
+	test.removeAll(60);
 	test.print();
 
 	int here = 0;
