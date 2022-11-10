@@ -1,1 +1,12 @@
-﻿  cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_4\x64\Debug\cours_0.exe
+﻿  main.cpp
+C:\Projet Human\hae_gp2\cours_4\main.cpp(33,53): warning C4244: '=' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_4\main.cpp(35,53): warning C4244: '=' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+  cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_4\x64\Debug\cours_0.exe
