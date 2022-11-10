@@ -142,6 +142,7 @@
     <ClCompile Include="cours_0.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinaryTree.hpp" />
     <ClInclude Include="LinkedList.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
