@@ -144,7 +144,7 @@ C:\Projet Human\hae_gp2\cours_4\libs\sfml\lib</AdditionalLibraryDirectories>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SFML_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projet Human\hae_gp2\cours_4\libs\sfml\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\libs\sfml\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
