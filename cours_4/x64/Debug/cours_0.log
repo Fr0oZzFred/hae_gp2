@@ -1,10 +1,10 @@
 ﻿  main.cpp
-D:\Projet cours\Visual Studio\hae_gp2\cours_4\main.cpp(36,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours_4\main.cpp(46,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_4\main.cpp(38,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours_4\main.cpp(48,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float

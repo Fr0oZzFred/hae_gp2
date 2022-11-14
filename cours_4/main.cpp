@@ -3,13 +3,16 @@
 #include <SFML/Graphics.hpp>
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML Window");
+    const sf::String projectName = "Eevee";
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), projectName, sf::Style::Fullscreen);
+    bool fullscreen = true;
+
     sf::Texture texture;
     if (!texture.loadFromFile("Assets/Evoli.png")) return EXIT_FAILURE;
     sf::RectangleShape shape(sf::Vector2f(texture.getSize()));
     shape.setTexture(&texture);
     //shape.setFillColor(sf::Color::Magenta);
-    int speed = 100;
+    int speed = 200;
 
     sf::Clock deltaClock;
     while (window.isOpen()) {
@@ -19,6 +22,14 @@ int main() {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+
+            //Handle FullScreen
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+                fullscreen ? 
+                window.create(sf::VideoMode(1920, 1080), projectName, sf::Style::Default) :
+                window.create(sf::VideoMode(1920, 1080), projectName, sf::Style::Fullscreen);
+                fullscreen = !fullscreen;
+            }
         }
 
         sf::Vector2f pos = shape.getPosition();
