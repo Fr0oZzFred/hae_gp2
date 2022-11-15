@@ -19,9 +19,9 @@ int testSFML() {
     int speed = 200;
 
 
-    sf::RectangleShape line(sf::Vector2f(500, 1));
+    sf::RectangleShape line(sf::Vector2f(250, 10));
     line.setPosition(window.getSize().x * .5, window.getSize().y * .5);
-    int rotSpeed = 10;
+    int rotSpeed = 20;
 
 
     float t = 0;
@@ -84,22 +84,38 @@ int testSFML() {
 
         shape.setPosition(pos);
 
-        line.setRotation(line.getRotation() + rotSpeed * dt.asSeconds());
-
-        t -= sf::Keyboard::isKeyPressed(sf::Keyboard::Left) * .01;
-        t += sf::Keyboard::isKeyPressed(sf::Keyboard::Right) * .01;
+        line.setRotation(line.getRotation() - rotSpeed  * sf::Keyboard::isKeyPressed(sf::Keyboard::Left)    * dt.asSeconds());
+        line.setRotation(line.getRotation() + rotSpeed  * sf::Keyboard::isKeyPressed(sf::Keyboard::Right)   * dt.asSeconds());
+        t -= sf::Keyboard::isKeyPressed(sf::Keyboard::Left)     * .01;
+        t += sf::Keyboard::isKeyPressed(sf::Keyboard::Right)    * .01;
         if (t < 0) t = 0;
         if (t > 1) t = 1;
 
 
-        catmullPoints[4].setPosition(
-            Catmull::polynom2(
+        auto cosRad = std::cos((float)line.getRotation() * ((3.14 * 2) / 360));
+        auto sinRad = std::sin((float)line.getRotation() * ((3.14 * 2) / 360));
+
+        plot(line.getPosition());
+        plot(line.getPosition() + sf::Vector2f(
+            cosRad * 250,
+            sinRad * 250
+        ));
+        plot(line.getPosition() + sf::Vector2f(
+            cosRad * 500,
+            sinRad * 500 * std::abs(cosRad)
+        ));
+        plot(line.getPosition() + sf::Vector2f(
+            cosRad * 700,
+            0
+        ));
+
+        plot(Catmull::polynom2(
                 catmullPoints[0].getPosition(),
                 catmullPoints[1].getPosition(),
                 catmullPoints[2].getPosition(),
                 catmullPoints[3].getPosition(),
                 t
-            ));
+        ));
         catmullPoints[4].setOutlineColor(sf::Color::Magenta);
 
         std::vector<sf::Vector2f> points;
@@ -114,7 +130,6 @@ int testSFML() {
         catmullLine.setPoints(points, 0.00001);
 
 
-
         window.clear();
         window.draw(shape);
         window.draw(line);
@@ -122,7 +137,7 @@ int testSFML() {
             window.draw(p);
         catmullLine.draw(window);
         window.display();
-
+        catmullPoints.clear();
     }
 };
 
