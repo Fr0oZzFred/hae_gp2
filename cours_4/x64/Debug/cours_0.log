@@ -1,12 +1,29 @@
 ﻿  main.cpp
-D:\Projet cours\Visual Studio\hae_gp2\cours_4\main.cpp(46,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_4\Catmull.hpp(30,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_4\main.cpp(48,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_4\Catmull.hpp(29,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-  cours_0.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\cours_4\x64\Debug\cours_0.exe
+C:\Projet Human\hae_gp2\cours_4\Line.hpp(19,1): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+C:\Projet Human\hae_gp2\cours_4\main.cpp(23,66): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_4\main.cpp(23,41): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_4\main.cpp(81,37): warning C4244: '=' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_4\main.cpp(83,37): warning C4244: '=' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_4\main.cpp(89,66): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_4\main.cpp(90,67): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_4\main.cpp(114,46): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Projet Human\hae_gp2\cours_4\main.cpp(127): warning C4715: 'testSFML' : les chemins de contrôle ne retournent pas tous une valeur
+  cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_4\x64\Debug\cours_0.exe
