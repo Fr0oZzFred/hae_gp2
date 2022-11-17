@@ -16,6 +16,19 @@ int testSFML() {
     if (!texture.loadFromFile("Assets/Evoli.png")) return EXIT_FAILURE;
     sf::RectangleShape shape(sf::Vector2f(texture.getSize()));
     shape.setTexture(&texture);
+    shape.setPosition(
+        0,
+        window.getSize().y - texture.getSize().y
+    );
+    sf::Texture textureSoleil;
+    if (!textureSoleil.loadFromFile("Assets/full.png")) return EXIT_FAILURE;
+    sf::RectangleShape shapeSoleil(sf::Vector2f(texture.getSize()) * .5f);
+    shapeSoleil.setScale(sf::Vector2f(1, 0.5f));
+    shapeSoleil.setTexture(&textureSoleil);
+    shapeSoleil.setPosition(
+        window.getSize().x - texture.getSize().x * .5f,
+        0
+    );
     //shape.setFillColor(sf::Color::Magenta);
     int speed = 200;
     sf::SoundBuffer shootSoundBuff;
@@ -88,7 +101,7 @@ int testSFML() {
         }
 
         sf::Vector2f pos = line.getPosition();
-        //Handle Input
+        //Handle move
         pos.x -= speed * sf::Keyboard::isKeyPressed(sf::Keyboard::Left) * dt.asSeconds();
         pos.x += speed * sf::Keyboard::isKeyPressed(sf::Keyboard::Right) * dt.asSeconds();
         //pos.y -= speed * sf::Keyboard::isKeyPressed(sf::Keyboard::Up)       * dt.asSeconds();
@@ -104,6 +117,7 @@ int testSFML() {
 
         line.setPosition(pos);
 
+        //Handle Rotation
         line.setRotation(line.getRotation() - rotSpeed  * sf::Keyboard::isKeyPressed(sf::Keyboard::Up) * dt.asSeconds());
         line.setRotation(line.getRotation() + rotSpeed * sf::Keyboard::isKeyPressed(sf::Keyboard::Down) * dt.asSeconds());
         t -= sf::Keyboard::isKeyPressed(sf::Keyboard::Up) * .01;
@@ -111,7 +125,7 @@ int testSFML() {
         if (t < 0) t = 0;
         if (t > 1) t = 1;
 
-
+        //Trajectory
         auto cosRad = std::cos((float)line.getRotation() * ((3.14 * 2) / 360));
         auto sinRad = std::sin((float)line.getRotation() * ((3.14 * 2) / 360));
 
@@ -144,11 +158,14 @@ int testSFML() {
         points.push_back(catmullPoints[2].getPosition());
         points.push_back(catmullPoints[3].getPosition());
 
-
         Line catmullLine;
 
         catmullLine.setPoints(points, 0.00001);
 
+
+
+
+        //Update balls from canon
         for (int i = 0; i < balls.size();i++) {
             balls[i].setPosition(
                 catmullLine.getPoint(ballsT[i]));
@@ -159,6 +176,8 @@ int testSFML() {
             }
         }
 
+
+        // shoot VFX
         auto getAngle = [&](float pi) {
             return sf::Vector2f(std::cos(pi), std::sin(pi));
         };
@@ -184,11 +203,68 @@ int testSFML() {
             explosion[qual].position = posFix;
         }
 
+        //Background
+        std::vector<sf::VertexArray> montagnes;
+        int quality = 1200;
+        float distanceBmontagne = 1;
+
+        sf::Color topColor = sf::Color::White;
+        sf::Color midColor(102,51,0);
+        sf::Color botColor = sf::Color::Green;
+
+        int pointCount = 9;
+        float offset = -100;
+        sf::VertexArray montagne(sf::LinesStrip, pointCount);
+        montagne[0].position = sf::Vector2f(0,              offset + 100);
+        montagne[1].position = sf::Vector2f(1920 * .125,    offset + 50);
+        montagne[2].position = sf::Vector2f(1920 * .25,     offset + 25);
+        montagne[3].position = sf::Vector2f(1920 * .375,    offset + 50);
+        montagne[4].position = sf::Vector2f(1920 * .5,      offset + 100);
+        montagne[5].position = sf::Vector2f(1920 * .625,    offset + 80);
+        montagne[6].position = sf::Vector2f(1920 * .75,     offset + 25);
+        montagne[7].position = sf::Vector2f(1920 * .875,    offset + 50);
+        montagne[8].position = sf::Vector2f(1920,           offset + 100);
+
+        for (int j = 0; j < pointCount; j++) {
+            montagne[j].color = sf::Color::Cyan;
+        }
+
+
+        auto lerp = [](sf::Color c1, sf::Color c2, float t) {
+            sf::Color nuColor(
+                c1.r + t * (c2.r - c1.r),
+                c1.g + t * (c2.g - c1.g),
+                c1.b + t * (c2.b - c1.b)
+            );
+            return nuColor;
+        };
+
+
+        for (int i = 1; i < quality; i++) {
+            sf::VertexArray mont(sf::LinesStrip, pointCount);
+            for (int j = 0; j < pointCount; j++) {
+                mont[j].position = montagne[j].position + sf::Vector2f(0, i * distanceBmontagne);
+                auto t = (float)i / quality;
+                if (t < 0.2f)
+                    mont[j].color = sf::Color::Cyan;
+                else if (t < 0.5f)
+                    mont[j].color = lerp(topColor, midColor, (float)(t -0.2f) * 2.0f);
+                else
+                    mont[j].color = lerp(midColor, botColor, (float)(t - 0.5f) * 2.0f);
+            }
+            montagnes.push_back(mont);
+        }
+        montagnes.push_back(montagne);
+
 
         window.clear();
+        for (auto m : montagnes) {
+            window.draw(m);
+        }
         window.draw(explosion);
         window.draw(mid);
         window.draw(shape);
+        window.draw(shapeSoleil);
         window.draw(line);
         for(auto p : catmullPoints)
             window.draw(p);
