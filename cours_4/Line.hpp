@@ -34,6 +34,12 @@ public:
 			}
 		}
 	};
+
+	sf::Vector2f getPoint(float t = 0) {
+		if (t < 0) return baked[0];
+		if (t > baked.size() - .25) return baked[baked.size()];
+		return baked[(int)baked.size() * (t + .25)];
+	};
 private:
 	std::vector <sf::Vector2f> baked;
 
