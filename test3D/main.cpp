@@ -1,15 +1,21 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
+#include <sstream>
+#include <fstream>
+#include <list>
 #include "Vec3.hpp"
-#include "Matrix4x4.hpp"
+#include "Mat4.hpp"
+#include "Mesh.hpp"
 #include "RenderSettings.hpp"
+#include <iostream>
 using namespace std;
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
 	sf::CircleShape shape(100.f);
 	shape.setFillColor(sf::Color::Green);
+
 
 	while (window.isOpen()) {
 		sf::Event event;

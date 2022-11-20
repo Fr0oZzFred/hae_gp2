@@ -162,6 +162,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lib.hpp" />
+    <ClInclude Include="Mat4.hpp" />
+    <ClInclude Include="Mesh.hpp" />
+    <ClInclude Include="RenderSettings.hpp" />
+    <ClInclude Include="Vec3.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
