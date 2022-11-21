@@ -22,16 +22,26 @@ struct Mesh {
 			stream << line;
 
 			char junk;
-			if (line[0] == 'v') {
+			if (line[0] == 'v' && line[1] == ' ') {
 				Vec3 v;
 				stream >> junk >> v.x >> v.y >> v.z;
 				vertices.push_back(v);
 			}
 			if (line[0] == 'f') {
-				int f[3];
-				stream >> junk >> f[0] >> f[1] >> f[2];
+				int f[4];
+
+				//Read line
+				for (int i = 0; i < 4; i++) {
+					while (' ' != stream.peek()) stream.get();
+					stream.get();
+					f[i] = stream.get() % 48;
+
+				}
+
 				polys.push_back({ vertices[f[0] - 1], vertices[f[1] - 1], vertices[f[2] - 1] });
+				polys.push_back({ vertices[f[0] - 1], vertices[f[2] - 1], vertices[f[3] - 1] });
 			}
+
 		}
 
 		return true;
@@ -55,9 +65,10 @@ int ClipTriangleAgainstPlane(Vec3 plane_p, Vec3 plane_n, tri3& in_tri, tri3& out
 
 	auto dist = [&](Vec3& p) {
 		Vec3 n = Norm(p);
-		return (plane_n.x * p.x + plane_n.y * p.y + plane_n.z * p.z - Dot(plane_n, plane_p));
+		return (plane_n.x * p.x + plane_n.y * p.y + plane_n.z * p.z - Dot(plane_n, plane_p)); //Return signed distance from point to plane
 	};
 
+	//Designate points as in plane or out of plane based on whether signed distance is positive or negative
 	Vec3* inside_points[3]; int nInsidePointCount = 0;
 	Vec3* outside_points[3]; int nOutsidePointCount = 0;
 
@@ -73,7 +84,10 @@ int ClipTriangleAgainstPlane(Vec3 plane_p, Vec3 plane_n, tri3& in_tri, tri3& out
 	else			outside_points[nOutsidePointCount++]	= &in_tri.p[2];
 
 	if (nInsidePointCount == 0) return 0; //Triangle is complety outside of plane, destroy it
-	if (nInsidePointCount == 3) return 1; //3 points are valid, return the orignal triangle
+	if (nInsidePointCount == 3) {
+		out_tri1 = in_tri; 
+		return 1; //3 points are valid, return the orignal triangle
+	}
 
 	if (nInsidePointCount == 1 && nOutsidePointCount == 2) {
 		out_tri1.color = in_tri.color;

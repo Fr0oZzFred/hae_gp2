@@ -1,3 +1,6 @@
 ﻿  main.cpp
-D:\Projet cours\Visual Studio\hae_gp2\test3D\Mesh.hpp(103): warning C4715: 'ClipTriangleAgainstPlane': not all control paths return a value
+D:\Projet cours\Visual Studio\hae_gp2\test3D\main.cpp(210,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\test3D\main.cpp(248,41): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\test3D\main.cpp(287,28): warning C4244: '/=': conversion from 'float' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\test3D\Mesh.hpp(117): warning C4715: 'ClipTriangleAgainstPlane': not all control paths return a value
   cours_0.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\test3D\x64\Debug\cours_0.exe

@@ -18,7 +18,7 @@ Vec3 operator* (Mat4& m, Vec3& i) {
 };
 
 //Manipulating Matrices Functions
-Mat4 IndetityMatrix() {
+Mat4 IdentityMatrix() {
 	Mat4 matrix;
 	matrix.m[0][0] = 1.0f;
 	matrix.m[1][1] = 1.0f;
@@ -49,8 +49,8 @@ Mat4 YRotationMatrix(float theta) {
 Mat4 ZRotationMatrix(float theta) {
 	Mat4 matrix;
 	matrix.m[0][0] = cosf(theta);
-	matrix.m[0][2] = sinf(theta);
-	matrix.m[2][0] = -sinf(theta);
+	matrix.m[0][1] = sinf(theta);
+	matrix.m[1][0] = -sinf(theta);
 	matrix.m[1][1] = cosf(theta);
 	matrix.m[2][2] = 1.0f;
 	matrix.m[3][3] = 1.0f;
@@ -90,6 +90,9 @@ Mat4 MatrixMultiply(Mat4& m1, Mat4& m2) {
 		}
 	}
 	return matrix;
+};
+Mat4 operator * (Mat4& m1, Mat4& m2) {
+	return MatrixMultiply(m1, m2);
 };
 Mat4 PointingMatrix(Vec3& pos, Vec3& target, Vec3& up) {
 	
