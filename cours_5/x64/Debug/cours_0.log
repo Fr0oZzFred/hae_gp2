@@ -1,0 +1,41 @@
+﻿  main.cpp
+C:\Projet Human\hae_gp2\cours_5\Catmull.hpp(30,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_5\Catmull.hpp(29,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_5\Line.hpp(19,1): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Line.hpp(41,34): warning C4244: 'argument' : conversion de 'double' en 'const unsigned __int64', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(62,66): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_5\main.cpp(15,67): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_5\main.cpp(15,53): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_5\main.cpp(16,58): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_5\main.cpp(16,39): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_5\main.cpp(48,22): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\main.cpp(49,23): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_5\x64\Debug\cours_0.exe
