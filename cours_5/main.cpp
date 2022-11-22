@@ -7,7 +7,7 @@
 #include "Catmull.hpp"
 #include "Line.hpp"
 #include "Entity.hpp"
-static const sf::String projectName = "Pad qui bouge sans physic";
+static const sf::String projectName = "Casse birque sans physic";
 static const sf::Vector2f screenSize(1920, 1080);
 
 
@@ -29,7 +29,7 @@ int main() {
         }
     }
 
-
+    std::vector<Particle> particles;
 
 
     sf::Clock clock;
@@ -56,14 +56,26 @@ int main() {
         pad.DetectColision(&ball);
         for (auto &b : blocks) {
             b.DetectColision(&ball);
+            if (b.touched) {
+                b.touched = false;
+                for (auto part : particles) {
+                    if (!part.used) {
+                        part.Reset(b.originalPos);
+                        break;
+                    }
+                }
+                Particle p(b.originalPos);
+                particles.push_back(p);
+            }
         }
 
+        for (auto& p : particles)   p.Update(dt);
+
         window.clear();
+        for (auto p : particles)   window.draw(p.shape);
         window.draw(*pad.shape);
         window.draw(*ball.shape);
-        for (auto &b : blocks) {
-            window.draw(*b.shape);
-        }
+        for (auto &b : blocks)      window.draw(*b.shape);
         window.display();
     }
 

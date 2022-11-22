@@ -86,8 +86,12 @@ public:
 
 class Block : public Entity {
 public:
+	bool touched = false;
+	sf::Vector2f originalPos;
+
 	Block(sf::Vector2f pos) : Entity(new sf::RectangleShape(sf::Vector2f(200, 50)), new sf::Vector2f(200, 50)) {
 		shape->setPosition(pos);
+		originalPos = pos;
 		UpdateBox();
 	};
 	void DetectColision(Entity* ball) {
@@ -96,8 +100,66 @@ public:
 			shape->setFillColor(sf::Color::Black);
 			shape->setPosition(-500, -500);
 			UpdateBox();
+			touched = true;
 		}
 		else
 			shape->setFillColor(sf::Color::Red);
 	}
+};
+
+class Particle {
+public:
+	sf::Vector2f position;
+	float duration = .5;
+	float timeSinceCreation = 0;
+	bool used = true;
+	int qual = 16;
+	float distanceMin = 20;
+	float distanceRand = 30;
+
+	sf::VertexArray shape;
+
+	sf::Vector2f getAngle(float pi) {
+		return sf::Vector2f(std::cos(pi), std::sin(pi));
+	};
+
+	Particle(sf::Vector2f pos) {
+		position = pos + sf::Vector2f(100,25); //offset psk pas d'origin
+		CreateParticle();
+	};
+
+	void CreateParticle() {
+		sf::Vector2f posFix = sf::Vector2f(0, 0);
+		sf::VertexArray explosion(sf::PrimitiveType::TriangleStrip, qual + 1);
+		for (int i = 0; i < qual; i++) {
+			double t = (double)i / qual;
+			t *= 3.14159 * 2;
+			explosion[i].position = position + getAngle(t) * (distanceMin + (float)Lib::rand() / RAND_MAX * distanceRand);
+			if (i == 0) posFix = explosion[i].position;
+		}
+		explosion[qual].position = posFix;
+		shape = explosion;
+	};
+
+	void Update(sf::Time dt) {
+		timeSinceCreation += dt.asSeconds();
+
+		sf::Vector2f posFix = sf::Vector2f(0, 0);
+		for (int i = 0; i < qual; i++) {
+			double t = (double)i / qual;
+			t *= 3.14159 * 2;
+			shape[i].position = position + getAngle(t) * (distanceMin + (float)Lib::rand() / RAND_MAX * distanceRand);
+			if (i == 0) posFix = shape[i].position;
+		}
+		shape[qual].position = posFix;
+
+		if (timeSinceCreation > duration) {
+			position = sf::Vector2f(-500, -500);
+			used = false;
+		}
+	};
+	void Reset(sf::Vector2f p) {
+		timeSinceCreation = 0;
+		position = p;
+	};
 };
