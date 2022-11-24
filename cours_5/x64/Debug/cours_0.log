@@ -16,28 +16,41 @@ C:\Projet Human\hae_gp2\cours_5\Entity.hpp(62,66): warning C4244: 'argument' : 
           [
               T=float
           ]
-C:\Projet Human\hae_gp2\cours_5\Entity.hpp(137,48): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_5\Entity.hpp(151,44): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_5\main.cpp(15,67): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(116,35): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(159,48): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(163,36): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(163,22): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(179,10): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(178,10): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(177,10): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(191,44): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(222,50): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\Entity.hpp(223,33): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\main.cpp(19,67): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
           with
           [
               T=float
           ]
-C:\Projet Human\hae_gp2\cours_5\main.cpp(15,53): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\main.cpp(19,53): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
           with
           [
               T=float
           ]
-C:\Projet Human\hae_gp2\cours_5\main.cpp(16,58): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\main.cpp(20,58): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-C:\Projet Human\hae_gp2\cours_5\main.cpp(16,39): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\main.cpp(20,39): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-C:\Projet Human\hae_gp2\cours_5\main.cpp(48,22): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_5\main.cpp(49,23): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\main.cpp(36,40): warning C4305: 'argument' : troncation de 'double' à 'T'
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_5\main.cpp(72,22): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_5\main.cpp(73,23): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
   cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_5\x64\Debug\cours_0.exe

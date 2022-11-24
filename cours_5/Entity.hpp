@@ -55,10 +55,10 @@ public:
 class Ball : public Entity {
 public:
 	Pad* pad = nullptr;
-	int yOffset = -100;
+	int yOffset = -50;
 
-	Ball(Pad* pad) : Entity(new sf::CircleShape(50),
-		new sf::Vector2f(50, 50)) {
+	Ball(Pad* pad) : Entity(new sf::CircleShape(25),
+		new sf::Vector2f(25, 25)) {
 		shape->setPosition(pad->shape->getPosition() + sf::Vector2f(0, yOffset));
 		UpdateBox();
 	};
@@ -107,6 +107,26 @@ public:
 	}
 };
 
+class Part : public Entity {
+public:
+	Part(float rotRad, sf::Vector2f newVelocity, sf::Vector2f pos) : Entity(new sf::RectangleShape(sf::Vector2f(10, 5)), new sf::Vector2f(10, 5)) {
+		velocity = newVelocity;
+		shape->setPosition(pos);
+		shape->setOrigin(5, 2.5);
+		shape->setRotation(rotRad * 360 / (3.14159 * 2));
+	};
+
+	void Update(sf::Time dt) {
+		sf::Vector2f pos = shape->getPosition();
+		pos += velocity * dt.asSeconds();
+		shape->setPosition(pos);
+	};
+	void Hide() {
+		shape->setPosition(sf::Vector2f(-500, -500));
+		velocity = sf::Vector2f(0, 0);
+	};
+};
+
 class Particle {
 public:
 	sf::Vector2f position;
@@ -114,10 +134,11 @@ public:
 	float timeSinceCreation = 0;
 	bool used = true;
 	int qual = 16;
-	float distanceMin = 20;
-	float distanceRand = 30;
+	float distanceMin = 1;
+	float distanceRand = 10;
 
 	sf::VertexArray shape;
+	std::vector<Part> rects;
 
 	sf::Vector2f getAngle(float pi) {
 		return sf::Vector2f(std::cos(pi), std::sin(pi));
@@ -131,35 +152,77 @@ public:
 	void CreateParticle() {
 		sf::Vector2f posFix = sf::Vector2f(0, 0);
 		sf::VertexArray explosion(sf::PrimitiveType::TriangleStrip, qual + 1);
+		sf::RectangleShape rect;
 		for (int i = 0; i < qual; i++) {
 			double t = (double)i / qual;
 			t *= 3.14159 * 2;
 			explosion[i].position = position + getAngle(t) * (distanceMin + (float)Lib::rand() / RAND_MAX * distanceRand);
 			if (i == 0) posFix = explosion[i].position;
+
+
+			Part rect(std::sin(t), getAngle(t) * 200.0f, position);
+			rect.shape->setFillColor(sf::Color::Red);
+			rects.push_back(rect);
 		}
 		explosion[qual].position = posFix;
 		shape = explosion;
 	};
 
 	void Update(sf::Time dt) {
+		if (!used) return;
 		timeSinceCreation += dt.asSeconds();
+
+		auto lerp = [](sf::Color c1, sf::Color c2, float t) {
+			sf::Color nuColor(
+				c1.r + t * (c2.r - c1.r),
+				c1.g + t * (c2.g - c1.g),
+				c1.b + t * (c2.b - c1.b)
+			);
+			return nuColor;
+		};
+
 
 		sf::Vector2f posFix = sf::Vector2f(0, 0);
 		for (int i = 0; i < qual; i++) {
 			double t = (double)i / qual;
 			t *= 3.14159 * 2;
-			shape[i].position = position + getAngle(t) * (distanceMin + (float)Lib::rand() / RAND_MAX * distanceRand);
+			float sizeByLifetime = 1 + timeSinceCreation * 20;
+			float dist = (distanceMin * sizeByLifetime + (float)Lib::rand() / RAND_MAX * distanceRand * sizeByLifetime);
+			shape[i].position = position + getAngle(t) * dist;
 			if (i == 0) posFix = shape[i].position;
+
+			float colorT = (dist - distanceMin * sizeByLifetime) / (distanceRand * sizeByLifetime - distanceMin * sizeByLifetime);
+			shape[i].color = lerp(sf::Color::Yellow, sf::Color::Red, colorT);
+
 		}
 		shape[qual].position = posFix;
+		for (auto &r : rects) {
+			r.Update(dt);
+		}
+
 
 		if (timeSinceCreation > duration) {
 			position = sf::Vector2f(-500, -500);
 			used = false;
+			for (int i = 0; i < qual+1; i++) {
+				shape[i].position = position;
+			}
+			for (auto& r : rects) {
+				r.Hide();
+			}
 		}
 	};
 	void Reset(sf::Vector2f p) {
 		timeSinceCreation = 0;
-		position = p;
+		position = p + sf::Vector2f(100, 25); //offset psk pas d'origin
+		for (int i = 0; i < qual; i++) {
+			double t = (double)i / qual;
+
+			t *= 3.14159 * 2;
+			rects[i].shape->setRotation(std::sin(t) * 360 / (3.14159 * 2));
+			rects[i].velocity = getAngle(t) * 200.0f;
+			rects[i].shape->setPosition(position);
+		}
+		used = true;
 	};
 };

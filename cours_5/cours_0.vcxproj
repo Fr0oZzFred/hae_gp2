@@ -157,12 +157,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bloom.cpp" />
+    <ClCompile Include="HotReloadShader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Lib.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bloom.hpp" />
     <ClInclude Include="Catmull.hpp" />
     <ClInclude Include="Entity.hpp" />
+    <ClInclude Include="HotReloadShader.hpp" />
     <ClInclude Include="Lib.hpp" />
     <ClInclude Include="Line.hpp" />
   </ItemGroup>

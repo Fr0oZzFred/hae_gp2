@@ -7,13 +7,37 @@
 #include "Catmull.hpp"
 #include "Line.hpp"
 #include "Entity.hpp"
+#include "Bloom.hpp"
+#include "HotReloadShader.hpp"
 static const sf::String projectName = "Casse birque sans physic";
 static const sf::Vector2f screenSize(1920, 1080);
 
+static HotReloadShader* bloomShader = nullptr;
+static HotReloadShader* blurShader = nullptr;
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(screenSize.x, screenSize.y), projectName);
     Pad pad(sf::Vector2f(screenSize.x * .5, screenSize.y * .75));
+
+   sf::Texture winTex;
+   winTex.create(window.getSize().x, window.getSize().y);
+   
+   bloomShader = new HotReloadShader("res/simple.vert", "res/bloom.frag");
+   blurShader = new HotReloadShader("res/simple.vert", "res/blur.frag");
+   sf::RenderTexture* destX = new sf::RenderTexture();
+   destX->create(window.getSize().x, window.getSize().y);
+   destX->clear(sf::Color(0, 0, 0, 0));
+   
+   sf::RenderTexture* destFinal = new sf::RenderTexture();
+   destFinal->create(window.getSize().x, window.getSize().y);
+   destFinal->clear(sf::Color(0, 0, 0, 0));
+   
+   float bloomWidth = 48;
+   sf::Glsl::Vec4 bloomMul(1, 1, 1, 0.8);
+
+
+
+
     Ball ball(&pad);
     int padSpeed = 500;
     int ballSpeed = 500;
@@ -47,7 +71,6 @@ int main() {
         if (gameStarted) {
             pad.Move(padSpeed, dt, screenSize);
             ball.Move(ballSpeed, dt, screenSize);
-
             if (ball.shape->getPosition().y > screenSize.y * .8) {
                 return 0;
             }
@@ -58,24 +81,37 @@ int main() {
             b.DetectColision(&ball);
             if (b.touched) {
                 b.touched = false;
-                for (auto part : particles) {
+                bool found = false;
+                for (auto &part : particles) {
                     if (!part.used) {
                         part.Reset(b.originalPos);
+                        found = true;
                         break;
                     }
                 }
-                Particle p(b.originalPos);
-                particles.push_back(p);
+                if(!found){
+                    Particle p(b.originalPos);
+                    particles.push_back(p);
+                }
             }
         }
 
         for (auto& p : particles)   p.Update(dt);
 
         window.clear();
-        for (auto p : particles)   window.draw(p.shape);
+
+        for (auto &b : blocks)      window.draw(*b.shape);
+        for (auto p : particles) {
+            window.draw(p.shape);
+            for (auto r : p.rects)
+                window.draw(*r.shape);
+        }
         window.draw(*pad.shape);
         window.draw(*ball.shape);
-        for (auto &b : blocks)      window.draw(*b.shape);
+
+        if (bloomWidth)
+            Bloom::render(window, winTex, destX, destFinal, &blurShader->sh, &bloomShader->sh, bloomWidth, bloomMul);
+
         window.display();
     }
 
