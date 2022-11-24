@@ -137,7 +137,7 @@ public:
 	float distanceMin = 1;
 	float distanceRand = 10;
 
-	sf::VertexArray shape;
+	sf::ConvexShape shape;
 	std::vector<Part> rects;
 
 	sf::Vector2f getAngle(float pi) {
@@ -151,20 +151,21 @@ public:
 
 	void CreateParticle() {
 		sf::Vector2f posFix = sf::Vector2f(0, 0);
-		sf::VertexArray explosion(sf::PrimitiveType::TriangleStrip, qual + 1);
+		sf::ConvexShape explosion(qual + 1);
 		sf::RectangleShape rect;
 		for (int i = 0; i < qual; i++) {
 			double t = (double)i / qual;
 			t *= 3.14159 * 2;
-			explosion[i].position = position + getAngle(t) * (distanceMin + (float)Lib::rand() / RAND_MAX * distanceRand);
-			if (i == 0) posFix = explosion[i].position;
+
+			explosion.setPoint(i , position + getAngle(t) * (distanceMin + (float)Lib::rand() / RAND_MAX * distanceRand));
+			if (i == 0) posFix = explosion.getPoint(i);
 
 
 			Part rect(std::sin(t), getAngle(t) * 200.0f, position);
 			rect.shape->setFillColor(sf::Color::Red);
 			rects.push_back(rect);
 		}
-		explosion[qual].position = posFix;
+		explosion.setPoint(qual, posFix);
 		shape = explosion;
 	};
 
@@ -188,14 +189,14 @@ public:
 			t *= 3.14159 * 2;
 			float sizeByLifetime = 1 + timeSinceCreation * 20;
 			float dist = (distanceMin * sizeByLifetime + (float)Lib::rand() / RAND_MAX * distanceRand * sizeByLifetime);
-			shape[i].position = position + getAngle(t) * dist;
-			if (i == 0) posFix = shape[i].position;
+			shape.setPoint( i , position + getAngle(t) * dist);
+			if (i == 0) posFix = shape.getPoint(i);
 
 			float colorT = (dist - distanceMin * sizeByLifetime) / (distanceRand * sizeByLifetime - distanceMin * sizeByLifetime);
-			shape[i].color = lerp(sf::Color::Yellow, sf::Color::Red, colorT);
+			shape.setFillColor(lerp(sf::Color::Yellow, sf::Color::Red, colorT));
 
 		}
-		shape[qual].position = posFix;
+		shape.setPoint(qual, posFix);
 		for (auto &r : rects) {
 			r.Update(dt);
 		}
@@ -205,7 +206,7 @@ public:
 			position = sf::Vector2f(-500, -500);
 			used = false;
 			for (int i = 0; i < qual+1; i++) {
-				shape[i].position = position;
+				shape.setPoint(i, position);
 			}
 			for (auto& r : rects) {
 				r.Hide();

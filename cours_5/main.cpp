@@ -16,7 +16,7 @@ static HotReloadShader* bloomShader = nullptr;
 static HotReloadShader* blurShader = nullptr;
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(screenSize.x, screenSize.y), projectName);
+    sf::RenderWindow window(sf::VideoMode(screenSize.x, screenSize.y), projectName, sf::Style::Fullscreen);
     Pad pad(sf::Vector2f(screenSize.x * .5, screenSize.y * .75));
 
    sf::Texture winTex;
