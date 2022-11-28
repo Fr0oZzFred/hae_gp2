@@ -1,1 +1,6 @@
-﻿  cours_0.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\sphirograph\x64\Debug\cours_0.exe
+﻿  main.cpp
+D:\Projet cours\Visual Studio\hae_gp2\sphirograph\main.cpp(49,52): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\sphirograph\main.cpp(49,43): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\sphirograph\main.cpp(69,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\sphirograph\main.cpp(69,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  cours_0.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\sphirograph\x64\Debug\cours_0.exe

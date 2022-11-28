@@ -8,7 +8,7 @@ public:
 	);
 
 	void update(float dt);
-	void draw(sf::RenderWindow* window);
+	void draw(sf::RenderWindow* window, bool drawArms);
 
 private:
 	sf::Vector2f center					= sf::Vector2f(0,0);

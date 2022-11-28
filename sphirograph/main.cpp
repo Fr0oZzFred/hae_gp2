@@ -4,8 +4,8 @@ using namespace std;
 #include <iostream>
 #include "sphirograph.hpp"
 
-static int screenX = 1920;
-static int screenY = 1080;
+static float screenX = 1920;
+static float screenY = 1080;
 static string projectName = "Sphirograph";
 
 
@@ -55,6 +55,25 @@ int main() {
         sf::Color::Green, sf::Color::Magenta
         );
 
+
+    //TimeScale
+    float speed = 1;
+    float minSpeed = 0.5f;
+    float maxSpeed = 10;
+
+
+    //Create Text
+    sf::Font font;
+    if (!font.loadFromFile("Assets/courier-new.ttf")) return EXIT_FAILURE;
+    sf::Text speedText;
+    speedText.setPosition(screenX * 0.05, screenY * 0.05);
+    speedText.setFont(font);
+    speedText.setCharacterSize(30);
+    speedText.setFillColor(sf::Color::White);
+
+    bool drawArms = true;
+
+
     sf::Clock time;
     while (window.isOpen()) {
         sf::Event event;
@@ -62,12 +81,23 @@ int main() {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+
+            //Set Timescale
+            speed += sf::Keyboard::isKeyPressed(sf::Keyboard::Up)   * 0.5f;
+            speed -= sf::Keyboard::isKeyPressed(sf::Keyboard::Down) * 0.5f;
+            if (speed < minSpeed) speed = minSpeed;
+            if (speed > maxSpeed) speed = maxSpeed;
+
+            //Set drawArms
+            drawArms = !sf::Keyboard::isKeyPressed(sf::Keyboard::Space);
         }
 
-        shirograph.update(dt.asSeconds());
+        shirograph.update(dt.asSeconds() * speed);
+        speedText.setString("Timescale : " + to_string(speed));
 
         window.clear();
-        shirograph.draw(&window);
+        shirograph.draw(&window, drawArms);
+        window.draw(speedText);
         window.display();
     }
 

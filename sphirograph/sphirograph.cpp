@@ -20,8 +20,8 @@ void Sphirograph::update(float dt) {
 	point.color = drawColor;
 	drawPoints.append(point);
 };
-void Sphirograph::draw(sf::RenderWindow* window) {
-	window->draw(arms);
+void Sphirograph::draw(sf::RenderWindow* window, bool drawArms) {
+	if(drawArms) window->draw(arms);
 	window->draw(drawPoints);
 };
 
