@@ -20,6 +20,7 @@ private:
 
 	float time;
 	sf::VertexArray arms				= sf::VertexArray();
+	sf::VertexArray drawPoints			= sf::VertexArray(sf::Points, 0);
 	void init(
 		sf::Vector2f center, int* nbArms, vector<float>* armsLength, vector<double>* armsAngularVelocity,
 		sf::Color armsColor, sf::Color drawColor

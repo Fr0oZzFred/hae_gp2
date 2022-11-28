@@ -16,9 +16,13 @@ void Sphirograph::update(float dt) {
 	for (int i = 1; i < *nbArms + 1; i++) {
 		arms[i].position = arms[i - 1].position + getAngle(time * armsAngularVelocity->at(i - 1)) * armsLength->at(i - 1);
 	}
+	sf::Vertex point(arms[*nbArms]);
+	point.color = drawColor;
+	drawPoints.append(point);
 };
 void Sphirograph::draw(sf::RenderWindow* window) {
 	window->draw(arms);
+	window->draw(drawPoints);
 };
 
 //Private
