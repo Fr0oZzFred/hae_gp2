@@ -13,7 +13,8 @@
 
 /test3D/.vs
 /test3D/Debug
-
+/sphirograph/.vs
+/sphirograph/Debug
 # Prerequisites
 *.d
 
