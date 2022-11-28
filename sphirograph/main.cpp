@@ -8,6 +8,19 @@ static float screenX = 1920;
 static float screenY = 1080;
 static string projectName = "Sphirograph";
 
+//Nomenclature : nbArms; armLength n, armLength n+1, ...; armAngularSpeed n, armAngularSpeed n+1, ...;
+//List de truc sympa :      
+// 2; 100, 100; 25, 44;
+// 2; 100, 45; 30, -50;
+// 2; 142, 20; 20, -142;
+// 2; 105, 50; 50, 105;
+// 2; 100, 50; 30, -80;
+// 10; 20; 10, -11, 12, -13, 14, -15, 16, -17, 18, -19;
+// 19; 10; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1;
+// 3; 40; 10, -10, 30;
+// 10; 10, 10, 20, 10, 20, 10, 20, 10, 20, 10; 1, 6, 5, 3, 1, 7, 3, 2, 1, 3;
+// 4; 10, 10, 30, 30; -40, 10, 30, -50;
+// 3: 38, 96, 11; 98, -32, 97;
 
 
 int main() {
@@ -35,7 +48,7 @@ int main() {
     vector<double> armsAngularVelocity;
     for (int i = 0; i < nbArms; i++) {
         double armAngularVelocity = 0;
-        cout << "Angular Velocity (deg/s)  of arm " << i + 1 << " : ";
+        cout << "Angular Velocity (deg/s) of arm " << i + 1 << " : ";
         while (armAngularVelocity == 0) {
             cin >> armAngularVelocity;
             if (armAngularVelocity != 0) {

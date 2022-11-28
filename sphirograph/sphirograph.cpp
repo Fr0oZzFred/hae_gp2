@@ -43,5 +43,5 @@ void Sphirograph::init(
 	update(0);
 }
 sf::Vector2f Sphirograph::getAngle(float rad) {
-	return sf::Vector2f(cos(rad), sin(rad));
+	return sf::Vector2f(-sin(rad), -cos(rad));
 };
