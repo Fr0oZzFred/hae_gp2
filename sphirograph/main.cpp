@@ -1,9 +1,12 @@
+using namespace std;
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "sphirograph.hpp"
 
-using namespace std;
 static int screenX = 1920;
 static int screenY = 1080;
+static string projectName = "Sphirograph";
 
 
 
@@ -15,9 +18,9 @@ int main() {
     cin >> nbArms;
 
     //Set arms length
-    vector<int> armsLength;
+    vector<float> armsLength;
     for (int i = 0; i < nbArms; i++) {
-        int armLength = 0;
+        float armLength = 0;
         cout << "Length for arm " << i + 1 << " : ";
         while (armLength == 0) {
             cin >> armLength;
@@ -43,8 +46,14 @@ int main() {
     }
 
 
-    sf::RenderWindow window(sf::VideoMode(screenX, screenY), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(screenX, screenY), projectName);
 
+
+    Sphirograph shirograph(
+        sf::Vector2f(screenX * 0.5f, screenY * 0.5f),
+        &nbArms, &armsLength, &armsAngularVelocity,
+        sf::Color::Green, sf::Color::Magenta
+        );
 
     sf::Clock time;
     while (window.isOpen()) {
@@ -55,7 +64,10 @@ int main() {
                 window.close();
         }
 
+        shirograph.update(dt.asSeconds());
+
         window.clear();
+        shirograph.draw(&window);
         window.display();
     }
 

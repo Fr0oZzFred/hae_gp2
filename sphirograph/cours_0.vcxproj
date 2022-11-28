@@ -159,10 +159,12 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Lib.cpp" />
+    <ClCompile Include="sphirograph.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Catmull.hpp" />
     <ClInclude Include="Lib.hpp" />
+    <ClInclude Include="sphirograph.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
