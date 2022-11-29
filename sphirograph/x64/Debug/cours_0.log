@@ -1,1 +1,13 @@
-﻿  cours_0.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\sphirograph\x64\Debug\cours_0.exe
+﻿  main.cpp
+C:\Projet Human\hae_gp2\sphirograph\main.cpp(62,52): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Projet Human\hae_gp2\sphirograph\main.cpp(62,43): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Projet Human\hae_gp2\sphirograph\main.cpp(82,51): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\sphirograph\main.cpp(82,35): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+  sphirograph.cpp
+C:\Projet Human\hae_gp2\sphirograph\sphirograph.cpp(17,59): warning C4244: 'argument' : conversion de '_Ty' en 'float', perte possible de données
+          with
+          [
+              _Ty=double
+          ]
+  Génération de code en cours...
+  cours_0.vcxproj -> C:\Projet Human\hae_gp2\sphirograph\x64\Debug\cours_0.exe
