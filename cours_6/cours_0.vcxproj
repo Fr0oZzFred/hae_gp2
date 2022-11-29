@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Catmull.hpp" />
+    <ClInclude Include="CmdId.hpp" />
     <ClInclude Include="Lib.hpp" />
     <ClInclude Include="Turtle.hpp" />
   </ItemGroup>
