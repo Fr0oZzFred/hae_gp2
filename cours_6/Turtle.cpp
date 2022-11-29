@@ -24,10 +24,10 @@ void Turtle::draw(sf::RenderWindow* win) {
 		win->draw(trail);
 };
 void Turtle::update() {
-	setDrawtrail(sf::Keyboard::isKeyPressed(sf::Keyboard::Space));
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) trailColor = sf::Color::Red;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) trailColor = sf::Color::Magenta;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) trailColor = sf::Color::Cyan;
+	setDrawTrail(sf::Keyboard::isKeyPressed(sf::Keyboard::Space));
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) setDrawcolor(sf::Color::Red);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) setDrawcolor(sf::Color::Magenta);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) setDrawcolor(sf::Color::Cyan);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) Reset();
 	move();
 	updateHead();
@@ -74,6 +74,9 @@ void Turtle::rotateRight(float degrees) {
 void Turtle::rotateLeft(float degrees) {
 	trs = trs.rotate(-degrees);
 }
-void Turtle::setDrawtrail(bool b) {
+void Turtle::setDrawTrail(bool b) {
 	drawTrail = b;
+}
+void Turtle::setDrawcolor(sf::Color color) {
+	trailColor = color;
 };

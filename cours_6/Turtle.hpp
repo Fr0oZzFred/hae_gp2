@@ -26,5 +26,6 @@ private:
 	void moveBackward(float pixels = 1);
 	void rotateRight(float degrees = 1);
 	void rotateLeft(float degrees = 1);
-	void setDrawtrail(bool b);
+	void setDrawTrail(bool b);
+	void setDrawcolor(sf::Color color);
 };
