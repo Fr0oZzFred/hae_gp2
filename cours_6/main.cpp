@@ -7,9 +7,7 @@ using namespace std;
 static float screenX = 1920;
 static float screenY = 1080;
 
-sf::Clock t;
 int main() {
-    sf::Time dt = t.restart();
     Turtle turtle(30, sf::Vector2f(screenX * 0.5f, screenY * 0.5f), 1, sf::Color::Color(0, 102, 0, 255));
 
     sf::RenderWindow window(sf::VideoMode(screenX, screenY), "Turtle Game");
@@ -21,7 +19,7 @@ int main() {
         }
 
 
-        turtle.update(dt.asSeconds());
+        turtle.update();
 
 
         window.clear();
