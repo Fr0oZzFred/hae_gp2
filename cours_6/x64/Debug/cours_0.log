@@ -1,0 +1,14 @@
+﻿  main.cpp
+C:\Projet Human\hae_gp2\cours_6\Catmull.hpp(30,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_6\Catmull.hpp(29,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+  Lib.cpp
+  Génération de code en cours...
+  cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_6\x64\Debug\cours_0.exe
