@@ -1,0 +1,10 @@
+moveForward 100.000000 
+rotateRight 90.000000 
+moveForward 100.000000 
+rotateRight 90.000000 
+draw 0.000000 
+moveForward 100.000000 
+rotateRight 90.000000 
+draw 1.000000 
+moveForward 100.000000 
+reset 0.000000 

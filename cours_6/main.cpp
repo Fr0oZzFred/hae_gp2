@@ -3,7 +3,8 @@ using namespace std;
 #include "Lib.hpp"
 #include "Catmull.hpp"
 #include "Turtle.hpp"
-#include "CmdId.hpp"
+#include "CmdFile.hpp"
+#include <iostream>
 
 static float screenX = 1920;
 static float screenY = 1080;
@@ -42,7 +43,7 @@ int main() {
     cmdColorOn.id = CmdId::draw;
     cmdColorOn.data = 1;
     Cmd reset;
-    reset.id = CmdId::Reset;
+    reset.id = CmdId::reset;
     reset.data = 0;
 
     turtle.commands.push_back(cmd1);
@@ -56,8 +57,8 @@ int main() {
     turtle.commands.push_back(cmd7);
     turtle.commands.push_back(reset);
 
-   
-
+    CmdFile::save("res/commands.txt", turtle.commands);
+    //turtle.commands = CmdFile::load("res/commands.txt");
 
     sf::RenderWindow window(sf::VideoMode(screenX, screenY), "Turtle Game");
     sf::Clock t;

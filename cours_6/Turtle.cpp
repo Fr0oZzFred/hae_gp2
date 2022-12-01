@@ -105,7 +105,7 @@ bool Turtle::evaluate(float dt) {
 		setDrawTrail(task.data);
 		task.data -= dt;
 		break;
-		case CmdId::Reset:
+		case CmdId::reset:
 		task.data += dt;
 		Reset();
 		break;
