@@ -20,13 +20,16 @@ struct Cmd {
 
 class CmdFile {
 public:
+
+    static bool used;
+
     static std::vector<Cmd> load(const char* path) {
         std::vector<Cmd> cmds;
         std::FILE* file;
         fopen_s(&file, path, "r");
 
         if (!file) return cmds;
-
+        
         while (!feof(file)) {
             Cmd c;
             char id[128] = {};
@@ -48,8 +51,7 @@ public:
             fprintf(file, "%s %f \n", CmdIdToString(c.id) , c.data);
         }
         fclose(file);
-
-
+        
         return true;
     };
 
@@ -60,7 +62,7 @@ private:
         if ((int)id == 2) return "rotateLeft";
         if ((int)id == 3) return "rotateRight";
         if ((int)id == 4) return "draw";
-        if ((int)id == 5) return "reset";
+        return "reset";
     }
 
     static CmdId stringToCmdId(std::string id) {
@@ -69,6 +71,6 @@ private:
         if (id == "rotateLeft")     return (CmdId)2;
         if (id == "rotateRight")    return (CmdId)3;
         if (id == "draw")           return (CmdId)4;
-        if (id == "reset")          return (CmdId)5;
+        return (CmdId)5;
     }
 };

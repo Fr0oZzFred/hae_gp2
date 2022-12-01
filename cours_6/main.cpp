@@ -57,18 +57,43 @@ int main() {
     turtle.commands.push_back(cmd7);
     turtle.commands.push_back(reset);
 
-    CmdFile::save("res/commands.txt", turtle.commands);
-    //turtle.commands = CmdFile::load("res/commands.txt");
+    //CmdFile::save("res/commands.txt", turtle.commands);
+    struct stat statut;
+    stat("res/commands.txt", &statut);
+    auto version = statut.st_mtime;
+    turtle.commands = CmdFile::load("res/commands.txt");
 
     sf::RenderWindow window(sf::VideoMode(screenX, screenY), "Turtle Game");
     sf::Clock t;
+    float timerVersion = 0;
     while (window.isOpen()) {
         sf::Time dt = t.restart();
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+                turtle.index = 0;
+                turtle.commands = CmdFile::load("res/commands.txt");
+            }
         }
+
+        timerVersion += dt.asSeconds();
+        stat("res/commands.txt", &statut);
+        auto currentV = statut.st_mtime;
+
+        //Check Timer
+        if (timerVersion >= 1) {
+            timerVersion--;
+            if (version < currentV) {
+                turtle.Reset();
+                turtle.index = 0;
+                turtle.commands = CmdFile::load("res/commands.txt");
+                version = currentV;
+            }
+        }
+
+
 
         //Evaluate Task
         if (turtle.index < (int)turtle.commands.size()) {
