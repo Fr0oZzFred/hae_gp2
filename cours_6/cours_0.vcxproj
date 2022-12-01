@@ -126,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\libs\sfml\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\libs\sfml\include;.\libs\imgui;.\libs\imgui-sfml</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -157,6 +157,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="libs\imgui-sfml\imgui-SFML.cpp" />
+    <ClCompile Include="libs\imgui\imgui.cpp" />
+    <ClCompile Include="libs\imgui\imgui_demo.cpp" />
+    <ClCompile Include="libs\imgui\imgui_draw.cpp" />
+    <ClCompile Include="libs\imgui\imgui_tables.cpp" />
+    <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Lib.cpp" />
     <ClCompile Include="Turtle.cpp" />
@@ -165,6 +171,8 @@
     <ClInclude Include="Catmull.hpp" />
     <ClInclude Include="CmdFile.hpp" />
     <ClInclude Include="Lib.hpp" />
+    <ClInclude Include="libs\imgui-sfml\imgui-SFML_export.h" />
+    <ClInclude Include="libs\imgui\imconfig.h" />
     <ClInclude Include="Turtle.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

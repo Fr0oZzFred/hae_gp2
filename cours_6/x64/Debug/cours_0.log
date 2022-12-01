@@ -1,15 +1,14 @@
 ﻿  main.cpp
-C:\Projet Human\hae_gp2\cours_6\Catmull.hpp(30,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+D:\Projet cours\Visual Studio\hae_gp2\cours_6\Catmull.hpp(30,11): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Projet Human\hae_gp2\cours_6\Catmull.hpp(29,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+D:\Projet cours\Visual Studio\hae_gp2\cours_6\Catmull.hpp(29,11): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Projet Human\hae_gp2\cours_6\main.cpp(66,52): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Projet Human\hae_gp2\cours_6\main.cpp(66,43): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Projet Human\hae_gp2\cours_6\CmdFile.hpp(75): warning C4715: 'CmdFile::stringToCmdId' : les chemins de contrôle ne retournent pas tous une valeur
-  cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_6\x64\Debug\cours_0.exe
+D:\Projet cours\Visual Studio\hae_gp2\cours_6\main.cpp(68,52): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours_6\main.cpp(68,43): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+  cours_0.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\cours_6\x64\Debug\cours_0.exe
