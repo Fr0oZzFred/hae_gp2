@@ -157,6 +157,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="libs\imgui-sfml\imgui-SFML.cpp" />
     <ClCompile Include="libs\imgui\imgui.cpp" />
     <ClCompile Include="libs\imgui\imgui_demo.cpp" />
@@ -168,6 +169,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Catmull.hpp" />
+    <ClInclude Include="Cst.hpp" />
+    <ClInclude Include="Entity.hpp" />
     <ClInclude Include="Lib.hpp" />
     <ClInclude Include="libs\imgui-sfml\imgui-SFML_export.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
