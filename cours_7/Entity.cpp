@@ -29,7 +29,8 @@ void Entity::update() {
 	dx *= fx;
 	dy *= fy;
 
-	moveDown(weight * Cst::GRAVITY);
+	falling =		!(hasCollision(cx, cy + 1));
+	if (falling)	moveDown(weight * Cst::GRAVITY);
 
 	while (rx > 1) {
 		if (hasCollision(cx + 1, cy)) {
@@ -79,21 +80,7 @@ void Entity::update() {
 };
 
 bool Entity::hasCollision(int x, int y) {
-	if (x > Cst::SCREEN_SIZE_X / Cst::CELL_SIZE)	return true;
-	if (x < 0)										return true;
-	if (y > Cst::SCREEN_SIZE_Y / Cst::CELL_SIZE)	return true;
-	if (y < 0)										return true;
-	for (auto &e : *entities) {
-		//if (&e != this) { //Même si c'est this il passe dedans
-		//	if (x == e.cx) {
-		//		return true;
-		//	}
-		//	if (y == e.cy) {
-		//		return true;
-		//	}
-		//}
-	}
-	return false;
+	return world.collides(x, y);
 };
 
 void Entity::draw(sf::RenderWindow* win) {
@@ -114,6 +101,10 @@ void Entity::moveUp(float nudge) {
 };
 void Entity::moveDown(float nudge) {
 	ry += nudge;
+}
+void Entity::jump() {
+	if (falling) return;
+	moveUp(10);
 };
 
 void Entity::im() {
@@ -130,6 +121,7 @@ void Entity::im() {
 	Value("ry", ry);
 	Value("Pos X :", sprite->getPosition().x);
 	Value("Pos X :", sprite->getPosition().y);
+	Value("Falling", falling);
 
 	float nudge = 1.0f;
 	if (Button("C Right")) {
@@ -155,5 +147,8 @@ void Entity::im() {
 	}
 	if (Button("R Down")) {
 		moveDown();
+	}
+	if (Button("Jump")) {
+		jump();
 	}
 }

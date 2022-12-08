@@ -7,6 +7,7 @@ using namespace std;
 #include "imgui-SFML.h"
 #include "Entity.hpp"
 #include "Cst.hpp"
+#include "World.hpp"
 
 static float screenX = 1920;
 static float screenY = 1080;
@@ -24,9 +25,6 @@ int main() {
         sf::Vector2f(Cst::SCREEN_SIZE_X * 0.4f,Cst::SCREEN_SIZE_Y * 0.4f),
         &entities);
 
-    Entity wall(new sf::RectangleShape(sf::Vector2f(16, 16)),
-        sf::Vector2f(Cst::SCREEN_SIZE_X * 0.5f, Cst::SCREEN_SIZE_Y * 0.5f),
-        &entities);
     while (window.isOpen()) {
         sf::Time dt = t.restart();
         sf::Event event;
@@ -34,6 +32,13 @@ int main() {
             ImGui::SFML::ProcessEvent(window, event);
             if (event.type == sf::Event::Closed)
                 window.close();
+            if (event.type == sf::Event::MouseButtonPressed) {
+                int mcx = (int)event.mouseButton.x / Cst::CELL_SIZE;
+                int mcy = (int)event.mouseButton.y / Cst::CELL_SIZE;
+                //add block to world's statics
+                //add test against statics in world
+                world.poke(mcx, mcy);
+            }
         }
 
         ImGui::SFML::Update(window, dt);
@@ -50,9 +55,11 @@ int main() {
             cube.dy += dir.y * sp;
         }
 
-        cube.update();
-        wall.update();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+            cube.jump();
+        }
 
+        cube.update();
 
         bool b = true;
         ImGui::Begin("debug", &b);
@@ -60,9 +67,10 @@ int main() {
         ImGui::End();
 
         window.clear();
+
+        world.draw(window);
         ImGui::SFML::Render(window);
         cube.draw(&window);
-        wall.draw(&window);
         window.display();
     }
 

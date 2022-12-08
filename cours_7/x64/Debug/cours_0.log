@@ -1,7 +1,9 @@
 ﻿  Entity.cpp
 C:\Projet Human\hae_gp2\cours_7\Entity.cpp(17,23): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
 C:\Projet Human\hae_gp2\cours_7\Entity.cpp(18,23): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_7\Entity.cpp(76,23): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_7\Entity.cpp(77,23): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_7\Entity.cpp(122,43): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Projet Human\hae_gp2\cours_7\Entity.cpp(79,23): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_7\Entity.cpp(80,23): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_7\Entity.cpp(85,27): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_7\Entity.cpp(85,24): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours_7\Entity.cpp(115,43): warning C4305: 'argument' : troncation de 'double' à 'float'
   cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_7\x64\Debug\cours_0.exe

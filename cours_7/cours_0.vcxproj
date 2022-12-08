@@ -166,6 +166,7 @@
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Lib.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Catmull.hpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Lib.hpp" />
     <ClInclude Include="libs\imgui-sfml\imgui-SFML_export.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
+    <ClInclude Include="World.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

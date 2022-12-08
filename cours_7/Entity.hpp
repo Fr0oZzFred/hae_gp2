@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Cst.hpp"
 #include "imgui.h"
+#include "World.hpp"
 
 class Entity {
 public:
@@ -27,6 +28,7 @@ public:
 	float fy = 0.0f;
 
 	float weight = 0.0f;
+	bool falling = false;
 
 	Entity(sf::RectangleShape* _sprite, sf::Vector2f pixelPos, std::vector<Entity>* _entities);
 	void setPixelCoordinates(sf::Vector2f npos);
@@ -40,6 +42,8 @@ public:
 	void moveLeft(float nudge = 0.1f);
 	void moveUp(float nudge = 0.1f);
 	void moveDown(float nudge = 0.1f);
+	void jump();
 
 	void im();
+
 };
