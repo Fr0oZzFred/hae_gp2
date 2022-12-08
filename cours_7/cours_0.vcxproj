@@ -176,6 +176,7 @@
     <ClInclude Include="libs\imgui-sfml\imgui-SFML_export.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
     <ClInclude Include="World.hpp" />
+    <ClInclude Include="WorldFile.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,6 +8,7 @@ using namespace std;
 #include "Entity.hpp"
 #include "Cst.hpp"
 #include "World.hpp"
+#include "WorldFile.hpp"
 
 static float screenX = 1920;
 static float screenY = 1080;
@@ -38,6 +39,15 @@ int main() {
                 //add block to world's statics
                 //add test against statics in world
                 world.poke(mcx, mcy);
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
+                world.statics.clear();
+                world.statics = WorldFile::load("res/walls.txt");
+                world.mkGraphics();
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                WorldFile::save("res/walls.txt", world.statics);
             }
         }
 

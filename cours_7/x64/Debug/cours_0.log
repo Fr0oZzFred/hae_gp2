@@ -1,9 +1,26 @@
-﻿  Entity.cpp
-C:\Projet Human\hae_gp2\cours_7\Entity.cpp(17,23): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_7\Entity.cpp(18,23): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_7\Entity.cpp(79,23): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_7\Entity.cpp(80,23): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_7\Entity.cpp(85,27): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_7\Entity.cpp(85,24): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\cours_7\Entity.cpp(115,43): warning C4305: 'argument' : troncation de 'double' à 'float'
+﻿  main.cpp
+C:\Projet Human\hae_gp2\cours_7\Catmull.hpp(30,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_7\Catmull.hpp(29,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_7\main.cpp(19,52): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Projet Human\hae_gp2\cours_7\main.cpp(19,43): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Projet Human\hae_gp2\cours_7\main.cpp(57,17): warning C4804: '-' : utilisation risquée du type 'bool' dans l'opération
+C:\Projet Human\hae_gp2\cours_7\main.cpp(59,17): warning C4804: '-' : utilisation risquée du type 'bool' dans l'opération
+C:\Projet Human\hae_gp2\cours_7\main.cpp(61,28): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours_7\main.cpp(61,26): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
   cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_7\x64\Debug\cours_0.exe
