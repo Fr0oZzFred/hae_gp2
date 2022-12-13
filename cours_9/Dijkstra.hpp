@@ -59,7 +59,7 @@ public:
 		}
 	};
 	int min(int d1, int d2) {
-		if (d1 < 0 && d2) return -1;
+		if (d1 < 0 && d2 < 0) return -1;
 		else if  (d1 < 0) return d2;
 		else if  (d2 < 0) return d1;
 		float dist1 = gd[d1];
@@ -74,24 +74,25 @@ public:
 		return min(min(d1, d2), min(d3, d4));
 	};
 	bool findInPred(sf::Vector2i pos) {
-		for (auto& p : g) {
+		for (auto& p : pred) {
 			if (p == pos) return true;
 		}
 		return false;
 	};
 	void shortestWay(sf::Vector2i start, sf::Vector2i dest) {
 		visited.clear();
+		pred.clear();
 		visited.push_back(start);
 		sf::Vector2i actualPos = start;
 		pred.push_back(actualPos);
-		int length	= 0;
+		//int length	= 0;
 		bool found	= false;
 		auto dist = [](sf::Vector2i a, sf::Vector2i b) {
 			sf::Vector2i d = b - a;
 			return sqrt(d.x * d.x + d.y * d.y);
 		};
 		while (!found) {
-			length++;
+			//length++;
 			int idxL = find(actualPos + sf::Vector2i(-1, 0));
 			int idxR = find(actualPos + sf::Vector2i(1, 0));
 			int idxT = find(actualPos + sf::Vector2i(0, 1));
@@ -104,24 +105,32 @@ public:
 				visited.push_back(actualPos + sf::Vector2i(-1, 0));
 				gd[idxL] = dist(actualPos + sf::Vector2i(-1, 0), dest);
 			}
+			else idxL = -1;
 			if (hasR) {
 				visited.push_back(actualPos + sf::Vector2i(1, 0));
 				gd[idxR] = dist(actualPos + sf::Vector2i(1, 0), dest);
 			}
+			else idxR = -1;
 			if (hasT) {
 				visited.push_back(actualPos + sf::Vector2i(0, 1));
 				gd[idxT] = dist(actualPos + sf::Vector2i(0, 1), dest);
 			}
+			else idxT = -1;
 			if (hasB) {
 				visited.push_back(actualPos + sf::Vector2i(0, -1));
 				gd[idxB] = dist(actualPos + sf::Vector2i(0, -1), dest);
 			}
+			else idxB = -1;
 
 			int mini = min(idxL, idxR, idxT, idxB);
-			if (mini < 0) found = true;
-			actualPos = g[mini];
-			pred.push_back(actualPos);
-			if (length > 50) found = true;
+			if (mini < 0) {
+				found = true;
+			}
+			else {
+				actualPos = g[mini];
+				pred.push_back(actualPos);
+			}
+			//if (length > 50) found = true;
 		}
 
 		mkVisitedGraphics();
