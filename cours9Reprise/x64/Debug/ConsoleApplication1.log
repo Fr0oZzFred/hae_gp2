@@ -1,0 +1,54 @@
+﻿  ConsoleApplication.cpp
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\Catmull.hpp(34,11): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\Catmull.hpp(33,11): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\Line.hpp(48,15): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\Line.hpp(47,15): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\Line.hpp(46,15): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\Line.hpp(74,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\Line.hpp(81,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\CmdFile.hpp(30,10): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\CmdFile.hpp(31,10): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\Dijkstra.hpp(67,12): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\Dijkstra.hpp(68,12): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\ConsoleApplication.cpp(52,104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\ConsoleApplication.cpp(52,68): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\ConsoleApplication.cpp(59,92): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\ConsoleApplication.cpp(59,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\ConsoleApplication.cpp(129,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\ConsoleApplication.cpp(129,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\ConsoleApplication.cpp(142,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\ConsoleApplication.cpp(142,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\ConsoleApplication.cpp(173,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  ConsoleApplication1.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\cours9Reprise\x64\Debug\ConsoleApplication1.exe
