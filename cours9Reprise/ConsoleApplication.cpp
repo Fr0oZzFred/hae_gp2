@@ -61,6 +61,12 @@ void printDij(Dijkstra& g, sf::VertexArray& points) {
 	}
 };
 
+void initSequence(std::vector<sf::Vector2i>& sequence, int& idx) {
+	sequence.clear();
+	sequence = dij.way;
+	idx = sequence.size() - 1;
+};
+
 void testSFML(){
 	player = new Player();
 	std::cout << std::filesystem::current_path() << std::endl;
@@ -90,6 +96,12 @@ void testSFML(){
 	world.mkGraphics();
 	std::cout << "bricks read :" << std::to_string(bricks.size());
 	
+
+	std::vector<sf::Vector2i> sequence;
+	int sqcIdx = 0;
+
+
+
 	while (window.isOpen()) { // ONE FRAME
 		double dt = frameEnd - frameStart;
 		frameStart = Lib::getTimestamp();
@@ -169,6 +181,7 @@ void testSFML(){
 					printGraph(g, points);
 					printWayGraph(dij.way, way);
 					printDij(dij, ways);
+					initSequence(sequence, sqcIdx);
 				}
 			}
 		}
@@ -191,6 +204,17 @@ void testSFML(){
 
 			ImGui::End();
 		}
+
+
+
+		if (sqcIdx > 0) {
+			player->cx = sequence[sqcIdx].x;
+			player->cy = sequence[sqcIdx].y;
+			sqcIdx--;
+		}
+
+
+
 		window.clear();
 		
 		player->draw(window);
