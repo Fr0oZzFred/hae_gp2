@@ -166,6 +166,7 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="A_etoile.hpp" />
     <ClInclude Include="Catmull.hpp" />
     <ClInclude Include="CmdFile.hpp" />
     <ClInclude Include="Cst.hpp" />

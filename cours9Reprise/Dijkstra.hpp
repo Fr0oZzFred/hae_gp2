@@ -16,6 +16,16 @@ namespace std {
 	};
 }
 
+/*
+namespace std {
+	template <> struct hash<sf::Vector2i> {
+		std::size_t operator()(const sf::Vector2i& k) const {
+			using std::hash;
+			return std::size_t((k.y << 16) | k.x);
+		}
+	};
+}*/
+
 typedef std::unordered_map<sf::Vector2i, bool>			BaseGraph;
 typedef std::unordered_map<sf::Vector2i, float>			DistanceGraph;
 typedef std::unordered_map<sf::Vector2i, sf::Vector2i>	AssocGraph;
@@ -115,7 +125,7 @@ public:
 		using namespace ImGui;
 		Value("start x", start.x);
 		Value("start y", start.y);
-		DragInt2("Weight", &end.x);
+		DragInt2("End", &end.x);
 		if( TreeNode("Preds")){
 			int idx = 0;
 			for(auto & p: pred){

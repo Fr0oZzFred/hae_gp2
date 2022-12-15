@@ -36,10 +36,8 @@ void Entity::setGridPos(sf::Vector2f npos) {
 void Entity::im() {
 	using namespace ImGui;
 	DragFloat2("frict", &frictX, 0.01,0.5,1.0);
-	DragInt2("cx", &cx);
-	DragFloat2("rx", &rx);
-	DragInt2("cy", &cy);
-	DragFloat2("ry", &ry);
+	DragInt2("cx cy", &cx);
+	DragFloat2("rx ry", &rx);
 	Value("pos x", shp->getPosition().x);
 	Value("pos y", shp->getPosition().y);
 }

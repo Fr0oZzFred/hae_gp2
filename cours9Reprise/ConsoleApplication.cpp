@@ -30,15 +30,6 @@ public:
 	}
 };
 
-/*
-namespace std {
-	template <> struct hash<sf::Vector2i> {
-		std::size_t operator()(const sf::Vector2i& k) const {
-			using std::hash;
-			return std::size_t((k.y << 16) | k.x);
-		}
-	};
-}*/
 
 
 
@@ -59,6 +50,16 @@ void printWayGraph(SpeedingWay& g, sf::VertexArray& points) {
 		points.append(sf::Vertex(sf::Vector2f(p.x * Cst::CELL_SIZE + hcell, p.y * Cst::CELL_SIZE + hcell), sf::Color::Yellow));
 	}
 };
+void printDij(Dijkstra& g, sf::VertexArray& points) {
+	int hcell = Cst::CELL_SIZE >> 1;
+	points.clear();
+	for (auto& p : dij.pred) {
+		auto& from = p.first;
+		auto& to = p.second;
+		points.append(sf::Vertex(sf::Vector2f(from.x * Cst::CELL_SIZE + hcell, from.y * Cst::CELL_SIZE + hcell), sf::Color::Magenta));
+		points.append(sf::Vertex(sf::Vector2f(to.x * Cst::CELL_SIZE + hcell, to.y * Cst::CELL_SIZE + hcell), sf::Color::Magenta));
+	}
+};
 
 void testSFML(){
 	player = new Player();
@@ -77,8 +78,10 @@ void testSFML(){
 
 	sf::VertexArray points;
 	sf::VertexArray way;
+	sf::VertexArray ways;
 	points.setPrimitiveType(Points);
 	way.setPrimitiveType(LinesStrip);
+	ways.setPrimitiveType(Lines);
 
 	auto bricks = CmdFile::loadScript("res/save.txt");
 	for( auto & c : bricks)
@@ -165,6 +168,7 @@ void testSFML(){
 					dij.build(sf::Vector2i(player->cx, player->cy));
 					printGraph(g, points);
 					printWayGraph(dij.way, way);
+					printDij(dij, ways);
 				}
 			}
 		}
@@ -192,6 +196,7 @@ void testSFML(){
 		player->draw(window);
 		world.draw(window);
 		window.draw(points);
+		window.draw(ways);
 		window.draw(way);
 
 		ImGui::EndFrame();
