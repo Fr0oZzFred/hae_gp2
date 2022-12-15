@@ -151,9 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bloom.cpp" />
     <ClCompile Include="ConsoleApplication.cpp" />
     <ClCompile Include="Entities.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="HotReloadShader.cpp" />
     <ClCompile Include="Lib.cpp" />
     <ClCompile Include="libs\imgui-sfml\imgui-SFML.cpp" />
     <ClCompile Include="libs\imgui\imgui.cpp" />
@@ -165,9 +167,11 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bloom.hpp" />
     <ClInclude Include="Cst.hpp" />
     <ClInclude Include="Entities.hpp" />
     <ClInclude Include="Game.hpp" />
+    <ClInclude Include="HotReloadShader.hpp" />
     <ClInclude Include="imconfig.h" />
     <ClInclude Include="imgui-SFML_export.h" />
     <ClInclude Include="Lib.hpp" />

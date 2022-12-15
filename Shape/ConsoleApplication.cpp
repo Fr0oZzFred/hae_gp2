@@ -5,9 +5,35 @@
 #include "World.hpp"
 #include "imgui.h"
 #include "Player.hpp"
+#include "Bloom.hpp"
+#include "HotReloadShader.hpp"
+
+static HotReloadShader* bloomShader = nullptr;
+static HotReloadShader* blurShader = nullptr;
+
 
 int main(){
-	sf::RenderWindow window(sf::VideoMode(Game::WIDTH, Game::HEIGHT), "Shape !", sf::Style::Fullscreen);
+	sf::RenderWindow window(sf::VideoMode(Game::WIDTH, Game::HEIGHT), Game::NAME, sf::Style::Fullscreen);
+
+	//Bloom
+	sf::Texture winTex;
+	winTex.create(window.getSize().x, window.getSize().y);
+
+	bloomShader = new HotReloadShader("res/simple.vert", "res/bloom.frag");
+	blurShader = new HotReloadShader("res/simple.vert", "res/blur.frag");
+	sf::RenderTexture* destX = new sf::RenderTexture();
+	destX->create(window.getSize().x, window.getSize().y);
+	destX->clear(sf::Color(0, 0, 0, 0));
+
+	sf::RenderTexture* destFinal = new sf::RenderTexture();
+	destFinal->create(window.getSize().x, window.getSize().y);
+	destFinal->clear(sf::Color(0, 0, 0, 0));
+
+	float bloomWidth = 48;
+	sf::Glsl::Vec4 bloomMul(2, 2, 2, 0.8);
+
+
+
 	window.setFramerateLimit(60);
 	window.setVerticalSyncEnabled(true);
 
@@ -46,8 +72,13 @@ int main(){
 		player.draw(window);
 		ImGui::EndFrame();
 		ImGui::SFML::Render(window);
+
+		if (bloomWidth)
+			Bloom::render(window, winTex, destX, destFinal, &blurShader->sh, &bloomShader->sh, bloomWidth, bloomMul);
 		window.display();
 	}
 	ImGui::SFML::Shutdown();
+
+
 	return 0;
 }
