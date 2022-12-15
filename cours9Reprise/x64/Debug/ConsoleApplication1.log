@@ -1,1 +1,78 @@
-﻿  ConsoleApplication1.vcxproj -> C:\Projet Human\hae_gp2\cours9Reprise\x64\Debug\ConsoleApplication1.exe
+﻿  ConsoleApplication.cpp
+C:\Projet Human\hae_gp2\cours9Reprise\Catmull.hpp(34,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\Catmull.hpp(33,11): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\Line.hpp(48,15): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\Line.hpp(47,15): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\Line.hpp(46,15): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\Line.hpp(74,1): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\Line.hpp(81,13): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\CmdFile.hpp(30,10): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\CmdFile.hpp(31,10): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\Dijkstra.hpp(77,12): warning C4244: 'initialisation' : conversion de 'T' en 'float', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\Dijkstra.hpp(78,12): warning C4244: 'initialisation' : conversion de 'T' en 'float', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\A_etoile.hpp(45,16): warning C4244: 'return' : conversion de 'float' en 'int', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(45,104): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(45,68): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(52,92): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(52,62): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(61,98): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(61,65): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(62,94): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(62,63): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(69,27): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(147,29): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(147,27): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(160,31): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(160,28): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(193,31): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(193,28): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Projet Human\hae_gp2\cours9Reprise\ConsoleApplication.cpp(205,53): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+  ConsoleApplication1.vcxproj -> C:\Projet Human\hae_gp2\cours9Reprise\x64\Debug\ConsoleApplication1.exe

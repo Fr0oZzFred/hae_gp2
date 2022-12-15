@@ -16,6 +16,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include "Dijkstra.hpp"
+#include "A_etoile.hpp"
 
 
 using namespace sf;
@@ -34,6 +35,7 @@ public:
 
 
 static Dijkstra dij;
+static A_etoile a_etoile;
 static Player * player = nullptr;
 
 void printGraph(BaseGraph& g, sf::VertexArray& points) {
@@ -182,6 +184,18 @@ void testSFML(){
 					printWayGraph(dij.way, way);
 					printDij(dij, ways);
 					initSequence(sequence, sqcIdx);
+				}
+
+				if (event.key.code == sf::Keyboard::A) {
+					std::unordered_map<sf::Vector2i, bool> g;
+					for (int y = 0; y < 1 + Game::HEIGHT / Cst::CELL_SIZE; ++y)
+						for (int x = 0; x < 1 + Game::WIDTH / Cst::CELL_SIZE; ++x) {
+							if (!world.collides(x, y))
+								g[sf::Vector2i(x, y)] = true;
+						}
+
+					a_etoile.setGraph(g);
+					a_etoile.build(sf::Vector2i(1,1));
 				}
 			}
 		}
