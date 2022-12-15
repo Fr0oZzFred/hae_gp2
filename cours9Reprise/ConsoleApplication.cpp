@@ -78,6 +78,7 @@ void testSFML(){
 	sf::VertexArray points;
 	sf::VertexArray way;
 	points.setPrimitiveType(Points);
+	way.setPrimitiveType(LinesStrip);
 
 	auto bricks = CmdFile::loadScript("res/save.txt");
 	for( auto & c : bricks)
