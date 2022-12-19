@@ -10,9 +10,9 @@ public:
 
 	float speed = 0.2f;
 
-	Player() : Entity(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f), new sf::RectangleShape(sf::Vector2f(24, 24))) {
+	Player() : Entity(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f), new sf::RectangleShape(sf::Vector2f(48, 48))) {
 		auto rect = (sf::RectangleShape*)this->shp;
-		rect->setOrigin(12, 12);
+		rect->setOrigin(rect->getSize() * 0.5f);
 		rect->setFillColor(sf::Color::Red);
 	};
 	void im();

@@ -11,6 +11,20 @@
 static HotReloadShader* bloomShader = nullptr;
 static HotReloadShader* blurShader = nullptr;
 
+#pragma region Debug
+
+void debugGrid(sf::VertexArray &grid) {
+	for (int x = 0; x < Game::WIDTH / Cst::CELL_SIZE; x++) {
+		for (int y = 0; y < Game::HEIGHT / Cst::CELL_SIZE; y++) {
+			grid.append(sf::Vertex(sf::Vector2f(x * Game::WIDTH / Cst::CELL_SIZE, 0), sf::Color::White));
+			grid.append(sf::Vertex(sf::Vector2f(x * Game::WIDTH / Cst::CELL_SIZE, Game::HEIGHT), sf::Color::White));
+			grid.append(sf::Vertex(sf::Vector2f(0, y * Game::WIDTH / Cst::CELL_SIZE), sf::Color::White));
+			grid.append(sf::Vertex(sf::Vector2f(Game::WIDTH, y * Game::WIDTH / Cst::CELL_SIZE), sf::Color::White));
+		}
+	}
+}
+#pragma endregion
+
 
 int main(){
 	sf::RenderWindow window(sf::VideoMode(Game::WIDTH, Game::HEIGHT), Game::NAME, sf::Style::Fullscreen);
@@ -68,8 +82,12 @@ int main(){
 		player.update();
 
 
+		sf::VertexArray grid(sf::Lines);
+		debugGrid(grid);
+
 		window.clear();
 		player.draw(window);
+		window.draw(grid);
 		ImGui::EndFrame();
 		ImGui::SFML::Render(window);
 

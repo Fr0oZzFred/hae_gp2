@@ -1,7 +1,52 @@
 ﻿  ConsoleApplication.cpp
-C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(33,38): warning C4305: 'argument' : troncation de 'double' à 'T'
+C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(19,56): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
+C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(20,80): warning C4244: 'argument' : conversion de 'const int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(20,56): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(21,59): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(22,69): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(22,46): warning C4244: 'argument' : conversion de 'const int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(47,38): warning C4305: 'argument' : troncation de 'double' à 'T'
+          with
+          [
+              T=float
+          ]
+  Player.cpp
+C:\Projet Human\hae_gp2\Shape\Player.cpp(6,45): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Projet Human\hae_gp2\Shape\Player.cpp(13,10): warning C4804: '-' : utilisation risquée du type 'bool' dans l'opération
+C:\Projet Human\hae_gp2\Shape\Player.cpp(15,10): warning C4804: '-' : utilisation risquée du type 'bool' dans l'opération
+C:\Projet Human\hae_gp2\Shape\Player.cpp(17,22): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Projet Human\hae_gp2\Shape\Player.cpp(17,19): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+  Génération de code en cours...
   ConsoleApplication1.vcxproj -> C:\Projet Human\hae_gp2\Shape\x64\Debug\ConsoleApplication1.exe
