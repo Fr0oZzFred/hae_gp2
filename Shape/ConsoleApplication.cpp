@@ -86,8 +86,8 @@ int main(){
 		debugGrid(grid);
 
 		window.clear();
-		player.draw(window);
 		window.draw(grid);
+		player.draw(window);
 		ImGui::EndFrame();
 		ImGui::SFML::Render(window);
 
