@@ -2,6 +2,8 @@
 #include "Entities.hpp"
 #include "Game.hpp"
 #include <SFML/Graphics.hpp>
+#include "Lib.hpp"
+
 class Player : public Entity {
 public:
 
@@ -12,19 +14,21 @@ public:
 
 	float range = 64.0f;
 	int resolution = 3;
+	sf::Vector2f mouseDir;
+	float angle = 0;
 
 
+	auto getAngle(float a) {
+		return sf::Vector2f(
+			std::cos(a),
+			std::sin(a)
+		);
+	};
 
 	Player() : Entity(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f), new sf::ConvexShape()) {
 		auto rect = (sf::ConvexShape*)this->shp;
 		rect->setPointCount(resolution);
-		auto getAngle = [](float a) {
-			//Inversed for having the first point up
-			return sf::Vector2f(
-				-std::sin(a),
-				-std::cos(a)
-			);
-		};
+		
 
 		for (int i = 0; i < resolution; i++) {
 			double t = (double)i / resolution;

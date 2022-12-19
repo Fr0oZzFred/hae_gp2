@@ -274,8 +274,6 @@ public:
 		return false;
 	};
 
-	
-
 };
 
 #define SFML_ORANGE sf::Color(0xFC5C49ff)
