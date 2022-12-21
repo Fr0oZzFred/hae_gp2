@@ -80,6 +80,7 @@ int main(){
 		}
 
 		player.update();
+		world.update();
 
 
 		sf::VertexArray grid(sf::Lines);
@@ -87,6 +88,7 @@ int main(){
 
 		window.clear();
 		window.draw(grid);
+		world.draw(window);
 		player.draw(window);
 		ImGui::EndFrame();
 		ImGui::SFML::Render(window);

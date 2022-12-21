@@ -1,5 +1,6 @@
 #include "Player.hpp"
 #include "imgui.h"
+#include "World.hpp"
 
 void Player::im() {
 	using namespace ImGui;
@@ -29,6 +30,11 @@ void Player::update() {
 	dx *= frictX;
 	dy *= frictY;
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+		shoot();
+	}
+
+
 
 	//Rotation
 	mouseDir = (sf::Vector2f)sf::Mouse::getPosition() - shp->getPosition();
@@ -50,4 +56,8 @@ void Player::update() {
 
 
 	Entity::update();
+}
+void Player::shoot() {
+	Entity proj(sf::Vector2f((cx + rx) * Cst::CELL_SIZE, (cy + ry) * Cst::CELL_SIZE), new sf::RectangleShape(sf::Vector2f(24, 12)));
+	world.addEntity(proj);
 };

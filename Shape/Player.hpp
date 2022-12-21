@@ -12,7 +12,7 @@ public:
 
 	float speed = 0.2f;
 
-	float range = 64.0f;
+	float range = 32.0f;
 	int resolution = 3;
 	sf::Vector2f mouseDir;
 	float angle = 0;
@@ -41,4 +41,5 @@ public:
 	};
 	void im();
 	void update();
+	void shoot();
 };

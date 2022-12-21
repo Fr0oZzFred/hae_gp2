@@ -11,4 +11,13 @@ bool World::collides(float x, float y) {
 	else if (x < 0)							return true;
 	else if (y < 0)							return true;
 	return false;
+}
+void World::addEntity(Entity& entity) {
+	entities.push_back(entity);
+}
+void World::update() {
+	for (auto& entity : entities)	entity.update();
+}
+void World::draw(sf::RenderWindow& window) {
+	for (auto& entity : entities)	entity.draw(window);
 };
