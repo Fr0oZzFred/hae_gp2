@@ -32,52 +32,36 @@ void Entity::setGridPos(sf::Vector2f npos) {
 void Entity::update() {};
 
 void Entity::baseUpdate() {
+	updatePos();
+	syncPos();
+}
+void Entity::updatePos() {
 	rx += dx;
 	ry += dy;
 
+	//Handle rx,ry
 	while (rx > 1) {
-		if (collides(cx + 1, cy)) {
-			rx--;
-			dx = 0;
-		}
-		else {
-			rx--;
-			cx++;
-		}
+		rx--;
+		cx++;
 	}
 	while (rx < 0) {
-		if (collides(cx - 1, cy)) {
-			rx++;
-			dx = 0;
-		}
-		else {
-			rx++;
-			cx--;
-		}
+		rx++;
+		cx--;
 	}
 	while (ry > 1) {
-		if (collides(cx, cy + 1)) {
-			ry--;
-			dy = 0;
-		}
-		else {
-			ry--;
-			cy++;
-		}
+		ry--;
+		cy++;
 	}
 	while (ry < 0) {
-		if (collides(cx, cy - 1)) {
-			ry++;
-			dy = 0;
-		}
-		else {
-			ry++;
-			cy--;
-		}
+		ry++;
+		cy--;
 	}
+};
 
+void Entity::syncPos() {
 	xx = (int)((cx + rx) * Game::CELL_SIZE);
 	yy = (int)((cy + ry) * Game::CELL_SIZE);
+
 	shp->setPosition(xx, yy);
 };
 

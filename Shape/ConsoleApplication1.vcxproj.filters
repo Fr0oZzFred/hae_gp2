@@ -27,9 +27,6 @@
     <ClCompile Include="Entities.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="libs\imgui\imgui.cpp">
       <Filter>imgui</Filter>
     </ClCompile>

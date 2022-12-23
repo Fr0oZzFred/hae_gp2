@@ -14,12 +14,12 @@ static HotReloadShader* blurShader = nullptr;
 #pragma region Debug
 
 void debugGrid(sf::VertexArray& grid) {
-	for (int x = 0; x < (Game::WIDTH - Game::AREA_X_SIDE() * 2) / Game::CELL_SIZE + 1; x++) {
-		for (int y = 0; y < (Game::HEIGHT - Game::AREA_Y_SIDE() * 2) / Game::CELL_SIZE + 1; y++) {
-			grid.append(sf::Vertex(sf::Vector2f(x * Game::CELL_SIZE + Game::AREA_X_SIDE(), Game::AREA_Y_SIDE()), sf::Color::White));
-			grid.append(sf::Vertex(sf::Vector2f(x * Game::CELL_SIZE + Game::AREA_X_SIDE(), Game::HEIGHT - Game::AREA_Y_SIDE()), sf::Color::White));
-			grid.append(sf::Vertex(sf::Vector2f(Game::AREA_X_SIDE(), y * Game::CELL_SIZE + Game::AREA_Y_SIDE()), sf::Color::White));
-			grid.append(sf::Vertex(sf::Vector2f(Game::WIDTH - Game::AREA_X_SIDE(), y * Game::CELL_SIZE + Game::AREA_Y_SIDE()), sf::Color::White));
+	for (int x = 0; x < (Game::WIDTH - Game::AREA_MARGE_X() * 2) / Game::CELL_SIZE + 1; x++) {
+		for (int y = 0; y < (Game::HEIGHT - Game::AREA_MARGE_Y() * 2) / Game::CELL_SIZE + 1; y++) {
+			grid.append(sf::Vertex(sf::Vector2f(x * Game::CELL_SIZE + Game::AREA_MARGE_X(), Game::AREA_MARGE_Y()), sf::Color::White));
+			grid.append(sf::Vertex(sf::Vector2f(x * Game::CELL_SIZE + Game::AREA_MARGE_X(), Game::HEIGHT - Game::AREA_MARGE_Y()), sf::Color::White));
+			grid.append(sf::Vertex(sf::Vector2f(Game::AREA_MARGE_X(), y * Game::CELL_SIZE + Game::AREA_MARGE_Y()), sf::Color::White));
+			grid.append(sf::Vertex(sf::Vector2f(Game::WIDTH - Game::AREA_MARGE_X(), y * Game::CELL_SIZE + Game::AREA_MARGE_Y()), sf::Color::White));
 		}
 	}
 };

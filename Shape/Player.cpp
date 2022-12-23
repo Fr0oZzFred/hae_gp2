@@ -12,9 +12,6 @@ void Player::im() {
 	Value("angle", angle);
 }
 void Player::update() {
-
-
-
 	//Movement
 	int x = -sf::Keyboard::isKeyPressed(sf::Keyboard::Left) + -sf::Keyboard::isKeyPressed(sf::Keyboard::Q) +
 			sf::Keyboard::isKeyPressed(sf::Keyboard::Right) + sf::Keyboard::isKeyPressed(sf::Keyboard::D);
@@ -54,8 +51,29 @@ void Player::update() {
 		shoot();
 	}
 
+	Entity::updatePos();
 
-	Entity::baseUpdate();
+	//Clamp cx,rx,cy,ry
+	float resX = 0.0f;
+	float resY = 0.0f;
+
+	resX = std::clamp(cx + rx,
+		Game::AREA_MARGE_X() / Game::CELL_SIZE + range / Game::CELL_SIZE,
+		(Game::WIDTH - Game::AREA_MARGE_X()) / Game::CELL_SIZE - range / Game::CELL_SIZE);
+	resY = std::clamp(cy + ry,
+		Game::AREA_MARGE_Y() / Game::CELL_SIZE + range / Game::CELL_SIZE,
+		(Game::HEIGHT - Game::AREA_MARGE_Y()) / Game::CELL_SIZE - range / Game::CELL_SIZE);
+	
+	rx = fmod(resX, 1.0f);
+	resX -= rx;
+	cx = resX;
+
+	ry = fmod(resY, 1.0f);
+	resY -= ry;
+	cy = resY;
+
+
+	Entity::syncPos();
 }
 void Player::shoot() {
 	world.addEntity(

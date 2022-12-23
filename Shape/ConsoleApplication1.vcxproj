@@ -154,7 +154,6 @@
     <ClCompile Include="Bloom.cpp" />
     <ClCompile Include="ConsoleApplication.cpp" />
     <ClCompile Include="Entities.cpp" />
-    <ClCompile Include="Game.cpp" />
     <ClCompile Include="HotReloadShader.cpp" />
     <ClCompile Include="Lib.cpp" />
     <ClCompile Include="libs\imgui-sfml\imgui-SFML.cpp" />
