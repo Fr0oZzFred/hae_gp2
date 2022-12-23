@@ -28,9 +28,11 @@ void Entity::setPixelPos(sf::Vector2f npos) {
 
 void Entity::setGridPos(sf::Vector2f npos) {
 	setPixelPos(sf::Vector2f(npos.x * Cst::CELL_SIZE, npos.y * Cst::CELL_SIZE));
+}
+void Entity::update() {
 };
 
-void Entity::update() {
+void Entity::baseUpdate() {
 	rx += dx;
 	ry += dy;
 

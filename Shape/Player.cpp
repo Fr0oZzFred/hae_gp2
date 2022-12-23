@@ -12,6 +12,9 @@ void Player::im() {
 	Value("angle", angle);
 }
 void Player::update() {
+
+
+
 	//Movement
 	int x = -sf::Keyboard::isKeyPressed(sf::Keyboard::Left) + -sf::Keyboard::isKeyPressed(sf::Keyboard::Q) +
 			sf::Keyboard::isKeyPressed(sf::Keyboard::Right) + sf::Keyboard::isKeyPressed(sf::Keyboard::D);
@@ -27,10 +30,6 @@ void Player::update() {
 	}
 	dx *= frictX;
 	dy *= frictY;
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-		shoot();
-	}
 
 
 
@@ -50,15 +49,19 @@ void Player::update() {
 	*	shp->setRotation(Lib::lerp(shp->getRotation(), angle, rotSpeed));
 	}*/
 
-	
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+		shoot();
+	}
 
 
-	Entity::update();
+	Entity::baseUpdate();
 }
 void Player::shoot() {
-	Projectile proj(this,
-		(sf::Vector2f)sf::Mouse::getPosition() -
-		shp->getPosition()
-	);
-	world.addEntity(proj);
+	world.addEntity(
+		new Projectile(
+			this,
+			(sf::Vector2f)sf::Mouse::getPosition() -
+			shp->getPosition()
+	));
 };

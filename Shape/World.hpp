@@ -8,9 +8,10 @@ public:
 
 	bool collides(float x, float y);
 
-	std::vector<Entity> entities;
+	std::vector<Entity*> entities;
 
-	void addEntity(Entity& entity);
+	void addEntity(Entity* entity);
+	void removeEntity(Entity* entity);
 	void update();
 	void draw(sf::RenderWindow& window);
 };

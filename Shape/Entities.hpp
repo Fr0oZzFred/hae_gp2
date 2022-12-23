@@ -28,7 +28,8 @@ public:
 	sf::Vector2f getGridPosition();
 	void setPixelPos(sf::Vector2f npos);
 	void setGridPos(sf::Vector2f npos);
-	void update();
+	virtual void update();
+	void baseUpdate();
 	void draw(sf::RenderWindow& win);
 	bool collides(float gx,float gy);
 };
