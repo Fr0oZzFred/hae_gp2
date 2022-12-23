@@ -11,7 +11,7 @@ public:
 	float			frictX = 0.9f;
 	float			frictY = 0.9f;
 
-	float speed = 0.2f;
+	float speed = 0.02f;
 
 	float range = 32.0f;
 	int resolution = 3;

@@ -80,9 +80,6 @@
     <ClInclude Include="imconfig.h">
       <Filter>imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Cst.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="World.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>

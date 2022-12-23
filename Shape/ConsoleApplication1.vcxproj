@@ -169,7 +169,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bloom.hpp" />
-    <ClInclude Include="Cst.hpp" />
     <ClInclude Include="Entities.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="HotReloadShader.hpp" />

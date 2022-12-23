@@ -16,21 +16,20 @@ sf::Vector2f Entity::getGridPosition() {
 }
 
 void Entity::setPixelPos(sf::Vector2f npos) {
-	cx = (int)npos.x / Cst::CELL_SIZE;
-	cy = (int)npos.y / Cst::CELL_SIZE;
+	cx = (int)npos.x / Game::CELL_SIZE;
+	cy = (int)npos.y / Game::CELL_SIZE;
 
-	rx = (npos.x - (cx * Cst::CELL_SIZE)) / Cst::CELL_SIZE;
-	ry = (npos.y - (cy * Cst::CELL_SIZE)) / Cst::CELL_SIZE;
+	rx = (npos.x - (cx * Game::CELL_SIZE)) / Game::CELL_SIZE;
+	ry = (npos.y - (cy * Game::CELL_SIZE)) / Game::CELL_SIZE;
 
-	xx = (int)((cx + rx) * Cst::CELL_SIZE);
-	yy = (int)((cy + ry) * Cst::CELL_SIZE);
+	xx = (int)((cx + rx) * Game::CELL_SIZE);
+	yy = (int)((cy + ry) * Game::CELL_SIZE);
 };
 
 void Entity::setGridPos(sf::Vector2f npos) {
-	setPixelPos(sf::Vector2f(npos.x * Cst::CELL_SIZE, npos.y * Cst::CELL_SIZE));
+	setPixelPos(sf::Vector2f(npos.x * Game::CELL_SIZE, npos.y * Game::CELL_SIZE));
 }
-void Entity::update() {
-};
+void Entity::update() {};
 
 void Entity::baseUpdate() {
 	rx += dx;
@@ -77,8 +76,8 @@ void Entity::baseUpdate() {
 		}
 	}
 
-	xx = (int)((cx + rx) * Cst::CELL_SIZE);
-	yy = (int)((cy + ry) * Cst::CELL_SIZE);
+	xx = (int)((cx + rx) * Game::CELL_SIZE);
+	yy = (int)((cy + ry) * Game::CELL_SIZE);
 	shp->setPosition(xx, yy);
 };
 

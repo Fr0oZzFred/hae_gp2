@@ -7,8 +7,8 @@ void Player::im() {
 	DragFloat2("frict", &frictX, 0.01, 0.5, 1.0);
 	DragInt2("cx cy", &cx);
 	DragFloat2("rx ry", &rx);
-	Value("pos x", shp->getPosition().x);
-	Value("pos y", shp->getPosition().y);
+	Value("pos x", xx);
+	Value("pos y", yy);
 	Value("angle", angle);
 }
 void Player::update() {
