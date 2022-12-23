@@ -9,8 +9,6 @@ void Player::im() {
 	DragFloat2("rx ry", &rx);
 	Value("pos x", shp->getPosition().x);
 	Value("pos y", shp->getPosition().y);
-	Value("dir x", mouseDir.x);
-	Value("dir y", mouseDir.y);
 	Value("angle", angle);
 }
 void Player::update() {
@@ -37,10 +35,10 @@ void Player::update() {
 
 
 	//Rotation
-	mouseDir = (sf::Vector2f)sf::Mouse::getPosition() - shp->getPosition();
-	Lib::safeNormalize(mouseDir);
-	angle = std::atan2(mouseDir.y, mouseDir.x);
-	angle *= 180.f / 3.14159;
+	angle = Lib::lookAt(
+		shp->getPosition(), 
+		(sf::Vector2f)sf::Mouse::getPosition()
+	);
 	float rotSpeed = 1.0f;
 	shp->setRotation(Lib::lerp(shp->getRotation(), angle, rotSpeed));
 	/*Si rotSpeed < 1.0f il faut ça(angle entre 360 et 0 toujours pas fixed)
@@ -58,6 +56,9 @@ void Player::update() {
 	Entity::update();
 }
 void Player::shoot() {
-	Entity proj(sf::Vector2f((cx + rx) * Cst::CELL_SIZE, (cy + ry) * Cst::CELL_SIZE), new sf::RectangleShape(sf::Vector2f(24, 12)));
+	Projectile proj(this,
+		(sf::Vector2f)sf::Mouse::getPosition() -
+		shp->getPosition()
+	);
 	world.addEntity(proj);
 };

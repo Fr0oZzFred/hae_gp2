@@ -2,8 +2,8 @@
 
 #include <chrono>
 #include <ctime>
-#include "SFML/System/Vector2.hpp"
-#include "SFML/Graphics/Color.hpp"
+#include "SFML/System.hpp"
+#include "SFML/Graphics.hpp"
 
 
 class Lib{
@@ -274,6 +274,13 @@ public:
 		return false;
 	};
 
+	static float lookAt(sf::Vector2f start, sf::Vector2f end) {
+		sf::Vector2f dir = end - start;
+		Lib::safeNormalize(dir);
+		float angle = std::atan2(dir.y, dir.x);
+		angle *= 180.0f / 3.14159f;
+		return angle;
+	};
 };
 
 #define SFML_ORANGE sf::Color(0xFC5C49ff)

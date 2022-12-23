@@ -11,6 +11,10 @@ Entity::Entity(sf::Vector2f pixelPos, sf::Shape* shp) {
 	setPixelPos(pixelPos);
 };
 
+sf::Vector2f Entity::getGridPosition() {
+	return sf::Vector2f(cx + rx, cy + ry);
+}
+
 void Entity::setPixelPos(sf::Vector2f npos) {
 	cx = (int)npos.x / Cst::CELL_SIZE;
 	cy = (int)npos.y / Cst::CELL_SIZE;

@@ -3,6 +3,7 @@
 #include "Game.hpp"
 #include <SFML/Graphics.hpp>
 #include "Lib.hpp"
+#include "Projectile.hpp"
 
 class Player : public Entity {
 public:
@@ -14,8 +15,7 @@ public:
 
 	float range = 32.0f;
 	int resolution = 3;
-	sf::Vector2f mouseDir;
-	float angle = 0;
+	float angle = 0.0f;
 
 
 	auto getAngle(float a) {
