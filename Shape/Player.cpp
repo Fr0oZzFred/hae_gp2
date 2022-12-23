@@ -19,11 +19,20 @@ void Player::update() {
 			sf::Keyboard::isKeyPressed(sf::Keyboard::Down) + sf::Keyboard::isKeyPressed(sf::Keyboard::S);
 	x = std::clamp(x, -1, 1);
 	y = std::clamp(y, -1, 1);
+	bool diagonal = false;
+	if (x != 0 && y != 0)
+		diagonal = true;
 	sf::Vector2f dir(x, y);
 	float len = sqrt(dir.x * dir.x + dir.y * dir.y);
 	if (len) {
-		dx += dir.x * speed;
-		dy += dir.y * speed;
+		if (diagonal) {
+			dx += dir.x * speed * 0.707f;
+			dy += dir.y * speed * 0.707f;
+		}
+		else {
+			dx += dir.x * speed;
+			dy += dir.y * speed;
+		}
 	}
 	dx *= frictX;
 	dy *= frictY;
