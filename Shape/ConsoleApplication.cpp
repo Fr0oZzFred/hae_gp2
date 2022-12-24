@@ -46,8 +46,6 @@ int main(){
 	float bloomWidth = 48;
 	sf::Glsl::Vec4 bloomMul(2, 2, 2, 0.8);
 
-
-
 	window.setFramerateLimit(60);
 	window.setVerticalSyncEnabled(true);
 

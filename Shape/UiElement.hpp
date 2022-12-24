@@ -11,6 +11,7 @@ class UiElement {
 public:
 
 	ElementType type = ElementType::ButtonType;
+	const char* name = "";
 
 	int				cx = 0;
 	int				cy = 0;
@@ -32,4 +33,6 @@ public:
 	void syncPos();
 	virtual void draw(sf::RenderWindow& window) = 0;
 	virtual void im() = 0;
+	virtual void save(FILE* file) = 0;
+	virtual void load(FILE* file) = 0;
 };

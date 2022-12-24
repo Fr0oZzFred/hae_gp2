@@ -8,7 +8,7 @@ bool Data::saveUI(const char* path, std::vector<UiElement*>& elements) {
 
     for (auto c : elements) {
         fprintf(file, "%i \n", c->type);
-        fprintf(file, "%i %i %f %f \n", c->cx, c->cy, c->rx, c->ry);
+        c->save(file);
     }
 
     fclose(file);
@@ -35,7 +35,7 @@ std::vector<UiElement*> Data::loadUI(const char* path) {
 
             case 0:
                 e = new Button();
-                fscanf_s(file, "%i %i %f %f \n", &e->cx, &e->cy, &e->rx, &e->ry);
+                e->load(file);
             break;
         }
         if (e == nullptr) {
