@@ -21,18 +21,18 @@ void Button::im() {
 	DragFloat2("rx ry", &rx);
 	Value("pos x", xx);
 	Value("pos y", yy);
-	static char _name[128] = "";
-	ImGui::InputText("Name", _name, IM_ARRAYSIZE(_name));
-	if (ImGui::Button("Rename")) {
-		name = _name;
-	}
-	if (ImGui::Button("Remove")) {
-		ui.remove(this);
-	}
+	static char _name[64] = "";
+	if(ImGui::InputText("Name", _name, IM_ARRAYSIZE(_name), ImGuiInputTextFlags_CharsNoBlank)) return;
+	if (ImGui::Button("Rename")) Lib::MemcpyRec(name, _name, 64);
+	if (ImGui::Button("Remove")) ui.remove(this);
 };
 void Button::save(FILE* file) {
+	fprintf(file, "%s \n", name);
 	fprintf(file, "%i %i %f %f \n", cx, cy, rx, ry);
 };
 void Button::load(FILE* file) {
-	fscanf_s(file, " %i %i %f %f \n", &cx, &cy, &rx, &ry);
+	static char _name[64] = {};
+	fscanf_s(file, "%s \n", _name, 64);
+	fscanf_s(file, "%i %i %f %f \n", &cx, &cy, &rx, &ry);
+	Lib::MemcpyRec(name, _name, 63);
 };

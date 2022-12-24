@@ -40,12 +40,11 @@ void UI::im() {
 
 
 		if (!showElementsIm) return;
-		int idx = 0;
-		for (auto& e : elements) {
+		
+		for (auto e : elements) {
 			ImGui::Begin(e->name, &t);
 			e->im();
 			ImGui::End();
-			idx++;
 		}
 	}
 };

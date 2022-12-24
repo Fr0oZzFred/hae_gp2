@@ -11,7 +11,7 @@ class UiElement {
 public:
 
 	ElementType type = ElementType::ButtonType;
-	const char* name = "";
+	char name[64]{};
 
 	int				cx = 0;
 	int				cy = 0;

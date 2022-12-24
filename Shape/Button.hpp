@@ -1,6 +1,7 @@
 #pragma once
 #include "UiElement.hpp"
 #include "Game.hpp"
+#include "Lib.hpp"
 
 class Button : public UiElement {
 public:
@@ -8,7 +9,7 @@ public:
 	sf::Font text;
 
 	Button() {
-		name = "New Button";
+		Lib::Memcpy(name, "NewButton", 10);
 		setPixelPos(sf::Vector2f(1920/2, 1080/2));
 		box = new sf::RectangleShape(sf::Vector2f(200.0f, 50.0f));
 		box->setFillColor(sf::Color::White);
