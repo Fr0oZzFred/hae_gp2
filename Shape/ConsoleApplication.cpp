@@ -7,6 +7,7 @@
 #include "Player.hpp"
 #include "Bloom.hpp"
 #include "HotReloadShader.hpp"
+#include "UI.hpp"
 
 static HotReloadShader* bloomShader = nullptr;
 static HotReloadShader* blurShader = nullptr;
@@ -24,7 +25,6 @@ void debugGrid(sf::VertexArray& grid) {
 	}
 };
 #pragma endregion
-
 
 int main(){
 	sf::RenderWindow window(sf::VideoMode(Game::WIDTH, Game::HEIGHT), Game::NAME, sf::Style::Fullscreen);
@@ -63,7 +63,6 @@ int main(){
 		sf::Time dt = time.restart();
 		sf::Event event;
 		while (window.pollEvent(event)) {
-
 			ImGui::SFML::ProcessEvent(window, event);
 			if (event.type == sf::Event::Closed)
 				window.close();
@@ -73,14 +72,16 @@ int main(){
 		ImGui::SFML::Update(window, dt);
 		{
 			using namespace ImGui;
-
-			ImGui::Begin("Debug", &t);
+			ImGui::Begin("Player", &t);
 			player.im();
 			ImGui::End();
+			
+			ui.im();
 		}
 
 		player.update();
 		world.update();
+		ui.update();
 
 
 		sf::VertexArray grid(sf::Lines);
@@ -89,12 +90,14 @@ int main(){
 		window.clear();
 		window.draw(grid);
 		world.draw(window);
+		ui.draw(window);
 		player.draw(window);
-		ImGui::EndFrame();
-		ImGui::SFML::Render(window);
 
 		if (bloomWidth)
 			Bloom::render(window, winTex, destX, destFinal, &blurShader->sh, &bloomShader->sh, bloomWidth, bloomMul);
+
+		ImGui::EndFrame();
+		ImGui::SFML::Render(window);
 		window.display();
 	}
 	ImGui::SFML::Shutdown();

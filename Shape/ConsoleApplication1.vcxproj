@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bloom.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="ConsoleApplication.cpp" />
     <ClCompile Include="Entities.cpp" />
     <ClCompile Include="HotReloadShader.cpp" />
@@ -164,10 +165,14 @@
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="Data.cpp" />
+    <ClCompile Include="UI.cpp" />
+    <ClCompile Include="UiElement.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bloom.hpp" />
+    <ClInclude Include="Button.hpp" />
     <ClInclude Include="Entities.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="HotReloadShader.hpp" />
@@ -176,6 +181,9 @@
     <ClInclude Include="Lib.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Projectile.hpp" />
+    <ClInclude Include="Data.hpp" />
+    <ClInclude Include="UI.hpp" />
+    <ClInclude Include="UiElement.hpp" />
     <ClInclude Include="World.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

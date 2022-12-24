@@ -10,7 +10,7 @@ void Player::im() {
 	Value("pos x", xx);
 	Value("pos y", yy);
 	Value("angle", angle);
-}
+};
 void Player::update() {
 	//Movement
 	int x = -sf::Keyboard::isKeyPressed(sf::Keyboard::Left) + -sf::Keyboard::isKeyPressed(sf::Keyboard::Q) +
