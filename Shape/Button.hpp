@@ -8,6 +8,8 @@ public:
 	//Button
 	sf::RectangleShape* box = nullptr;
 	float buttonColor[3] = { 1.0f, 1.0f ,1.0f };
+	float sizeX = 200.0f, sizeY = 50.0f;
+	sf::FloatRect collider;
 
 	//Text
 	sf::Font font;
@@ -19,13 +21,17 @@ public:
 	
 
 	Button() {
+		Lib::Memcpy(name, "NewButton", 10);
+		setPixelPos(sf::Vector2f(1920 * 0.5f, 1080 * 0.5f));
+		box = new sf::RectangleShape(sf::Vector2f(sizeX, sizeY));
+		box->setOrigin(box->getSize() * 0.5f);
+
+
 		if(!font.loadFromFile("Ressources/depixel/DePixelBreitFett.ttf")) throw "Font not Found";
 		text.setFont(font);
 		text.setString("NewButton");
 		text.setCharacterSize(fontSize);
-		Lib::Memcpy(name, "NewButton", 10);
-		setPixelPos(sf::Vector2f(1920/2, 1080/2));
-		box = new sf::RectangleShape(sf::Vector2f(200.0f, 50.0f));
+		text.setOrigin(box->getOrigin());
 	};
 
 	void draw(sf::RenderWindow& window);

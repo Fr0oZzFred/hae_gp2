@@ -8,7 +8,26 @@ void Button::draw(sf::RenderWindow& window) {
 void Button::update() {
 	box->setFillColor(sf::Color(buttonColor[0] * 255.0f, buttonColor[1] * 255.0f, buttonColor[2] * 255.0f));
 	text.setFillColor(sf::Color(textColor[0] * 255.0f, textColor[1] * 255.0f, textColor[2] * 255.0f)); 
+
+	//Update Size
+	box->setSize(sf::Vector2f(sizeX, sizeY));
+
+	//update collider
+	collider.top = yy - box->getSize().y * 0.5f;
+	collider.left = xx - box->getSize().x * 0.5f;
+	collider.width = box->getSize().x;
+	collider.height = box->getSize().y;
+
+	//Check State
+	sf::Mouse mouse;
+	sf::Vector2f mousePos = sf::Vector2f(mouse.getPosition());
+	if (collider.contains(mousePos)) {
+		box->setFillColor(sf::Color::Yellow);
+	}
+
+
 	UiElement::baseUpdate();
+
 	box->setPosition(xx, yy);
 	text.setPosition(
 		xx + offsetX * Game::CELL_SIZE,
@@ -27,6 +46,7 @@ void Button::im() {
 		DragFloat2("rx ry", &rx);
 		Value("pos x", xx);
 		Value("pos y", yy);
+		DragFloat2("Size", &sizeX);
 		if (ImGui::TreeNode("ButtonColor")) {
 			ImGui::ColorPicker3("ButtonColor", &buttonColor[0]);
 			TreePop();
@@ -50,18 +70,20 @@ void Button::im() {
 };
 void Button::save(FILE* file) {
 	fprintf(file,
-		"%s %i %i %f %f %f %f %f %f %f %f %s %f %f %f\n",
+		"%s %i %i %f %f %f %f %f %f %f %f %f %f %s %f %f %f\n",
 		name, cx, cy, rx, ry,
 		buttonColor[0], buttonColor[1], buttonColor[2],
+		sizeX, sizeY,
 		offsetX, offsetY, fontSize, content,
 		textColor[0], textColor[1], textColor[2]
 	);
 };
 void Button::load(FILE* file) {
 	fscanf_s(file,
-		"%s %i %i %f %f %f %f %f %f %f %f %s %f %f %f\n",
+		"%s %i %i %f %f %f %f %f %f %f %f %f %f %s %f %f %f\n",
 		_name, 64, &cx, &cy, &rx, &ry,
 		&buttonColor[0], &buttonColor[1], &buttonColor[2],
+		&sizeX, &sizeY,
 		&offsetX, &offsetY, &fontSize, &content, 128,
 		&textColor[0], &textColor[1], &textColor[2]
 	);
