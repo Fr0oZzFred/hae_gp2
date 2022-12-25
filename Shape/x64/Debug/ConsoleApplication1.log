@@ -1,4 +1,7 @@
 ﻿  Button.cpp
+C:\Projet Human\hae_gp2\Shape\Button.cpp(13,56): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(13,44): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(13,32): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
   ConsoleApplication.cpp
 C:\Projet Human\hae_gp2\Shape\Player.hpp(36,31): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
 C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(30,59): warning C4244: 'argument' : conversion de 'const float' en 'unsigned int', perte possible de données

@@ -8,20 +8,14 @@ public:
 	sf::RectangleShape* box = nullptr;
 	sf::Font text;
 
+	float r = 1, g = 1, b = 1;
+
 	Button() {
 		Lib::Memcpy(name, "NewButton", 10);
 		setPixelPos(sf::Vector2f(1920/2, 1080/2));
 		box = new sf::RectangleShape(sf::Vector2f(200.0f, 50.0f));
-		box->setFillColor(sf::Color::White);
 	};
 	Button(sf::Vector2f pixelPos);
-
-	void init(
-		const char* _name,
-		sf::Vector2f pixelPos,
-		sf::Vector2f size,
-		sf::Color color
-	);
 
 	void draw(sf::RenderWindow& window);
 	void update();

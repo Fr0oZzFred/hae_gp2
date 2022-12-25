@@ -6,12 +6,11 @@ Button::Button(sf::Vector2f pixelPos) {
 	box = new sf::RectangleShape(sf::Vector2f(200.0f, 50.0f));
 	box->setFillColor(sf::Color::White);
 };
-void Button::init(const char* _name, sf::Vector2f pixelPos, sf::Vector2f size, sf::Color color) {
-};
 void Button::draw(sf::RenderWindow& window) {
 	window.draw(*box);
 };
 void Button::update() {
+	box->setFillColor(sf::Color(r * 255.0f, g * 255.0f, b * 255.0f));
 	UiElement::baseUpdate();
 	box->setPosition(xx, yy);
 };
@@ -21,18 +20,25 @@ void Button::im() {
 	DragFloat2("rx ry", &rx);
 	Value("pos x", xx);
 	Value("pos y", yy);
+	ImGui::ColorPicker3("Color", &r);
 	static char _name[64] = "";
 	if(ImGui::InputText("Name", _name, IM_ARRAYSIZE(_name), ImGuiInputTextFlags_CharsNoBlank)) return;
 	if (ImGui::Button("Rename")) Lib::MemcpyRec(name, _name, 64);
 	if (ImGui::Button("Remove")) ui.remove(this);
 };
 void Button::save(FILE* file) {
-	fprintf(file, "%s \n", name);
-	fprintf(file, "%i %i %f %f \n", cx, cy, rx, ry);
+	fprintf(file,
+		"%s %i %i %f %f %f %f %f \n"
+		,name, cx, cy, rx, ry,
+		r, g, b
+	);
 };
 void Button::load(FILE* file) {
 	static char _name[64] = {};
-	fscanf_s(file, "%s \n", _name, 64);
-	fscanf_s(file, "%i %i %f %f \n", &cx, &cy, &rx, &ry);
-	Lib::MemcpyRec(name, _name, 63);
+	fscanf_s(file,
+		"%s %i %i %f %f %f %f %f \n",
+		_name, 64, &cx, &cy, &rx, &ry,
+		&r, &g, &b
+	);
+	Lib::MemcpyRec(name, _name, 64);
 };
