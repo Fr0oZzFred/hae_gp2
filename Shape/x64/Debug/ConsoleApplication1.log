@@ -13,19 +13,4 @@ C:\Projet Human\hae_gp2\Shape\Button.cpp(23,89): warning C4244: 'argument' : co
 C:\Projet Human\hae_gp2\Shape\Button.cpp(23,66): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
 C:\Projet Human\hae_gp2\Shape\Button.cpp(23,43): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
 C:\Projet Human\hae_gp2\Shape\Button.cpp(37,24): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-  ConsoleApplication.cpp
-C:\Projet Human\hae_gp2\Shape\Player.hpp(36,31): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.hpp(37,25): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(30,59): warning C4244: 'argument' : conversion de 'const float' en 'unsigned int', perte possible de données
-C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(30,46): warning C4244: 'argument' : conversion de 'const float' en 'unsigned int', perte possible de données
-C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(47,38): warning C4305: 'argument' : troncation de 'double' à 'T'
-          with
-          [
-              T=float
-          ]
-  Data.cpp
-C:\Projet Human\hae_gp2\Shape\Button.hpp(37,25): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-  UI.cpp
-C:\Projet Human\hae_gp2\Shape\Button.hpp(37,25): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-  Génération de code en cours...
   ConsoleApplication1.vcxproj -> C:\Projet Human\hae_gp2\Shape\x64\Debug\ConsoleApplication1.exe

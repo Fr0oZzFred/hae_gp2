@@ -89,8 +89,6 @@ void Button::im() {
 	}
 };
 void Button::save(FILE* file) {
-	int buttonBool = displayButton;
-	int textBool = displayText;
 	fprintf(file,
 		"%s %i %i %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %s %f %f %f %i %i \n",
 		name, cx, cy, rx, ry,
@@ -100,7 +98,7 @@ void Button::save(FILE* file) {
 		sizeX, sizeY,
 		offsetX, offsetY, fontSize, content,
 		textColor[0], textColor[1], textColor[2],
-		buttonBool, textBool
+		displayButton, displayText
 	);
 }
 void Button::load(FILE* file) {
