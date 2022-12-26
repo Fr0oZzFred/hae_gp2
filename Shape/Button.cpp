@@ -15,8 +15,8 @@ void Button::updateColor() {
 	box->setFillColor(sf::Color(buttonColor[0] * 255.0f, buttonColor[1] * 255.0f, buttonColor[2] * 255.0f));
 };
 void Button::draw(sf::RenderWindow& window) {
-	window.draw(*box);
-	window.draw(text);
+	if(displayButton)	window.draw(*box);
+	if(displayText)		window.draw(text);
 };
 void Button::update() {
 	updateColor();
@@ -48,11 +48,13 @@ void Button::im() {
 	using namespace ImGui;
 	if (ImGui::TreeNode("Main")) {
 		ImGui::InputText("Name", _name, IM_ARRAYSIZE(_name), ImGuiInputTextFlags_CharsNoBlank);
+		ImGui::Checkbox("Display Button", &displayButton);
+		ImGui::Checkbox("Display Text", &displayText);
 		if (ImGui::Button("Rename")) Lib::MemcpyRec(name, _name, 64);
 		if (ImGui::Button("Remove")) ui.remove(this);
 		TreePop();
 	}
-	if (ImGui::TreeNode("Button")) {
+	if (displayButton && ImGui::TreeNode("Button")) {
 		DragInt2("cx cy", &cx);
 		DragFloat2("rx ry", &rx);
 		Value("pos x", xx);
@@ -72,14 +74,13 @@ void Button::im() {
 		}
 		TreePop();
 	}
-	if (ImGui::TreeNode("Text")) {
+	if (displayText && ImGui::TreeNode("Text")) {
 		DragFloat2("Offset", &offsetX);
 		Value("pos x", xx + offsetX * Game::CELL_SIZE);
 		Value("pos y", yy + offsetY * Game::CELL_SIZE);
 		DragFloat("Font Size", &fontSize);
-		if (ImGui::InputText("Content", content, IM_ARRAYSIZE(content), ImGuiInputTextFlags_CharsNoBlank)) {
+		if (ImGui::InputText("Content", content, IM_ARRAYSIZE(content), ImGuiInputTextFlags_CharsNoBlank))
 			text.setString(content);
-		}
 		if (ImGui::TreeNode("TextColor")) {
 			ImGui::ColorPicker3("TextColor", &textColor[0]);
 			TreePop();
@@ -88,28 +89,36 @@ void Button::im() {
 	}
 };
 void Button::save(FILE* file) {
+	int buttonBool = displayButton;
+	int textBool = displayText;
 	fprintf(file,
-		"%s %i %i %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %s %f %f %f\n",
+		"%s %i %i %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %s %f %f %f %i %i \n",
 		name, cx, cy, rx, ry,
 		buttonColor[0], buttonColor[1], buttonColor[2],
 		buttonSelected[0], buttonSelected[1], buttonSelected[2],
 		buttonPressed[0], buttonPressed[1], buttonPressed[2],
 		sizeX, sizeY,
 		offsetX, offsetY, fontSize, content,
-		textColor[0], textColor[1], textColor[2]
+		textColor[0], textColor[1], textColor[2],
+		buttonBool, textBool
 	);
 }
 void Button::load(FILE* file) {
+	int buttonBool = -1;
+	int textBool = -1;
 	fscanf_s(file,
-		"%s %i %i %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %s %f %f %f\n",
+		"%s %i %i %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %s %f %f %f %i %i \n",
 		_name, 64, &cx, &cy, &rx, &ry,
 		&buttonColor[0], &buttonColor[1], &buttonColor[2],
 		&buttonSelected[0], &buttonSelected[1], &buttonSelected[2],
 		&buttonPressed[0], &buttonPressed[1], &buttonPressed[2],
 		&sizeX, &sizeY,
 		&offsetX, &offsetY, &fontSize, &content, 128,
-		&textColor[0], &textColor[1], &textColor[2]
+		&textColor[0], &textColor[1], &textColor[2],
+		&buttonBool, &textBool
 	);
+	displayButton = buttonBool;
+	displayText = textBool;
 	Lib::MemcpyRec(name, _name, 64);
 	text.setString(content);
 };

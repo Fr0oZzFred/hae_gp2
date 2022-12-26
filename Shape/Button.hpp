@@ -6,6 +6,7 @@
 class Button : public UiElement {
 public:
 	//Button
+	bool displayButton = true;
 	sf::RectangleShape* box = nullptr;
 	float buttonColor[3] = { 1.0f, 1.0f ,1.0f };
 	float buttonSelected[3] = { 0.8f, 0.8f ,0.8f };
@@ -14,6 +15,7 @@ public:
 	sf::FloatRect collider;
 
 	//Text
+	bool displayText = true;
 	sf::Font font;
 	sf::Text text;
 	float textColor[3] = { 0.0f, 0.0f ,0.0f };
@@ -30,7 +32,8 @@ public:
 
 		if(!font.loadFromFile("Ressources/depixel/DePixelBreitFett.ttf")) throw "Font not Found";
 		text.setFont(font);
-		text.setString("NewButton");
+		Lib::Memcpy(content, "NewButton", 10);
+		text.setString(content);
 		text.setCharacterSize(fontSize);
 		text.setOrigin(box->getOrigin());
 	};
