@@ -1,16 +1,3 @@
-﻿  Button.cpp
-C:\Projet Human\hae_gp2\Shape\Button.hpp(39,25): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(10,103): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(10,76): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(10,49): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(15,105): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(15,77): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(15,49): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(19,95): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(19,70): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(19,45): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(27,89): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(27,66): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(27,43): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(41,24): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+﻿  World.cpp
+C:\Projet Human\hae_gp2\Shape\Button.hpp(40,25): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
   ConsoleApplication1.vcxproj -> C:\Projet Human\hae_gp2\Shape\x64\Debug\ConsoleApplication1.exe

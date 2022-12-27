@@ -26,10 +26,52 @@ void World::removeEntity(Entity* entity) {
 	}
 };
 void World::update() {
-	for (int i = 0; i < entities.size(); i++) {
-		entities[i]->update();
+	switch (currentState) {
+	case GameState::Boot:
+
+	break;
+	case GameState::MainMenu:
+
+	break;
+	case GameState::InGame:
+		for (int i = 0; i < entities.size(); i++)	entities[i]->update();
+	break;
+	case GameState::Pause:
+
+	break;
 	}
 };
 void World::draw(sf::RenderWindow& window) {
-	for (auto& entity : entities)	entity->draw(window);
+	switch (currentState) {
+		case GameState::Boot:
+
+		break;
+		case GameState::MainMenu:
+
+		break;
+		case GameState::InGame:
+			for (auto& entity : entities)	entity->draw(window);
+		break;
+		case GameState::Pause:
+
+		break;
+	}
+}
+void World::changeState(GameState nuState) {
+	if (currentState == nuState) return;
+	currentState = nuState;
+	switch (currentState) {
+		case GameState::Boot:
+			ui.load("res/boot.txt");
+		break;
+		case GameState::MainMenu:
+			ui.load("res/mainMenu.txt");
+		break;
+		case GameState::InGame:
+			ui.load("res/inGame.txt");
+		break;
+		case GameState::Pause:
+			ui.load("res/pause.txt");
+		break;
+	}
 };

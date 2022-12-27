@@ -2,6 +2,7 @@
 #include "UiElement.hpp"
 #include "Game.hpp"
 #include "Lib.hpp"
+#include "World.hpp"
 
 class Button : public UiElement {
 public:

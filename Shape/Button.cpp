@@ -54,10 +54,13 @@ void Button::callPressedFunc() {
 			throw "Index out of Range";
 		break;
 		case 0:
-			displayText = pressedFunc;
+			world.changeState(GameState::MainMenu);
 		break;
 		case 1:
-			displayButton = 0;
+			world.changeState(GameState::InGame);
+		break;
+		case 2:
+			world.changeState(GameState::Pause);
 		break;
 	}
 };

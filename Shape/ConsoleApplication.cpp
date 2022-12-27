@@ -55,7 +55,7 @@ int main(){
 	int sqcIdx = 0;
 
 	Player player;
-
+	world.changeState(GameState::MainMenu);
 	sf::Clock time;
 	while (window.isOpen()) {
 		sf::Time dt = time.restart();
@@ -86,10 +86,12 @@ int main(){
 		debugGrid(grid);
 
 		window.clear();
-		window.draw(grid);
+		if (world.currentState == GameState::InGame) {
+			window.draw(grid);
+			player.draw(window);
+		}
 		world.draw(window);
 		ui.draw(window);
-		player.draw(window);
 
 		if (bloomWidth)
 			Bloom::render(window, winTex, destX, destFinal, &blurShader->sh, &bloomShader->sh, bloomWidth, bloomMul);

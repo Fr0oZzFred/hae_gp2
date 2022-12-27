@@ -15,6 +15,7 @@ public:
 	void draw(sf::RenderWindow& window);
 	void save();
 	void load();
+	void load(const char* path);
 private:
 	std::vector<UiElement*> elements;
 };

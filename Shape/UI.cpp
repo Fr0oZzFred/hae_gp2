@@ -56,4 +56,7 @@ void UI::save() {
 };
 void UI::load() {
 	elements = Data::loadUI("res/ui.txt");
+}
+void UI::load(const char* path) {
+	elements = Data::loadUI(path);
 };

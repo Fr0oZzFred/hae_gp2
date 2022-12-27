@@ -56,7 +56,7 @@ void Player::update() {
 	}*/
 
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 		shoot();
 	}
 
