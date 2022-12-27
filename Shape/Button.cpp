@@ -8,6 +8,7 @@ void Button::updateColor() {
 	if (collider.contains(mousePos)) {
 		if (!pressedPrevFrame && mouse.isButtonPressed(sf::Mouse::Left)) {
 			box->setFillColor(sf::Color(buttonPressed[0] * 255.0f, buttonPressed[1] * 255.0f, buttonPressed[2] * 255.0f));
+			callPressedFunc();
 			return;
 		}
 		pressedPrevFrame = mouse.isButtonPressed(sf::Mouse::Left);
@@ -46,6 +47,19 @@ void Button::update() {
 	text.setPosition(
 		xx + offsetX * Game::CELL_SIZE,
 		yy + offsetY * Game::CELL_SIZE);
+}
+void Button::callPressedFunc() {
+	switch (pressedFunc) {
+		default:
+			throw "Index out of Range";
+		break;
+		case 0:
+			displayText = pressedFunc;
+		break;
+		case 1:
+			displayButton = 0;
+		break;
+	}
 };
 void Button::im() {
 	using namespace ImGui;
@@ -63,6 +77,7 @@ void Button::im() {
 		Value("pos x", xx);
 		Value("pos y", yy);
 		DragFloat2("Size", &sizeX);
+		ImGui::InputInt("Pressed Func Index", &pressedFunc);
 		if (ImGui::TreeNode("ButtonColor")) {
 			ImGui::ColorPicker3("ButtonColor", &buttonColor[0]);
 			TreePop();
@@ -93,7 +108,7 @@ void Button::im() {
 };
 void Button::save(FILE* file) {
 	fprintf(file,
-		"%s %i %i %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %s %f %f %f %i %i \n",
+		"%s %i %i %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %s %f %f %f %i %i %i \n",
 		name, cx, cy, rx, ry,
 		buttonColor[0], buttonColor[1], buttonColor[2],
 		buttonSelected[0], buttonSelected[1], buttonSelected[2],
@@ -101,14 +116,14 @@ void Button::save(FILE* file) {
 		sizeX, sizeY,
 		offsetX, offsetY, fontSize, content,
 		textColor[0], textColor[1], textColor[2],
-		displayButton, displayText
+		displayButton, displayText, pressedFunc
 	);
 }
 void Button::load(FILE* file) {
 	int buttonBool = -1;
 	int textBool = -1;
 	fscanf_s(file,
-		"%s %i %i %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %s %f %f %f %i %i \n",
+		"%s %i %i %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %s %f %f %f %i %i %i \n",
 		_name, 64, &cx, &cy, &rx, &ry,
 		&buttonColor[0], &buttonColor[1], &buttonColor[2],
 		&buttonSelected[0], &buttonSelected[1], &buttonSelected[2],
@@ -116,7 +131,7 @@ void Button::load(FILE* file) {
 		&sizeX, &sizeY,
 		&offsetX, &offsetY, &fontSize, &content, 128,
 		&textColor[0], &textColor[1], &textColor[2],
-		&buttonBool, &textBool
+		&buttonBool, &textBool, &pressedFunc
 	);
 	displayButton = buttonBool;
 	displayText = textBool;

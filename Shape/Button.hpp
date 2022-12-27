@@ -14,6 +14,7 @@ public:
 	float sizeX = 200.0f, sizeY = 50.0f;
 	sf::FloatRect collider;
 	bool pressedPrevFrame = false;
+	int pressedFunc = 0;
 
 	//Text
 	bool displayText = true;
@@ -42,6 +43,7 @@ public:
 	void updateColor();
 	void draw(sf::RenderWindow& window);
 	void update();
+	void callPressedFunc();
 	void im();
 	void save(FILE* file);
 	void load(FILE* file);
