@@ -1,16 +1,16 @@
 ﻿  Button.cpp
-C:\Projet Human\hae_gp2\Shape\Button.hpp(37,25): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(9,103): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(9,76): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(9,49): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(12,105): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(12,77): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(12,49): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(15,95): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(15,70): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(15,45): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(23,89): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(23,66): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(23,43): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Button.cpp(37,24): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.hpp(39,25): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(10,103): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(10,76): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(10,49): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(14,105): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(14,77): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(14,49): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(18,95): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(18,70): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(18,45): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(26,89): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(26,66): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(26,43): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Projet Human\hae_gp2\Shape\Button.cpp(40,24): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
   ConsoleApplication1.vcxproj -> C:\Projet Human\hae_gp2\Shape\x64\Debug\ConsoleApplication1.exe

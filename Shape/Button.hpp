@@ -13,6 +13,7 @@ public:
 	float buttonPressed[3] = { 0.6f, 0.6f ,0.6f };
 	float sizeX = 200.0f, sizeY = 50.0f;
 	sf::FloatRect collider;
+	bool pressedPrevFrame = false;
 
 	//Text
 	bool displayText = true;

@@ -3,15 +3,18 @@
 
 void Button::updateColor() {
 	sf::Mouse mouse;
+	if (!displayButton) return;
 	sf::Vector2f mousePos = sf::Vector2f(mouse.getPosition());
 	if (collider.contains(mousePos)) {
-		if (mouse.isButtonPressed(sf::Mouse::Left)) {
+		if (!pressedPrevFrame && mouse.isButtonPressed(sf::Mouse::Left)) {
 			box->setFillColor(sf::Color(buttonPressed[0] * 255.0f, buttonPressed[1] * 255.0f, buttonPressed[2] * 255.0f));
 			return;
 		}
+		pressedPrevFrame = mouse.isButtonPressed(sf::Mouse::Left);
 		box->setFillColor(sf::Color(buttonSelected[0] * 255.0f, buttonSelected[1] * 255.0f, buttonSelected[2] * 255.0f));
 		return;
 	}
+	pressedPrevFrame = mouse.isButtonPressed(sf::Mouse::Left);
 	box->setFillColor(sf::Color(buttonColor[0] * 255.0f, buttonColor[1] * 255.0f, buttonColor[2] * 255.0f));
 };
 void Button::draw(sf::RenderWindow& window) {
