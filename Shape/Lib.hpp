@@ -273,6 +273,16 @@ public:
 		}
 		return false;
 	};
+	static sf::Vector2f normalize(sf::Vector2f& inOut) {
+		float distSq = inOut.x * inOut.x + inOut.y * inOut.y;
+		if (distSq) {
+			float dist = sqrtf(distSq);
+			inOut.x /= dist;
+			inOut.y /= dist;
+			return inOut;
+		}
+		return sf::Vector2f(0, 0);
+	};
 
 	static float lookAt(sf::Vector2f start, sf::Vector2f end) {
 		sf::Vector2f dir = end - start;

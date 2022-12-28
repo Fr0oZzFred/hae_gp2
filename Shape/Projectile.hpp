@@ -8,10 +8,11 @@
 class Projectile : public Entity {
 public:
 
-	float speed = 0.1f;
+	float speed = 0.25f;
 
 	Projectile(Entity* entity, sf::Vector2f dir) : Entity(
-		sf::Vector2f((entity->cx + entity->rx) * Game::CELL_SIZE, (entity->cy + entity->ry) * Game::CELL_SIZE),
+		//sf::Vector2f(entity->xx, entity->yy) + dir, C'est un truc un peu funky, pourrait faire un mix entre shotgun et rifle
+		sf::Vector2f(entity->xx, entity->yy) + Lib::normalize(dir) * 30.0f,
 		new sf::RectangleShape(sf::Vector2f(24, 12))) {
 
 		shp->setOrigin(12, 6);
@@ -19,7 +20,7 @@ public:
 		shp->setRotation(Lib::lookAt(entity->shp->getPosition(),
 			(sf::Vector2f)sf::Mouse::getPosition())
 		);
-		Lib::safeNormalize(dir);
+		//Lib::safeNormalize(dir);
 		dir *= speed;
 		this->dx = dir.x;
 		this->dy = dir.y;
