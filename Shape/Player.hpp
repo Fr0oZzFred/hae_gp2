@@ -37,7 +37,7 @@ public:
 		}
 
 
-		rect->setFillColor(sf::Color::Red);
+		rect->setFillColor(sf::Color::Cyan);
 	};
 	void im();
 	void update();

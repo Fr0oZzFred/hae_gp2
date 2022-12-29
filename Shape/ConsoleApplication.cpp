@@ -8,6 +8,7 @@
 #include "Bloom.hpp"
 #include "HotReloadShader.hpp"
 #include "UI.hpp"
+#include "Enemy.hpp"
 
 static HotReloadShader* bloomShader = nullptr;
 static HotReloadShader* blurShader = nullptr;
@@ -55,6 +56,7 @@ int main(){
 	int sqcIdx = 0;
 
 	Player player;
+	Enemy enm(&player);
 	world.changeState(GameState::MainMenu);
 	sf::Clock time;
 	while (window.isOpen()) {
@@ -78,6 +80,7 @@ int main(){
 		}
 
 		player.update();
+		enm.update();
 		world.update();
 		ui.update();
 
@@ -89,6 +92,7 @@ int main(){
 		if (world.currentState == GameState::InGame) {
 			window.draw(grid);
 			player.draw(window);
+			enm.draw(window);
 		}
 		world.draw(window);
 		ui.draw(window);

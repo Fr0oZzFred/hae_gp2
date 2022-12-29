@@ -154,6 +154,7 @@
     <ClCompile Include="Bloom.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ConsoleApplication.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Entities.cpp" />
     <ClCompile Include="HotReloadShader.cpp" />
     <ClCompile Include="Lib.cpp" />
@@ -173,6 +174,7 @@
   <ItemGroup>
     <ClInclude Include="Bloom.hpp" />
     <ClInclude Include="Button.hpp" />
+    <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="Entities.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="HotReloadShader.hpp" />
