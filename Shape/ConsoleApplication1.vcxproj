@@ -172,6 +172,7 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="A_etoile.hpp" />
     <ClInclude Include="Bloom.hpp" />
     <ClInclude Include="Button.hpp" />
     <ClInclude Include="Enemy.hpp" />

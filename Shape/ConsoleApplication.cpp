@@ -9,6 +9,7 @@
 #include "HotReloadShader.hpp"
 #include "UI.hpp"
 #include "Enemy.hpp"
+#include "A_etoile.hpp"
 
 static HotReloadShader* bloomShader = nullptr;
 static HotReloadShader* blurShader = nullptr;
@@ -27,6 +28,13 @@ void debugGrid(sf::VertexArray& grid) {
 };
 #pragma endregion
 
+void addAreaNodes(std::vector<Node>& area) {
+	for (int x = 0; x < (Game::WIDTH - Game::AREA_MARGE_X() * 2) / Game::CELL_SIZE + 1; x++) {
+		for (int y = 0; y < (Game::HEIGHT - Game::AREA_MARGE_Y() * 2) / Game::CELL_SIZE + 1; y++) {
+			area.push_back(Node{ x,y,0,0 });
+		}
+	}
+};
 int main(){
 	sf::RenderWindow window(sf::VideoMode(Game::WIDTH, Game::HEIGHT), Game::NAME, sf::Style::Fullscreen);
 
@@ -52,9 +60,9 @@ int main(){
 
 	ImGui::SFML::Init(window);
 
-	std::vector<sf::Vector2i> sequence;
-	int sqcIdx = 0;
-
+	A_etoile pathfinding;
+	addAreaNodes(pathfinding.area);
+	pathfinding.nearestWay(sf::Vector2i(0, 0), sf::Vector2i(0, 1));
 	Player player;
 	Enemy enm(&player);
 	world.changeState(GameState::MainMenu);

@@ -2,16 +2,13 @@
 C:\Projet Human\hae_gp2\Shape\Button.hpp(40,25): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
 C:\Projet Human\hae_gp2\Shape\Player.hpp(36,31): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
 C:\Projet Human\hae_gp2\Shape\Enemy.hpp(30,31): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(31,59): warning C4244: 'argument' : conversion de 'const float' en 'unsigned int', perte possible de données
-C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(31,46): warning C4244: 'argument' : conversion de 'const float' en 'unsigned int', perte possible de données
-C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(48,38): warning C4305: 'argument' : troncation de 'double' à 'T'
+C:\Projet Human\hae_gp2\Shape\A_etoile.hpp(39,1): error C2082: redéfinition du paramètre formel 'start'
+C:\Projet Human\hae_gp2\Shape\A_etoile.hpp(39,1): error C2440: 'initialisation' : impossible de convertir de 'bool' en 'Node *'
+C:\Projet Human\hae_gp2\Shape\A_etoile.hpp(39,21): message : La conversion d'un type intégral en type pointeur nécessite reinterpret_cast, un cast de style C ou un cast de style fonction
+C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(39,59): warning C4244: 'argument' : conversion de 'const float' en 'unsigned int', perte possible de données
+C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(39,46): warning C4244: 'argument' : conversion de 'const float' en 'unsigned int', perte possible de données
+C:\Projet Human\hae_gp2\Shape\ConsoleApplication.cpp(56,38): warning C4305: 'argument' : troncation de 'double' à 'T'
           with
           [
               T=float
           ]
-  Enemy.cpp
-C:\Projet Human\hae_gp2\Shape\Button.hpp(40,25): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Player.hpp(36,31): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-C:\Projet Human\hae_gp2\Shape\Enemy.hpp(30,31): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-  Génération de code en cours...
-  ConsoleApplication1.vcxproj -> C:\Projet Human\hae_gp2\Shape\x64\Debug\ConsoleApplication1.exe
