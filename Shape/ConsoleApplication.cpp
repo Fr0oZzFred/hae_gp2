@@ -59,10 +59,21 @@ int main(){
 	window.setVerticalSyncEnabled(true);
 
 	ImGui::SFML::Init(window);
-
+	/*
+	* Lag de ouf demander à david
+	* 
 	A_etoile pathfinding;
 	addAreaNodes(pathfinding.area);
-	pathfinding.nearestWay(sf::Vector2i(0, 0), sf::Vector2i(0, 1));
+	sf::VertexArray path(sf::LinesStrip);
+	pathfinding.nearestWay(sf::Vector2i(0, 0), sf::Vector2i(10, 5));
+	for (auto n : pathfinding.way) {
+		sf::Vertex v(sf::Vector2f(n->x * Game::CELL_SIZE + Game::AREA_MARGE_X(), n->y * Game::CELL_SIZE + Game::AREA_MARGE_Y()), sf::Color::Red);
+		v.position += sf::Vector2f(Game::CELL_SIZE * 0.5f, Game::CELL_SIZE * 0.5f);
+		path.append(v);
+	}
+	*/
+
+
 	Player player;
 	Enemy enm(&player);
 	world.changeState(GameState::MainMenu);

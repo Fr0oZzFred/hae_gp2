@@ -83,7 +83,7 @@ public:
     }; 
     Node* findNode(Node* cur, std::vector<Node*>& list) {
         for (auto& n : list)
-            if ((n == cur) && (n == cur))
+            if (n == cur)
                 return n;
 
         return nullptr;
