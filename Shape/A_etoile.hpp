@@ -45,7 +45,7 @@ public:
 
         int idx = 0;
         while (!way.empty()) {
-            Node* u = way[idx];
+            Node* u = way[idx++];
             if (u->x == end->x && u->y == end->y) {
                 //faire chemin
                 return;
@@ -55,22 +55,18 @@ public:
             std::vector<Node*> neighbours;
             addNeighbours(u, neighbours);
             for (auto& n : neighbours) {
-                if(!findNode(n,closedList) ||
-                   !(findNode(n, way) && n.cost < u.cost)) {
-                    n.cost = u.cost + 1;
-                    n.heuristic = n.cost +
-                        n.x * end.x + n.y * end.y;
-                    //Il faut passer node en pointer pour qu'il soit commun
+                if (n == nullptr) continue;
+                if((findNode(n,closedList) == nullptr) ||
+                   ((findNode(n, way) == nullptr) && (n->cost < u->cost))) {
+                    n->cost = u->cost + 1;
+                    n->heuristic = n->cost +
+                        n->x * end->x + n->y * end->y;
+                    way.push_back(n);
                 }
-
-                //si non(v existe dans closedLists
-                //ou v existe dans openList avec un coût inférieur)
-                //v.cout = u.cout + 1
-                  //  v.heuristique = v.cout + distance([v.x, v.y], [objectif.x, objectif.y])
             }
+            closedList.push_back(u);
         }
-
-
+        throw "A* -> Not Found";
     };
     Node* findNode(int x, int y) {
         for (auto& n : area)
@@ -78,25 +74,30 @@ public:
 
         return nullptr;
     };
-    Node* findNode(int x, int y, std::vector<Node>& list) {
+    Node* findNode(int x, int y, std::vector<Node*>& list) {
         for (auto& n : list)
-            if ((n.x == x) && (n.y == y)) {
-                return &n;
-            }
+            if ((n->x == x) && (n->y == y))
+                return n;
 
-        return false;
+        return nullptr;
+    }; 
+    Node* findNode(Node* cur, std::vector<Node*>& list) {
+        for (auto& n : list)
+            if ((n == cur) && (n == cur))
+                return n;
+
+        return nullptr;
     };
 
-    void addNeighbours(Node cur, std::vector<Node>& neighbours) {
-        Node u, ur, r, dr, d, dl, l, ul;
-        if(findNode(u   , cur.x     , cur.y + -1  )) neighbours.push_back(u );
-        if(findNode(ur  , cur.x + 1 , cur.y + -1  )) neighbours.push_back(ur);
-        if(findNode(r   , cur.x + 1 , cur.y       )) neighbours.push_back(r );
-        if(findNode(dr  , cur.x + 1 , cur.y + 1   )) neighbours.push_back(dr);
-        if(findNode(d   , cur.x     , cur.y + 1   )) neighbours.push_back(d );
-        if(findNode(dl  , cur.x + -1, cur.y + 1   )) neighbours.push_back(dl);
-        if(findNode(l   , cur.x + -1, cur.y       )) neighbours.push_back(l );
-        if(findNode(ul  , cur.x + -1, cur.y+ -1   )) neighbours.push_back(ul);
+    void addNeighbours(Node* cur, std::vector<Node*>& neighbours) {
+        neighbours.push_back(findNode(cur->x     , cur->y + -1  ));
+        neighbours.push_back(findNode(cur->x + 1 , cur->y + -1  ));
+        neighbours.push_back(findNode(cur->x + 1 , cur->y       ));
+        neighbours.push_back(findNode(cur->x + 1 , cur->y + 1   ));
+        neighbours.push_back(findNode(cur->x     , cur->y + 1   ));
+        neighbours.push_back(findNode(cur->x + -1, cur->y + 1   ));
+        neighbours.push_back(findNode(cur->x + -1, cur->y       ));
+        neighbours.push_back(findNode(cur->x + -1, cur->y+ -1   ));
     };
 
 
