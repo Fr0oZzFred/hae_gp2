@@ -74,4 +74,6 @@ bool Entity::collides(float gx, float gy) {
 }
 bool Entity::isCollided(float gx, float gy) {
 	return false;
+}
+void Entity::im() {
 };

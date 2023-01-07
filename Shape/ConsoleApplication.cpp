@@ -10,6 +10,7 @@
 #include "UI.hpp"
 #include "Enemy.hpp"
 #include "A_etoile.hpp"
+#include "EnemySpawner.hpp"
 
 static HotReloadShader* bloomShader = nullptr;
 static HotReloadShader* blurShader = nullptr;
@@ -74,9 +75,7 @@ int main(){
 	*/
 
 
-	Player player;
-	Enemy enm(&player);
-	world.addEnemies(&enm);
+	world.player = new Player();
 	world.changeState(GameState::MainMenu);
 	sf::Clock time;
 	while (window.isOpen()) {
@@ -86,6 +85,9 @@ int main(){
 			ImGui::SFML::ProcessEvent(window, event);
 			if (event.type == sf::Event::Closed)
 				window.close();
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+				enemySpawner.Spawn();
+			}
 		}
 
 		bool t = true;
@@ -93,13 +95,12 @@ int main(){
 		{
 			using namespace ImGui;
 			ImGui::Begin("Player", &t);
-			player.im();
+			world.player->im();
 			ImGui::End();
 			
 			ui.im();
 		}
 
-		player.update();
 		world.update();
 		ui.update();
 
@@ -108,11 +109,7 @@ int main(){
 		debugGrid(grid);
 
 		window.clear();
-		if (world.currentState == GameState::InGame) {
-			window.draw(grid);
-			player.draw(window);
-			enm.draw(window);
-		}
+		if (world.currentState == GameState::InGame)	window.draw(grid);
 		world.draw(window);
 		ui.draw(window);
 

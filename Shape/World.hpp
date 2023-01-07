@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Entities.hpp"
 #include "UI.hpp"
+#include "Player.hpp"
 
 enum class GameState : int {
 	Boot,
@@ -15,6 +15,7 @@ public:
 	World();
 
 	GameState currentState = GameState::Boot;
+	Entity* player = nullptr;
 	std::vector<Entity*> projectiles;
 	std::vector<Entity*> enemies;
 	bool collides(float x, float y);
@@ -23,7 +24,7 @@ public:
 	bool collidesWithEnemies(float x, float y);
 
 	void addProjectile(Entity* entity);
-	void addEnemies(Entity* entity);
+	void addEnemy(Entity* entity);
 	void removeEntity(Entity* entity);
 	void update();
 	void draw(sf::RenderWindow& window);

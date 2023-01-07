@@ -21,7 +21,7 @@ public:
 		);
 	};
 
-	Enemy(Player* _player) : Entity(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.1f), new sf::ConvexShape()) {
+	Enemy(Player* _player, sf::Vector2f pixelPos) : Entity(pixelPos, new sf::ConvexShape()) {
 		auto rect = (sf::ConvexShape*)this->shp;
 		rect->setPointCount(resolution);
 

@@ -29,7 +29,7 @@ bool World::collidesWithEnemies(float x, float y) {
 void World::addProjectile(Entity* entity) {
 	projectiles.push_back(entity);
 }
-void World::addEnemies(Entity* entity) {
+void World::addEnemy(Entity* entity) {
 	enemies.push_back(entity);
 };
 void World::removeEntity(Entity* entity) {
@@ -52,6 +52,7 @@ void World::update() {
 
 	break;
 	case GameState::InGame:
+		player->update();
 		for (int i = 0; i < projectiles.size(); i++)	projectiles[i]->update();
 		for (int i = 0; i < enemies.size(); i++)		enemies[i]->update();
 	break;
@@ -71,6 +72,7 @@ void World::draw(sf::RenderWindow& window) {
 		case GameState::InGame:
 			for (auto& entity : projectiles)	entity->draw(window);
 			for (auto& entity : enemies)		entity->draw(window);
+			player->draw(window);
 		break;
 		case GameState::Pause:
 
