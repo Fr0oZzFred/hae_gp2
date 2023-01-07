@@ -31,6 +31,7 @@ public:
 	};
 	void update();
 	bool collides();
+	bool isCollided(float gx, float gy);
 
 private:
 

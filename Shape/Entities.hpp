@@ -39,4 +39,5 @@ public:
 	void syncPos();
 	void draw(sf::RenderWindow& win);
 	virtual bool collides(float gx,float gy);
+	virtual bool isCollided(float gx, float gy);
 };

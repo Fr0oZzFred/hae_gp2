@@ -11,6 +11,8 @@ public:
 
 	float range = 32.0f;
 	int resolution = 3;
+	float dist = 0;
+	bool dead = false;
 
 	auto getAngle(float a) {
 		return sf::Vector2f(
@@ -39,4 +41,5 @@ public:
 	void im();
 	void update();
 	void shoot();
+	bool isCollided(float gx, float gy);
 };

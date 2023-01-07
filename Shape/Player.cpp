@@ -85,7 +85,7 @@ void Player::update() {
 	Entity::syncPos();
 }
 void Player::shoot() {
-	world.addEntity(
+	world.addProjectile(
 		new Projectile(
 			this,
 			(sf::Vector2f)sf::Mouse::getPosition() -

@@ -76,6 +76,7 @@ int main(){
 
 	Player player;
 	Enemy enm(&player);
+	world.addEnemies(&enm);
 	world.changeState(GameState::MainMenu);
 	sf::Clock time;
 	while (window.isOpen()) {
@@ -99,7 +100,6 @@ int main(){
 		}
 
 		player.update();
-		enm.update();
 		world.update();
 		ui.update();
 

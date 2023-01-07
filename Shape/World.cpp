@@ -5,19 +5,37 @@ World world;
 
 World::World() {};
 bool World::collides(float x, float y) {
-	if (x > (Game::WIDTH  - Game::AREA_MARGE_X()) / Game::CELL_SIZE)	return true;
+	if (collidesWithWalls(x, y))		return true;
+	if (collidesWithProjectiles(x, y))	return true;
+	if (collidesWithEnemies(x, y))		return true;
+	return false;
+}
+bool World::collidesWithWalls(float x, float y) {
+	if (x > (Game::WIDTH - Game::AREA_MARGE_X()) / Game::CELL_SIZE)	return true;
 	if (y > (Game::HEIGHT - Game::AREA_MARGE_Y()) / Game::CELL_SIZE)	return true;
 	else if (x < Game::AREA_MARGE_X() / Game::CELL_SIZE)				return true;
 	else if (y < Game::AREA_MARGE_Y() / Game::CELL_SIZE)				return true;
 	return false;
+}
+bool World::collidesWithProjectiles(float x, float y) {
+	return false;
 };
-void World::addEntity(Entity* entity) {
-	entities.push_back(entity);
+bool World::collidesWithEnemies(float x, float y) {
+	for (auto& entity : enemies)
+		if (entity->isCollided(x, y)) return true;
+
+	return false;
+};
+void World::addProjectile(Entity* entity) {
+	projectiles.push_back(entity);
+}
+void World::addEnemies(Entity* entity) {
+	enemies.push_back(entity);
 };
 void World::removeEntity(Entity* entity) {
-	for (auto iter = entities.begin(); iter != entities.end();) {
+	for (auto iter = projectiles.begin(); iter != projectiles.end();) {
 		if (*iter == entity) {
-			iter = entities.erase(iter);
+			iter = projectiles.erase(iter);
 			delete entity;
 			return;
 		}
@@ -34,7 +52,8 @@ void World::update() {
 
 	break;
 	case GameState::InGame:
-		for (int i = 0; i < entities.size(); i++)	entities[i]->update();
+		for (int i = 0; i < projectiles.size(); i++)	projectiles[i]->update();
+		for (int i = 0; i < enemies.size(); i++)		enemies[i]->update();
 	break;
 	case GameState::Pause:
 
@@ -50,7 +69,8 @@ void World::draw(sf::RenderWindow& window) {
 
 		break;
 		case GameState::InGame:
-			for (auto& entity : entities)	entity->draw(window);
+			for (auto& entity : projectiles)	entity->draw(window);
+			for (auto& entity : enemies)		entity->draw(window);
 		break;
 		case GameState::Pause:
 

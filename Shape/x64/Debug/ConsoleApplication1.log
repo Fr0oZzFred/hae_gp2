@@ -1,7 +1,7 @@
 ﻿  ConsoleApplication.cpp
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(40,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(36,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(30,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(32,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\ConsoleApplication.cpp(39,59): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\ConsoleApplication.cpp(39,46): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\ConsoleApplication.cpp(56,38): warning C4305: 'argument': truncation from 'double' to 'T'
@@ -9,4 +9,9 @@ D:\Projet cours\Visual Studio\hae_gp2\Shape\ConsoleApplication.cpp(56,38): warni
           [
               T=float
           ]
+  Enemy.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(40,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(36,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(32,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   ConsoleApplication1.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\Shape\x64\Debug\ConsoleApplication1.exe
