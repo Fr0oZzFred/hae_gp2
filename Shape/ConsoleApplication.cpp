@@ -75,6 +75,9 @@ int main(){
 	*/
 
 
+	float lerpPos = 0;
+
+
 	world.player = new Player();
 	world.changeState(GameState::MainMenu);
 	sf::Clock time;
@@ -86,7 +89,7 @@ int main(){
 			if (event.type == sf::Event::Closed)
 				window.close();
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
-				enemySpawner.Spawn();
+				enemySpawner.Spawn(Side::Left , lerpPos);
 			}
 		}
 
@@ -96,6 +99,7 @@ int main(){
 			using namespace ImGui;
 			ImGui::Begin("Player", &t);
 			world.player->im();
+			SliderFloat("t", &lerpPos, 0.0f, 1.0f);
 			ImGui::End();
 			
 			ui.im();

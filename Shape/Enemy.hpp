@@ -34,6 +34,8 @@ public:
 
 
 		rect->setFillColor(sf::Color::Red);
+		shp->setPosition(pixelPos);
+
 
 		player = _player;
 	};
