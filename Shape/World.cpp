@@ -1,5 +1,6 @@
 #include "Game.hpp"
 #include "World.hpp"
+#include "EnemySpawner.hpp"
 
 World world;
 
@@ -52,6 +53,7 @@ void World::update() {
 
 	break;
 	case GameState::InGame:
+		enemySpawner.update();
 		player->update();
 		for (int i = 0; i < projectiles.size(); i++)	projectiles[i]->update();
 		for (int i = 0; i < enemies.size(); i++)		enemies[i]->update();
@@ -90,6 +92,7 @@ void World::changeState(GameState nuState) {
 			ui.load("res/mainMenu.txt");
 		break;
 		case GameState::InGame:
+			enemySpawner.restart(); //be careful when adding pause state
 			ui.load("res/inGame.txt");
 		break;
 		case GameState::Pause:

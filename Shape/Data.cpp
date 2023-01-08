@@ -14,7 +14,21 @@ bool Data::saveUI(const char* path, std::vector<UiElement*>& elements) {
     fclose(file);
 
     return true;
-};
+}
+bool Data::saveEnemySpawner(const char* path, std::vector<SpawnEnemy>& enemies) {
+    std::FILE* file;
+    fopen_s(&file, path, "w");
+    if (!file) std::ofstream{ path };
+
+    for (auto e : enemies) {
+        e.save(file);
+    }
+
+    fclose(file);
+
+    return true;
+}
+;
 std::vector<UiElement*> Data::loadUI(const char* path) {
     std::vector<UiElement*> elements;
     std::FILE* file;
@@ -27,16 +41,16 @@ std::vector<UiElement*> Data::loadUI(const char* path) {
         int type = -1;
         fscanf_s(file, "%i \n", &type);
         switch (type) {
-            default:
-                throw "Type out of index";
-                elements.clear();
-                return elements;
-            break;
+        default:
+        throw "Type out of index";
+        elements.clear();
+        return elements;
+        break;
 
-            case 0:
-                e = new Button();
-                e->load(file);
-            break;
+        case 0:
+        e = new Button();
+        e->load(file);
+        break;
         }
         if (e == nullptr) {
             elements.clear();
@@ -47,4 +61,20 @@ std::vector<UiElement*> Data::loadUI(const char* path) {
 
     fclose(file);
     return elements;
+};
+std::vector<SpawnEnemy> Data::loadEnemySpawner(const char* path) {
+    std::vector<SpawnEnemy> enemies;
+    std::FILE* file;
+    fopen_s(&file, path, "r");
+
+    if (!file) return enemies;
+
+    while (!feof(file)) {
+        SpawnEnemy spawn;
+        spawn.load(file);
+        enemies.push_back(spawn);
+    }
+
+    fclose(file);
+    return enemies;
 };

@@ -5,8 +5,8 @@ void Enemy::im() {
 };
 void Enemy::update() { 
 	if (dead) return;
-	shp->setRotation(Lib::lookAt(shp->getPosition(), player->shp->getPosition()));
-	setPixelPos(Lib::lerp(shp->getPosition(), player->shp->getPosition(), 0.01f));
+	shp->setRotation(Lib::lookAt(shp->getPosition(), world.player->shp->getPosition()));
+	setPixelPos(Lib::lerp(shp->getPosition(), world.player->shp->getPosition(), 0.01f));
 	Entity::baseUpdate();
 };
 void Enemy::shoot() {

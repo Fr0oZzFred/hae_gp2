@@ -4,10 +4,10 @@
 #include <SFML/Graphics.hpp>
 #include "Player.hpp"
 #include "Lib.hpp"
+#include "World.hpp"
 
 class Enemy : public Entity {
 public:
-	Player* player = nullptr;
 
 	float range = 32.0f;
 	int resolution = 3;
@@ -21,7 +21,7 @@ public:
 		);
 	};
 
-	Enemy(Player* _player, sf::Vector2f pixelPos) : Entity(pixelPos, new sf::ConvexShape()) {
+	Enemy(sf::Vector2f pixelPos) : Entity(pixelPos, new sf::ConvexShape()) {
 		auto rect = (sf::ConvexShape*)this->shp;
 		rect->setPointCount(resolution);
 
@@ -35,9 +35,6 @@ public:
 
 		rect->setFillColor(sf::Color::Red);
 		shp->setPosition(pixelPos);
-
-
-		player = _player;
 	};
 
 	void im();

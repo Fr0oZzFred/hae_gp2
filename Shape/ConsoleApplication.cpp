@@ -88,9 +88,6 @@ int main(){
 			ImGui::SFML::ProcessEvent(window, event);
 			if (event.type == sf::Event::Closed)
 				window.close();
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
-				enemySpawner.Spawn(Side::Left , lerpPos);
-			}
 		}
 
 		bool t = true;
@@ -99,9 +96,9 @@ int main(){
 			using namespace ImGui;
 			ImGui::Begin("Player", &t);
 			world.player->im();
-			SliderFloat("t", &lerpPos, 0.0f, 1.0f);
 			ImGui::End();
 			
+			enemySpawner.im();
 			ui.im();
 		}
 

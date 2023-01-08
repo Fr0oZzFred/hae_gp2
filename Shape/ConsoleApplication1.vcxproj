@@ -187,6 +187,7 @@
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Projectile.hpp" />
     <ClInclude Include="Data.hpp" />
+    <ClInclude Include="SpawnEnemy.hpp" />
     <ClInclude Include="UI.hpp" />
     <ClInclude Include="UiElement.hpp" />
     <ClInclude Include="World.hpp" />
