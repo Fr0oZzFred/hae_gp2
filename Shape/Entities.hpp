@@ -41,4 +41,8 @@ public:
 	virtual bool collides(float gx,float gy);
 	virtual bool isCollided(float gx, float gy);
 	virtual void im();
+	virtual void save();
+	virtual void save(FILE* file);
+	virtual void load();
+	virtual void load(FILE* file);
 };

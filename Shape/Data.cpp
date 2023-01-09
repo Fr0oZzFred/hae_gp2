@@ -28,6 +28,17 @@ bool Data::saveEnemySpawner(const char* path, std::vector<SpawnEnemy>& enemies) 
 
     return true;
 }
+bool Data::savePlayer(const char* path) {
+    std::FILE* file;
+    fopen_s(&file, path, "w");
+    if (!file) std::ofstream{ path };
+
+    world.player->save(file);
+
+    fclose(file);
+
+    return true;
+}
 ;
 std::vector<UiElement*> Data::loadUI(const char* path) {
     std::vector<UiElement*> elements;
@@ -77,4 +88,17 @@ std::vector<SpawnEnemy> Data::loadEnemySpawner(const char* path) {
 
     fclose(file);
     return enemies;
+}
+bool Data::loadPlayer(const char* path) {
+    std::FILE* file;
+    fopen_s(&file, path, "r");
+
+    if (!file) return false;
+
+    while (!feof(file)) {
+        world.player->load(file);
+    }
+
+    fclose(file);
+    return true;
 };

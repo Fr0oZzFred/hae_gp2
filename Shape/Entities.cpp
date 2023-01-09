@@ -75,5 +75,8 @@ bool Entity::collides(float gx, float gy) {
 bool Entity::isCollided(float gx, float gy) {
 	return false;
 }
-void Entity::im() {
-};
+void Entity::im() {};
+void Entity::save() {};
+void Entity::save(FILE* file) {};
+void Entity::load() {};
+void Entity::load(FILE* file) {};

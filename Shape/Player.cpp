@@ -4,19 +4,27 @@
 
 void Player::im() {
 	using namespace ImGui;
-	DragFloat2("frict", &frictX, 0.01, 0.5, 1.0);
-	DragInt2("cx cy", &cx);
-	DragFloat2("rx ry", &rx);
-	Value("pos x", xx);
-	Value("pos y", yy);
-	Value("angle", angle);
+	if (TreeNode("Debug")) {
+		DragInt2("cx cy", &cx);
+		DragFloat2("rx ry", &rx);
+		Value("pos x", xx);
+		Value("pos y", yy);
+		Value("angle", angle);
+		TreePop();
+	}
+	DragFloat2("Frict", &frictX, 0.01, 0.5, 1.0);
+	DragFloat("Speed", &speed, 1.0f, 0.0001f, 100.0f);
+	DragFloat("Range", &range, 1.0f, 0.0001f, 1000.0f);
+	DragInt("Resolution", &resolution, 1.0f, 3, 100);
+	if (ImGui::Button("Save")) save();
+	if (ImGui::Button("Load")) load();
 };
 void Player::update() {
 	//Movement
 	int x = -sf::Keyboard::isKeyPressed(sf::Keyboard::Left) + -sf::Keyboard::isKeyPressed(sf::Keyboard::Q) +
-			sf::Keyboard::isKeyPressed(sf::Keyboard::Right) + sf::Keyboard::isKeyPressed(sf::Keyboard::D);
+		sf::Keyboard::isKeyPressed(sf::Keyboard::Right) + sf::Keyboard::isKeyPressed(sf::Keyboard::D);
 	int y = -sf::Keyboard::isKeyPressed(sf::Keyboard::Up) + -sf::Keyboard::isKeyPressed(sf::Keyboard::Z) +
-			sf::Keyboard::isKeyPressed(sf::Keyboard::Down) + sf::Keyboard::isKeyPressed(sf::Keyboard::S);
+		sf::Keyboard::isKeyPressed(sf::Keyboard::Down) + sf::Keyboard::isKeyPressed(sf::Keyboard::S);
 	x = std::clamp(x, -1, 1);
 	y = std::clamp(y, -1, 1);
 	bool diagonal = false;
@@ -28,11 +36,14 @@ void Player::update() {
 		if (diagonal) {
 			dx += dir.x * speed * 0.707f;
 			dy += dir.y * speed * 0.707f;
+
 		}
 		else {
 			dx += dir.x * speed;
 			dy += dir.y * speed;
 		}
+		dx *= 0.016667; //DeltaTime
+		dy *= 0.016667; //DeltaTime
 	}
 	dx *= frictX;
 	dy *= frictY;
@@ -41,7 +52,7 @@ void Player::update() {
 
 	//Rotation
 	angle = Lib::lookAt(
-		shp->getPosition(), 
+		shp->getPosition(),
 		(sf::Vector2f)sf::Mouse::getPosition()
 	);
 	float rotSpeed = 1.0f;
@@ -72,7 +83,7 @@ void Player::update() {
 	resY = std::clamp(cy + ry,
 		Game::AREA_MARGE_Y() / Game::CELL_SIZE + range / Game::CELL_SIZE,
 		(Game::HEIGHT - Game::AREA_MARGE_Y()) / Game::CELL_SIZE - range / Game::CELL_SIZE);
-	
+
 	rx = fmod(resX, 1.0f);
 	resX -= rx;
 	cx = resX;
@@ -83,7 +94,21 @@ void Player::update() {
 
 
 	Entity::syncPos();
+
+
+	//Graphism
+	updateShape();
+
 }
+void Player::updateShape() {
+	auto convexShape = (sf::ConvexShape*)this->shp;
+	convexShape->setPointCount(resolution);
+	for (int i = 0; i < resolution; i++) {
+		double t = (double)i / resolution;
+		t *= 3.14159 * 2;
+		convexShape->setPoint(i, getAngle(t) * range);
+	}
+};
 void Player::shoot() {
 	world.addProjectile(
 		new Projectile(
@@ -92,3 +117,15 @@ void Player::shoot() {
 			shp->getPosition()
 	));
 };
+void Player::save() {
+	Data::savePlayer("res/player.txt");
+};
+void Player::save(FILE* file) {
+	fprintf_s(file, "%f %f %f %f %i \n", frictX, frictY, speed, range, resolution);
+}
+void Player::load() {
+	if(!Data::loadPlayer("res/player.txt")) throw "Player was not able to load correctly";
+};
+void Player::load(FILE* file) {
+	fscanf_s(file, "%f %f %f %f %i \n", &frictX, &frictY, &speed, &range, &resolution);
+}

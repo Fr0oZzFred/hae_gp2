@@ -8,8 +8,8 @@
 class Player : public Entity {
 public:
 
-	float			frictX = 0.9f;
-	float			frictY = 0.9f;
+	float	frictX = 0.9f;
+	float	frictY = 0.9f;
 
 	float speed = 0.02f;
 
@@ -26,20 +26,18 @@ public:
 	};
 
 	Player() : Entity(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f), new sf::ConvexShape()) {
-		auto rect = (sf::ConvexShape*)this->shp;
-		rect->setPointCount(resolution);
-		
+		auto convexShape = (sf::ConvexShape*)this->shp;
+		convexShape->setPointCount(resolution);
+		updateShape();
 
-		for (int i = 0; i < resolution; i++) {
-			double t = (double)i / resolution;
-			t *= 3.14159 * 2;
-			rect->setPoint(i, getAngle(t) * range);
-		}
-
-
-		rect->setFillColor(sf::Color::Cyan);
+		convexShape->setFillColor(sf::Color::Cyan);
 	};
 	void im();
 	void update();
+	void updateShape();
 	void shoot();
+	void save();
+	void save(FILE* file);
+	void load();
+	void load(FILE* file);
 };
