@@ -131,3 +131,9 @@ void Player::load() {
 void Player::load(FILE* file) {
 	fscanf_s(file, "%f %f %f %f %i \n", &frictX, &frictY, &speed, &range, &resolution);
 }
+
+void Player::addResolution(int value) {
+	resolution += value;
+	if (resolution < 3)
+		resolution = 3;
+};

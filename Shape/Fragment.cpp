@@ -17,6 +17,7 @@ bool Fragment::collides(Entity* player) {
 	if (_player->range / Game::CELL_SIZE > dist) {
 		//Particles
 		world.removeEntity(this, world.fragments);
+		_player->addResolution(1);
 	}
 	return _player->range / Game::CELL_SIZE > dist;
 }

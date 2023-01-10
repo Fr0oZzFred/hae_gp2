@@ -40,4 +40,5 @@ public:
 	void save(FILE* file);
 	void load();
 	void load(FILE* file);
+	void addResolution(int value);
 };
