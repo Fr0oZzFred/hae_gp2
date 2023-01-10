@@ -5,6 +5,7 @@
 #include "Player.hpp"
 #include "Lib.hpp"
 #include "World.hpp"
+#include "Fragment.hpp"
 
 class Enemy : public Entity {
 public:
@@ -12,7 +13,6 @@ public:
 	float range = 32.0f;
 	int resolution = 3;
 	float dist = 0;
-	bool dead = false;
 
 	auto getAngle(float a) {
 		return sf::Vector2f(
@@ -37,6 +37,9 @@ public:
 		shp->setPosition(pixelPos);
 	};
 
+	~Enemy() {
+		std::cout << "enemy";
+	};
 	void im();
 	void update();
 	void shoot();

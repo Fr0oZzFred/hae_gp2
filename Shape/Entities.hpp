@@ -27,7 +27,7 @@ public:
 
 	Entity(sf::Vector2f pixelPos, sf::Shape* shp);
 	virtual ~Entity() {
-		std::cout << " child from entity as been deleted" << "\n";
+		std::cout << " child of entity as been deleted" << "\n";
 	}
 
 	sf::Vector2f getGridPosition();

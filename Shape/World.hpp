@@ -18,14 +18,15 @@ public:
 	Entity* player = nullptr;
 	std::vector<Entity*> projectiles;
 	std::vector<Entity*> enemies;
+	std::vector<Entity*> fragments;
 	bool collides(float x, float y);
 	bool collidesWithWalls(float x, float y);
 	bool collidesWithProjectiles(float x, float y);
 	bool collidesWithEnemies(float x, float y);
+	bool collidesWithFragments(float x, float y);
 
-	void addProjectile(Entity* entity);
-	void addEnemy(Entity* entity);
-	void removeEntity(Entity* entity);
+	void addEntity(Entity* entity, std::vector<Entity*> &list);
+	void removeEntity(Entity* entity, std::vector<Entity*>& list);
 	void update();
 	void draw(sf::RenderWindow& window);
 	void changeState(GameState nuState);

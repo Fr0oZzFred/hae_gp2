@@ -7,7 +7,7 @@ void EnemySpawner::Spawn(SpawnEnemy enm) {
 	Spawn((Side)enm.side, enm.lerpPos);
 };
 void EnemySpawner::Spawn(Side side, float lerpPos) {
-	world.addEnemy(new Enemy(SideToAreaPos(side, lerpPos)));
+	world.addEntity(new Enemy(SideToAreaPos(side, lerpPos)), world.enemies);
 };
 sf::Vector2f EnemySpawner::SideToAreaPos(Side side, float lerpPos) {
 	switch (side) {

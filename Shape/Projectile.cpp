@@ -1,7 +1,7 @@
 #include "Projectile.hpp"
 void Projectile::update() {
 	if (collides()) {
-		world.removeEntity(this);
+		world.removeEntity(this, world.projectiles);
 		//Spawn particle
 		return;
 	}

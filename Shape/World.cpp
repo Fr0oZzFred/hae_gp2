@@ -26,17 +26,20 @@ bool World::collidesWithEnemies(float x, float y) {
 		if (entity->isCollided(x, y)) return true;
 
 	return false;
-};
-void World::addProjectile(Entity* entity) {
-	projectiles.push_back(entity);
 }
-void World::addEnemy(Entity* entity) {
-	enemies.push_back(entity);
+bool World::collidesWithFragments(float x, float y) {
+	for (auto& entity : fragments)
+		if (entity->isCollided(x, y)) return true;
+
+	return false;
 };
-void World::removeEntity(Entity* entity) {
-	for (auto iter = projectiles.begin(); iter != projectiles.end();) {
+void World::addEntity(Entity* entity, std::vector<Entity*> &list) {
+	list.push_back(entity);
+};
+void World::removeEntity(Entity* entity, std::vector<Entity*>& list) {
+	for (auto iter = list.begin(); iter != list.end();) {
 		if (*iter == entity) {
-			iter = projectiles.erase(iter);
+			iter = list.erase(iter);
 			delete entity;
 			return;
 		}
@@ -57,6 +60,7 @@ void World::update() {
 		player->update();
 		for (int i = 0; i < projectiles.size(); i++)	projectiles[i]->update();
 		for (int i = 0; i < enemies.size(); i++)		enemies[i]->update();
+		for (int i = 0; i < fragments.size(); i++)		fragments[i]->update();
 	break;
 	case GameState::Pause:
 
@@ -73,6 +77,7 @@ void World::draw(sf::RenderWindow& window) {
 		break;
 		case GameState::InGame:
 			for (auto& entity : projectiles)	entity->draw(window);
+			for (auto& entity : fragments)		entity->draw(window);
 			for (auto& entity : enemies)		entity->draw(window);
 			player->draw(window);
 		break;

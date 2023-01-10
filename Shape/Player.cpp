@@ -73,6 +73,7 @@ void Player::update() {
 
 	Entity::updatePos();
 
+
 	//Clamp cx,rx,cy,ry
 	float resX = 0.0f;
 	float resY = 0.0f;
@@ -110,12 +111,13 @@ void Player::updateShape() {
 	}
 };
 void Player::shoot() {
-	world.addProjectile(
+	world.addEntity(
 		new Projectile(
 			this,
 			(sf::Vector2f)sf::Mouse::getPosition() -
 			shp->getPosition()
-	));
+		), world.projectiles
+	);
 };
 void Player::save() {
 	Data::savePlayer("res/player.txt");
