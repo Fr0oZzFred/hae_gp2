@@ -17,6 +17,7 @@ public:
 
 	float shotRate = 0.15f;
 	float shotTime = 0;
+	bool moving;
 
 	auto getAngle(float a) {
 		return sf::Vector2f(
@@ -25,7 +26,7 @@ public:
 		);
 	};
 
-	Enemy(sf::Vector2f pixelPos) : Entity(pixelPos, new sf::ConvexShape()) {
+	Enemy(sf::Vector2f pixelPos, float _shotRate, int _moving) : Entity(pixelPos, new sf::ConvexShape()) {
 		auto rect = (sf::ConvexShape*)this->shp;
 		rect->setPointCount(resolution);
 
@@ -39,6 +40,9 @@ public:
 
 		rect->setFillColor(sf::Color::Red);
 		shp->setPosition(pixelPos);
+
+		shotRate = _shotRate;
+		moving = _moving == 1;
 	};
 
 	~Enemy() {

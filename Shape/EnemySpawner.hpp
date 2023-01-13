@@ -25,7 +25,7 @@ public:
 	SpawnEnemy enemy{ 0,0,0 };
 	EnemySpawner();
 	void Spawn(SpawnEnemy enm);
-	void Spawn(Side side, float lerpPos);
+	void Spawn(Side side, sf::Vector2f offset, int moving, float shotRate, float lerpPos);
 	sf::Vector2f SideToAreaPos(Side side, float lerpPos);
 	void checkSpawn();
 	void restart();

@@ -195,7 +195,8 @@ bool Player::collides(float gx, float gy) {
 	);
 	float dist = dist2.x * dist2.x + dist2.y * dist2.y;
 	dist = sqrt(dist);
-
-
+	if (range / Game::CELL_SIZE > dist) {
+		shp->setFillColor(sf::Color::Magenta);
+	}
 	return range / Game::CELL_SIZE > dist;
 };

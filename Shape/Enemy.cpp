@@ -3,10 +3,11 @@ void Enemy::im() {
 	using namespace ImGui;
 	Value("Dist", dist);
 };
-void Enemy::update() { 
-	shp->setRotation(Lib::lookAt(shp->getPosition(), world.player->shp->getPosition()));
-	setPixelPos(Lib::lerp(shp->getPosition(), world.player->shp->getPosition(), 0.01f));
+void Enemy::update() {
 	shoot();
+	shp->setRotation(Lib::lookAt(shp->getPosition(), world.player->shp->getPosition()));
+	if (!moving) return;
+	setPixelPos(Lib::lerp(shp->getPosition(), world.player->shp->getPosition(), 0.01f));
 	Entity::baseUpdate();
 };
 void Enemy::shoot() {

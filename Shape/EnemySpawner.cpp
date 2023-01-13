@@ -4,10 +4,10 @@ EnemySpawner enemySpawner;
 
 EnemySpawner::EnemySpawner() {}
 void EnemySpawner::Spawn(SpawnEnemy enm) {
-	Spawn((Side)enm.side, enm.lerpPos);
+	Spawn((Side)enm.side, sf::Vector2f(enm.offsetX, enm.offsetY), enm.moving, enm.shotRate, enm.lerpPos);
 };
-void EnemySpawner::Spawn(Side side, float lerpPos) {
-	world.addEntity(new Enemy(SideToAreaPos(side, lerpPos)), world.enemies);
+void EnemySpawner::Spawn(Side side, sf::Vector2f offset, int moving, float shotRate, float lerpPos) {
+	world.addEntity(new Enemy(SideToAreaPos(side, lerpPos) + offset, shotRate, moving), world.enemies);
 };
 sf::Vector2f EnemySpawner::SideToAreaPos(Side side, float lerpPos) {
 	switch (side) {
