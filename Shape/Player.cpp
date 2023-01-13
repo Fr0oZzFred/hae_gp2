@@ -14,8 +14,13 @@ void Player::im() {
 	}
 	DragFloat2("Frict", &frictX, 0.01, 0.5, 1.0);
 	DragFloat("Speed", &speed, 1.0f, 0.0001f, 100.0f);
+	DragFloat("ShotRate", &shotRate, .05f, 0.0f, 100.0f);
 	DragFloat("Range", &range, 1.0f, 0.0001f, 1000.0f);
 	DragInt("Resolution", &resolution, 1.0f, 3, 100);
+	if (ImGui::TreeNode("Projectile Color")) {
+		ImGui::ColorPicker3("Projectile Color", &projectileColor[0]);
+		TreePop();
+	}
 	if (ImGui::Button("Save")) save();
 	if (ImGui::Button("Load")) load();
 };
@@ -66,10 +71,7 @@ void Player::update() {
 	*	shp->setRotation(Lib::lerp(shp->getRotation(), angle, rotSpeed));
 	}*/
 
-
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-		shoot();
-	}
+	shoot();
 
 	Entity::updatePos();
 
@@ -111,26 +113,40 @@ void Player::updateShape() {
 	}
 };
 void Player::shoot() {
-	world.addEntity(
-		new Projectile(
-			this,
-			(sf::Vector2f)sf::Mouse::getPosition() -
-			shp->getPosition()
-		), world.projectiles
-	);
+	shootTime -= 0.016667;
+	if (shootTime > 0.0f) return;
+
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		shootTime = shotRate;
+		world.addEntity(
+			new Projectile(
+				this,
+				(sf::Vector2f)sf::Mouse::getPosition() -
+				shp->getPosition(),
+				sf::Color(projectileColor[0]* 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f)
+			), world.projectiles
+		);
+	}
+
 };
 void Player::save() {
 	Data::savePlayer("res/player.txt");
 };
 void Player::save(FILE* file) {
-	fprintf_s(file, "%f %f %f %f %i \n", frictX, frictY, speed, range, resolution);
-}
+	fprintf_s(file, "%f %f %f %f %f %i %f %f %f \n",
+		frictX, frictY, speed, range, shotRate, resolution,
+		projectileColor[0], projectileColor[1], projectileColor[2]
+	);
+};
 void Player::load() {
 	if(!Data::loadPlayer("res/player.txt")) throw "Player was not able to load correctly";
 };
 void Player::load(FILE* file) {
-	fscanf_s(file, "%f %f %f %f %i \n", &frictX, &frictY, &speed, &range, &resolution);
-}
+	fscanf_s(file, "%f %f %f %f %f %i %f %f %f \n",
+		&frictX, &frictY, &speed, &range, &shotRate, &resolution,
+		&projectileColor[0], &projectileColor[1], &projectileColor[2]
+	);
+};
 
 void Player::addResolution(int value) {
 	resolution += value;

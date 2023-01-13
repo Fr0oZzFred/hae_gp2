@@ -12,11 +12,14 @@ public:
 	float	frictY = 0.9f;
 
 	float speed = 0.02f;
+	float shotRate = 1.0f;
+	float shootTime = 0.0f;
 
 	float range = 32.0f;
 	int resolution = 3;
 	float angle = 0.0f;
 
+	float projectileColor[3] = { 0.0f, 0.0f, 0.0f };
 
 	auto getAngle(float a) {
 		return sf::Vector2f(

@@ -86,6 +86,9 @@ int main(){
 			ImGui::SFML::ProcessEvent(window, event);
 			if (event.type == sf::Event::Closed)
 				window.close();
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+				window.close();
+			}
 		}
 
 		bool t = true;
