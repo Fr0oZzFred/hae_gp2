@@ -16,8 +16,14 @@ void UI::remove(UiElement* elem) {
 	}
 };
 void UI::update() {
-	for (auto& e : elements) e->update();
-}
+	for (auto& e : elements) {
+		e->update();
+		if (elementsChanged) {
+			elementsChanged = false;
+			return;
+		}
+	}
+};
 void UI::im() {
 	bool t = true;
 	bool showElementsIm = false;
@@ -59,4 +65,5 @@ void UI::load() {
 }
 void UI::load(const char* path) {
 	elements = Data::loadUI(path);
+	elementsChanged = true;
 };

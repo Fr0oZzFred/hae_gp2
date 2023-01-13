@@ -8,6 +8,8 @@ class UI {
 public:
 	UI() {};
 
+	bool elementsChanged = false;
+
 	void add(UiElement* elem);
 	void remove(UiElement* elem);
 	void update();

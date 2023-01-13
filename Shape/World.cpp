@@ -49,23 +49,23 @@ void World::removeEntity(Entity* entity, std::vector<Entity*>& list) {
 };
 void World::update() {
 	switch (currentState) {
-	case GameState::Boot:
+		case GameState::Boot:
 
-	break;
-	case GameState::MainMenu:
+		break;
+		case GameState::MainMenu:
 
-	break;
-	case GameState::InGame:
-		enemySpawner.update();
-		player->update();
-		for (int i = 0; i < projectiles.size(); i++)	projectiles[i]->update();
-		for (int i = 0; i < enmProjectiles.size(); i++)	enmProjectiles[i]->update();
-		for (int i = 0; i < enemies.size(); i++)		enemies[i]->update();
-		for (int i = 0; i < fragments.size(); i++)		fragments[i]->update();
-	break;
-	case GameState::Pause:
+		break;
+		case GameState::InGame:
+			enemySpawner.update();
+			player->update();
+			for (int i = 0; i < projectiles.size(); i++)	projectiles[i]->update();
+			for (int i = 0; i < enmProjectiles.size(); i++)	enmProjectiles[i]->update();
+			for (int i = 0; i < enemies.size(); i++)		enemies[i]->update();
+			for (int i = 0; i < fragments.size(); i++)		fragments[i]->update();
+		break;
+		case GameState::Pause:
 
-	break;
+		break;
 	}
 };
 void World::draw(sf::RenderWindow& window) {
@@ -87,9 +87,10 @@ void World::draw(sf::RenderWindow& window) {
 
 		break;
 	}
-}
+};
 void World::changeState(GameState nuState) {
 	if (currentState == nuState) return;
+	oldState = currentState;
 	currentState = nuState;
 	switch (currentState) {
 		case GameState::Boot:
@@ -99,11 +100,15 @@ void World::changeState(GameState nuState) {
 			ui.load("res/mainMenu.txt");
 		break;
 		case GameState::InGame:
-			enemySpawner.restart(); //be careful when adding pause state
+			if(oldState != GameState::Pause)
+				enemySpawner.restart();
 			ui.load("res/inGame.txt");
 		break;
 		case GameState::Pause:
 			ui.load("res/pause.txt");
 		break;
 	}
+};
+void World::quitGame() {
+	window->close();
 };

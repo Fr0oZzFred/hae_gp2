@@ -15,11 +15,14 @@ public:
 	World();
 
 	GameState currentState = GameState::Boot;
+	GameState oldState = GameState::Boot;
 	Entity* player = nullptr;
+	sf::RenderWindow* window = nullptr;
 	std::vector<Entity*> projectiles;
 	std::vector<Entity*> enmProjectiles;
 	std::vector<Entity*> enemies;
 	std::vector<Entity*> fragments;
+
 	bool collides(float x, float y);
 	bool collidesWithWalls(float x, float y);
 	bool collidesWithProjectiles(float x, float y);
@@ -31,6 +34,7 @@ public:
 	void update();
 	void draw(sf::RenderWindow& window);
 	void changeState(GameState nuState);
+	void quitGame();
 };
 
 extern World world;

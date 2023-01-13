@@ -60,7 +60,7 @@ void Button::callPressedFunc() {
 			world.changeState(GameState::InGame);
 		break;
 		case 2:
-			world.changeState(GameState::Pause);
+			world.quitGame();
 		break;
 	}
 };

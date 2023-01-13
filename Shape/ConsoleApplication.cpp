@@ -38,6 +38,7 @@ void addAreaNodes(std::vector<Node>& area) {
 };
 int main(){
 	sf::RenderWindow window(sf::VideoMode(Game::WIDTH, Game::HEIGHT), Game::NAME, sf::Style::Fullscreen);
+	world.window = &window;
 
 	//Bloom
 	sf::Texture winTex;
@@ -88,6 +89,9 @@ int main(){
 				window.close();
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
 				window.close();
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && world.currentState == GameState::InGame) {
+				world.changeState(GameState::Pause);
 			}
 		}
 
