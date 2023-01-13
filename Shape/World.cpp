@@ -59,6 +59,7 @@ void World::update() {
 		enemySpawner.update();
 		player->update();
 		for (int i = 0; i < projectiles.size(); i++)	projectiles[i]->update();
+		for (int i = 0; i < enmProjectiles.size(); i++)	enmProjectiles[i]->update();
 		for (int i = 0; i < enemies.size(); i++)		enemies[i]->update();
 		for (int i = 0; i < fragments.size(); i++)		fragments[i]->update();
 	break;
@@ -78,6 +79,7 @@ void World::draw(sf::RenderWindow& window) {
 		case GameState::InGame:
 			for (auto& entity : projectiles)	entity->draw(window);
 			for (auto& entity : fragments)		entity->draw(window);
+			for (auto& entity : enmProjectiles)	entity->draw(window);
 			for (auto& entity : enemies)		entity->draw(window);
 			player->draw(window);
 		break;

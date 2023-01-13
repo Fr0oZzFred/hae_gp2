@@ -17,6 +17,7 @@ public:
 	GameState currentState = GameState::Boot;
 	Entity* player = nullptr;
 	std::vector<Entity*> projectiles;
+	std::vector<Entity*> enmProjectiles;
 	std::vector<Entity*> enemies;
 	std::vector<Entity*> fragments;
 	bool collides(float x, float y);

@@ -6,9 +6,21 @@ void Enemy::im() {
 void Enemy::update() { 
 	shp->setRotation(Lib::lookAt(shp->getPosition(), world.player->shp->getPosition()));
 	setPixelPos(Lib::lerp(shp->getPosition(), world.player->shp->getPosition(), 0.01f));
+	shoot();
 	Entity::baseUpdate();
 };
-void Enemy::shoot() {};
+void Enemy::shoot() {
+	shotTime -= 0.016667;
+	if (shotTime > 0) return;
+
+	shotTime = shotRate;
+	world.addEntity(
+		new Projectile(
+			this, world.player->shp->getPosition() - shp->getPosition(),
+			sf::Color::Red,
+			1), world.enmProjectiles
+	);
+};
 bool Enemy::isCollided(float gx, float gy) {
 	sf::Vector2f dist2(gx - (cx + rx), gy - (cy + ry));
 	dist = dist2.x * dist2.x + dist2.y * dist2.y;

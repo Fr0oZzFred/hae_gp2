@@ -14,7 +14,6 @@ public:
 		collider.width = 10;
 		collider.left = shp->getPosition().x - 5.0f;
 		collider.top = shp->getPosition().y - 5.0f;
-
 	};
 	~Fragment() {
 		std::cout << "fragment";

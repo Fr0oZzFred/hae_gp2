@@ -6,6 +6,7 @@
 #include "Lib.hpp"
 #include "World.hpp"
 #include "Fragment.hpp"
+#include "Projectile.hpp"
 
 class Enemy : public Entity {
 public:
@@ -13,6 +14,9 @@ public:
 	float range = 32.0f;
 	int resolution = 3;
 	float dist = 0;
+
+	float shotRate = 0.15f;
+	float shotTime = 0;
 
 	auto getAngle(float a) {
 		return sf::Vector2f(

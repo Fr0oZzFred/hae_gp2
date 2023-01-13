@@ -8,16 +8,12 @@ void Fragment::update() {
 }
 bool Fragment::collides(Entity* player) {
 	auto _player = (Player*)player;
-	sf::Vector2f dist2(
-		(_player->cx + _player->rx) - (cx + rx),
-		(_player->cy + _player->ry) - (cy + ry)
-	);
-	float dist = dist2.x * dist2.x + dist2.y * dist2.y;
-	dist = sqrt(dist);
-	if (_player->range / Game::CELL_SIZE > dist) {
+	if (player->collides(cx, cy)) {
 		//Particles
 		world.removeEntity(this, world.fragments);
 		_player->addResolution(1);
+		return true;
 	}
-	return _player->range / Game::CELL_SIZE > dist;
+
+	return false;
 }

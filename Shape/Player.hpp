@@ -52,4 +52,5 @@ public:
 	void load();
 	void load(FILE* file);
 	void addResolution(int value);
+	bool collides(float gx, float gy);
 };

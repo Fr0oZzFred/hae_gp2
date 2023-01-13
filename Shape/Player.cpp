@@ -124,8 +124,8 @@ void Player::shoot() {
 				world.addEntity(
 					new Projectile(
 						this, dir,
-						sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f)),
-					world.projectiles
+						sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f),
+						0), world.projectiles
 				);
 			break;
 			case 1:
@@ -135,27 +135,26 @@ void Player::shoot() {
 				world.addEntity(
 					new Projectile(
 						this, rotateVec2(getAngle(t), getAngle(shp->getRotation() * ((3.14159f * 2.0f) / 360.0f))),
-						sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f)),
-					world.projectiles
+						sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f),
+						0), world.projectiles
 				);
 			}
 			break;
 
 			case 2:
-
 			//Front
 			world.addEntity(
 				new Projectile(
 					this, dir,
-					sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f)),
-				world.projectiles
+					sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f),
+					0), world.projectiles
 			);
 			//Back
 			world.addEntity(
 				new Projectile(
 					this, -dir,
-					sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f)),
-				world.projectiles
+					sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f),
+					0), world.projectiles
 			);
 			break;
 
@@ -188,4 +187,15 @@ void Player::addResolution(int value) {
 	resolution += value;
 	if (resolution < 3)
 		resolution = 3;
+}
+bool Player::collides(float gx, float gy) {
+	sf::Vector2f dist2(
+		gx - (cx + rx),
+		gy - (cy + ry)
+	);
+	float dist = dist2.x * dist2.x + dist2.y * dist2.y;
+	dist = sqrt(dist);
+
+
+	return range / Game::CELL_SIZE > dist;
 };
