@@ -15,6 +15,7 @@ void Player::im() {
 	DragFloat2("Frict", &frictX, 0.01, 0.5, 1.0);
 	DragFloat("Speed", &speed, 1.0f, 0.0001f, 100.0f);
 	DragFloat("ShotRate", &shotRate, .05f, 0.0f, 100.0f);
+	DragInt("Shot Pattern", &shotPattern, 1.0f, 0, 3);
 	DragFloat("Range", &range, 1.0f, 0.0001f, 1000.0f);
 	DragInt("Resolution", &resolution, 1.0f, 3, 100);
 	if (ImGui::TreeNode("Projectile Color")) {
@@ -104,7 +105,6 @@ void Player::update() {
 
 }
 void Player::updateShape() {
-	auto convexShape = (sf::ConvexShape*)this->shp;
 	convexShape->setPointCount(resolution);
 	for (int i = 0; i < resolution; i++) {
 		double t = (double)i / resolution;
@@ -118,14 +118,50 @@ void Player::shoot() {
 
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 		shootTime = shotRate;
-		world.addEntity(
-			new Projectile(
-				this,
-				(sf::Vector2f)sf::Mouse::getPosition() -
-				shp->getPosition(),
-				sf::Color(projectileColor[0]* 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f)
-			), world.projectiles
-		);
+		sf::Vector2f dir = (sf::Vector2f)sf::Mouse::getPosition() - shp->getPosition();
+		switch (shotPattern) {
+			case 0:
+				world.addEntity(
+					new Projectile(
+						this, dir,
+						sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f)),
+					world.projectiles
+				);
+			break;
+			case 1:
+			for (int i = 0; i < resolution; i++) {
+				double t = (double)i / resolution;
+				t *= 3.14159 * 2;
+				world.addEntity(
+					new Projectile(
+						this, rotateVec2(getAngle(t), getAngle(shp->getRotation() * ((3.14159f * 2.0f) / 360.0f))),
+						sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f)),
+					world.projectiles
+				);
+			}
+			break;
+
+			case 2:
+
+			//Front
+			world.addEntity(
+				new Projectile(
+					this, dir,
+					sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f)),
+				world.projectiles
+			);
+			//Back
+			world.addEntity(
+				new Projectile(
+					this, -dir,
+					sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f)),
+				world.projectiles
+			);
+			break;
+
+			default:
+			break;
+		}
 	}
 
 };
@@ -133,8 +169,8 @@ void Player::save() {
 	Data::savePlayer("res/player.txt");
 };
 void Player::save(FILE* file) {
-	fprintf_s(file, "%f %f %f %f %f %i %f %f %f \n",
-		frictX, frictY, speed, range, shotRate, resolution,
+	fprintf_s(file, "%f %f %f %f %f %i %i %f %f %f \n",
+		frictX, frictY, speed, range, shotRate, shotPattern, resolution,
 		projectileColor[0], projectileColor[1], projectileColor[2]
 	);
 };
@@ -142,8 +178,8 @@ void Player::load() {
 	if(!Data::loadPlayer("res/player.txt")) throw "Player was not able to load correctly";
 };
 void Player::load(FILE* file) {
-	fscanf_s(file, "%f %f %f %f %f %i %f %f %f \n",
-		&frictX, &frictY, &speed, &range, &shotRate, &resolution,
+	fscanf_s(file, "%f %f %f %f %f %i %i %f %f %f \n",
+		&frictX, &frictY, &speed, &range, &shotRate, &shotPattern, &resolution,
 		&projectileColor[0], &projectileColor[1], &projectileColor[2]
 	);
 };

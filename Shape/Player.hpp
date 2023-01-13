@@ -21,16 +21,24 @@ public:
 
 	float projectileColor[3] = { 0.0f, 0.0f, 0.0f };
 
+	int shotPattern = 0;
+	sf::ConvexShape* convexShape;
+
 	auto getAngle(float a) {
 		return sf::Vector2f(
 			std::cos(a),
 			std::sin(a)
 		);
 	};
+	auto rotateVec2(sf::Vector2f input, sf::Vector2f rotation) {
+		sf::Vector2f res(0, 0);
+		res.x = input.x * rotation.x - input.y * rotation.y;
+		res.y = input.x * rotation.y + input.y * rotation.x;
+		return res;
+	};
 
 	Player() : Entity(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f), new sf::ConvexShape()) {
-		auto convexShape = (sf::ConvexShape*)this->shp;
-		convexShape->setPointCount(resolution);
+		convexShape = (sf::ConvexShape*)this->shp;
 		updateShape();
 
 		convexShape->setFillColor(sf::Color::Cyan);

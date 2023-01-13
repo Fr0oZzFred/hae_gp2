@@ -17,8 +17,8 @@ public:
 
 		shp->setOrigin(12, 6);
 
-		shp->setRotation(Lib::lookAt(entity->shp->getPosition(),
-			(sf::Vector2f)sf::Mouse::getPosition())
+		shp->setRotation(Lib::lookAt(shp->getPosition(),
+			dir)
 		);
 		//Lib::safeNormalize(dir);
 		dir *= speed;
