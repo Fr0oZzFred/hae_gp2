@@ -13,12 +13,12 @@
 #include "EnemySpawner.hpp"
 #include <filesystem>
 #include "SoundManager.hpp"
+#include "Background.hpp"
 
 
 static HotReloadShader* bloomShader = nullptr;
 static HotReloadShader* blurShader = nullptr;
 
-#pragma region Debug
 
 void debugGrid(sf::VertexArray& grid) {
 	for (int x = 0; x < (Game::WIDTH - Game::AREA_MARGE_X() * 2) / Game::CELL_SIZE + 1; x++) {
@@ -30,8 +30,6 @@ void debugGrid(sf::VertexArray& grid) {
 		}
 	}
 };
-#pragma endregion
-
 void addAreaNodes(std::vector<Node>& area) {
 	for (int x = 0; x < (Game::WIDTH - Game::AREA_MARGE_X() * 2) / Game::CELL_SIZE + 1; x++) {
 		for (int y = 0; y < (Game::HEIGHT - Game::AREA_MARGE_Y() * 2) / Game::CELL_SIZE + 1; y++) {
@@ -79,12 +77,21 @@ int main(){
 	*/
 
 	soundManager.init();
+	enemySpawner.load();
+	
 	world.player = new Player();
 	world.player->load();
 	world.changeState(GameState::MainMenu);
+
+	sf::VertexArray grid(sf::Lines);
+	debugGrid(grid);
+
 	sf::Clock time;
+	BackGround bg(0, &time);
+
+	sf::Clock dtTime;
 	while (window.isOpen()) {
-		sf::Time dt = time.restart();
+		sf::Time dt = dtTime.restart();
 		sf::Event event;
 		while (window.pollEvent(event)) {
 			ImGui::SFML::ProcessEvent(window, event);
@@ -122,12 +129,10 @@ int main(){
 		}
 		world.update();
 		ui.update();
-
-
-		sf::VertexArray grid(sf::Lines);
-		debugGrid(grid);
+		bg.update();
 
 		window.clear();
+		if (world.currentState == GameState::MainMenu)	bg.draw(window);
 		if (world.currentState == GameState::InGame || world.currentState == GameState::Pause)	window.draw(grid);
 		world.draw(window);
 		ui.draw(window);

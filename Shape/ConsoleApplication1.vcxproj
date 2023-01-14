@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="Bloom.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ConsoleApplication.cpp" />
@@ -176,8 +177,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="A_etoile.hpp" />
+    <ClInclude Include="Background.hpp" />
     <ClInclude Include="Bloom.hpp" />
     <ClInclude Include="Button.hpp" />
+    <ClInclude Include="ConsoleApplication.h" />
     <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="EnemySpawner.hpp" />
     <ClInclude Include="Entities.hpp" />
