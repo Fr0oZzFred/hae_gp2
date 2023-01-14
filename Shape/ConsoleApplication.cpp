@@ -12,6 +12,7 @@
 #include "A_etoile.hpp"
 #include "EnemySpawner.hpp"
 #include <filesystem>
+#include "SoundManager.hpp"
 
 
 static HotReloadShader* bloomShader = nullptr;
@@ -77,7 +78,7 @@ int main(){
 	}
 	*/
 
-
+	soundManager.init();
 	world.player = new Player();
 	world.player->load();
 	world.changeState(GameState::MainMenu);

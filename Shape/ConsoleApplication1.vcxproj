@@ -169,6 +169,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="Data.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UiElement.cpp" />
     <ClCompile Include="World.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Projectile.hpp" />
     <ClInclude Include="Data.hpp" />
+    <ClInclude Include="SoundManager.hpp" />
     <ClInclude Include="SpawnEnemy.hpp" />
     <ClInclude Include="UI.hpp" />
     <ClInclude Include="UiElement.hpp" />

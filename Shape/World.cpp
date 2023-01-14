@@ -103,6 +103,7 @@ void World::changeState(GameState nuState) {
 	if (world.currentState != GameState::InGame && nuState == GameState::Pause) return;
 	oldState = currentState;
 	currentState = nuState;
+	soundManager.playSound();
 	switch (currentState) {
 		case GameState::Boot:
 			ui.load("res/boot.txt");

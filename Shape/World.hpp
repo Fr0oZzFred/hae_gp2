@@ -2,6 +2,7 @@
 
 #include "UI.hpp"
 #include "Player.hpp"
+#include "SoundManager.hpp"
 
 enum class GameState : int {
 	Boot,
