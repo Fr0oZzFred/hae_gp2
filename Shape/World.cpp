@@ -121,7 +121,7 @@ void World::changeState(GameState nuState) {
 			ui.load("res/pause.txt");
 		break;
 		case GameState::GameOver:
-			ui.load("res/pause.txt");
+			ui.load("res/gameOver.txt");
 		break;
 	}
 };
@@ -142,6 +142,15 @@ void World::addResolution(int v) {
 	auto button = (Button*)ui.getText("Resolution");
 	if (button != nullptr)
 		button->setText(std::to_string(_player->resolution).c_str());
+}
+void World::reset() {
+	projectiles.clear();
+	enmProjectiles.clear();
+	enemies.clear();
+	fragments.clear();
+	score = 0;
+	player->load();
+	player->setPixelPos(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f));
 };
 void World::quitGame() {
 	window->close();

@@ -79,6 +79,10 @@ void Button::callPressedFunc() {
 		case 5:
 			p->activateSkill(3);
 		break;
+		case 6:
+			world.reset();
+			world.changeState(GameState::InGame);
+		break;
 		default:
 		throw "Index out of Range";
 		break;
