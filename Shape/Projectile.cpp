@@ -1,28 +1,38 @@
 #include "Projectile.hpp"
 void Projectile::update() {
+	Entity::baseUpdate();
 	if (collides()) {
-		if (type == 0)
-			world.removeEntity(this, world.projectiles);
-		else {
-			Player* player = (Player*)world.player;
-			player->addResolution(-1);
-			world.removeEntity(this, world.enmProjectiles);
+		Player* player = (Player*)world.player;
+		switch (type) {
+			case 0:
+				world.removeEntity(this, world.projectiles);
+			break;
+			case 1:
+				player->addResolution(-1);
+				world.removeEntity(this, world.enmProjectiles);
+			break;
+			case 2:
+				world.removeEntity(this, world.enmProjectiles);
+			break;
+
+			default:
+			break;
 		}
 		//Spawn particle
 		return;
 	}
-	Entity::baseUpdate();
 }
 bool Projectile::collides() {
-	float offsetX = dx * 2.5f;
-	float offsetY = dy * 2.5f;
-	if (world.collidesWithWalls(offsetX + cx + rx, offsetY + cy + ry))		return true;
+	if (world.collidesWithWalls(cx + rx, cy + ry)) {
+		if (type == 1) type = 2;
+		return true;
+	}
 	switch (type) {
 		case 0:
-			if (world.collidesWithEnemies(cx + rx, cy + ry))				return true;
+			if (world.collidesWithEnemies(cx + rx, cy + ry))	return true;
 		break;
 		case 1:
-			if (world.player->collides(cx + rx, cy + ry))					return true;
+			if (world.player->isCollided(cx + rx, cy + ry))		return true;
 		break;
 		default:
 		break;

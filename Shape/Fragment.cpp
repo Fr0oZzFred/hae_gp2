@@ -8,12 +8,11 @@ void Fragment::update() {
 }
 bool Fragment::collides(Entity* player) {
 	auto _player = (Player*)player;
-	if (player->collides(cx, cy)) {
+	if (player->isCollided(cx + rx, cy + ry)) {
 		//Particles
 		world.removeEntity(this, world.fragments);
 		_player->addResolution(1);
 		return true;
 	}
-
 	return false;
 }

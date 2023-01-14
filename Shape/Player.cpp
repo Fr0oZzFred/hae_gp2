@@ -188,15 +188,15 @@ void Player::addResolution(int value) {
 	if (resolution < 3)
 		resolution = 3;
 }
-bool Player::collides(float gx, float gy) {
-	sf::Vector2f dist2(
-		gx - (cx + rx),
-		gy - (cy + ry)
-	);
+bool Player::isCollided(float gx, float gy) {
+	sf::Vector2f dist2(gx - (cx + rx), gy - (cy + ry));
 	float dist = dist2.x * dist2.x + dist2.y * dist2.y;
 	dist = sqrt(dist);
 	if (range / Game::CELL_SIZE > dist) {
 		shp->setFillColor(sf::Color::Magenta);
+	}
+	else {
+		shp->setFillColor(sf::Color::Cyan);
 	}
 	return range / Game::CELL_SIZE > dist;
 };

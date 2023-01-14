@@ -84,7 +84,11 @@ void World::draw(sf::RenderWindow& window) {
 			player->draw(window);
 		break;
 		case GameState::Pause:
-
+			for (auto& entity : projectiles)	entity->draw(window);
+			for (auto& entity : fragments)		entity->draw(window);
+			for (auto& entity : enmProjectiles)	entity->draw(window);
+			for (auto& entity : enemies)		entity->draw(window);
+			player->draw(window);
 		break;
 	}
 };

@@ -115,7 +115,7 @@ int main(){
 		debugGrid(grid);
 
 		window.clear();
-		if (world.currentState == GameState::InGame)	window.draw(grid);
+		if (world.currentState == GameState::InGame || world.currentState == GameState::Pause)	window.draw(grid);
 		world.draw(window);
 		ui.draw(window);
 

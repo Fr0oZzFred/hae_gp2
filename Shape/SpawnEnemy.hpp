@@ -13,7 +13,7 @@ struct SpawnEnemy {
 		using namespace ImGui;
 			DragFloat("Spawn Time", &time);
 			SliderInt("Spawn Side", &side, 0, 3);
-			SliderFloat("Spawn Pos", &lerpPos, 0.0f, 1.0f);
+			DragFloat("Spawn Pos", &lerpPos, 0.1f, 0.0f, 1.0f);
 			DragFloat2("Offset", &offsetX);
 			SliderInt("Moving", &moving, 0, 1);
 			DragFloat("Shot Rate", &shotRate);

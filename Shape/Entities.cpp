@@ -71,10 +71,10 @@ void Entity::draw(sf::RenderWindow& win) {
 
 bool Entity::collides(float gx, float gy) {
 	return world.collides(gx, gy);
-}
+};
 bool Entity::isCollided(float gx, float gy) {
 	return false;
-}
+};
 void Entity::im() {};
 void Entity::save() {};
 void Entity::save(FILE* file) {};
