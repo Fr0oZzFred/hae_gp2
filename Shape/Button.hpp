@@ -28,19 +28,20 @@ public:
 	
 
 	Button() {
-		Lib::Memcpy(name, "NewButton", 10);
+		Lib::Memcpy(name, "NewButton", 64);
 		setPixelPos(sf::Vector2f(1920 * 0.5f, 1080 * 0.5f));
 		box = new sf::RectangleShape(sf::Vector2f(sizeX, sizeY));
 
 
 		if(!font.loadFromFile("Ressources/depixel/DePixelBreitFett.ttf")) throw "Font not Found";
 		text.setFont(font);
-		Lib::Memcpy(content, "NewButton", 10);
+		Lib::Memcpy(content, "NewButton", 128);
 		text.setString(content);
 		text.setCharacterSize(fontSize);
 		text.setOrigin(box->getOrigin());
 	};
 
+	void setText(const char* nuContent);
 	void updateColor();
 	void draw(sf::RenderWindow& window);
 	void update();

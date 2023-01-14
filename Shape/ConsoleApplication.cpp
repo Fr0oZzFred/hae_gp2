@@ -87,10 +87,7 @@ int main(){
 			ImGui::SFML::ProcessEvent(window, event);
 			if (event.type == sf::Event::Closed)
 				window.close();
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
-				window.close();
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && world.currentState == GameState::InGame) {
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 				world.changeState(GameState::Pause);
 			}
 		}

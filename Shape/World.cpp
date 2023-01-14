@@ -66,6 +66,9 @@ void World::update() {
 		case GameState::Pause:
 
 		break;
+		case GameState::GameOver:
+
+		break;
 	}
 };
 void World::draw(sf::RenderWindow& window) {
@@ -90,10 +93,14 @@ void World::draw(sf::RenderWindow& window) {
 			for (auto& entity : enemies)		entity->draw(window);
 			player->draw(window);
 		break;
+		case GameState::GameOver:
+
+		break;
 	}
 };
 void World::changeState(GameState nuState) {
 	if (currentState == nuState) return;
+	if (world.currentState != GameState::InGame && nuState == GameState::Pause) return;
 	oldState = currentState;
 	currentState = nuState;
 	switch (currentState) {
@@ -107,11 +114,33 @@ void World::changeState(GameState nuState) {
 			if(oldState != GameState::Pause)
 				enemySpawner.restart();
 			ui.load("res/inGame.txt");
+			addResolution(0);
+			addScore(0);
 		break;
 		case GameState::Pause:
 			ui.load("res/pause.txt");
 		break;
+		case GameState::GameOver:
+			ui.load("res/pause.txt");
+		break;
 	}
+};
+void World::addScore(int v) {
+	score += v;
+	auto button = (Button*)ui.getText("Score");
+	if (button != nullptr)
+		button->setText(std::to_string(score).c_str());
+};
+void World::addResolution(int v) {
+	Player* _player = (Player*)player;
+	if (_player->resolution + v < 3) {
+		changeState(GameState::GameOver);
+		return;
+	}
+	_player->addResolution(v);
+	auto button = (Button*)ui.getText("Resolution");
+	if (button != nullptr)
+		button->setText(std::to_string(_player->resolution).c_str());
 };
 void World::quitGame() {
 	window->close();

@@ -1,6 +1,10 @@
 #include "Button.hpp"
 #include "UI.hpp"
 
+void Button::setText(const char* nuContent) {
+	Lib::Memcpy(content, nuContent, 128);
+	text.setString(content);
+};
 void Button::updateColor() {
 	sf::Mouse mouse;
 	if (!displayButton) return;
@@ -50,8 +54,7 @@ void Button::update() {
 }
 void Button::callPressedFunc() {
 	switch (pressedFunc) {
-		default:
-			throw "Index out of Range";
+		case -1:
 		break;
 		case 0:
 			world.changeState(GameState::MainMenu);
@@ -61,6 +64,9 @@ void Button::callPressedFunc() {
 		break;
 		case 2:
 			world.quitGame();
+		break;
+		default:
+		throw "Index out of Range";
 		break;
 	}
 };

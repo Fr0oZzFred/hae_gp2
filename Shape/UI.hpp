@@ -12,6 +12,7 @@ public:
 
 	void add(UiElement* elem);
 	void remove(UiElement* elem);
+	UiElement* getText(const char* buttonName);
 	void update();
 	void im();
 	void draw(sf::RenderWindow& window);

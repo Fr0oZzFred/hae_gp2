@@ -29,6 +29,7 @@ bool Enemy::isCollided(float gx, float gy) {
 	if (range / Game::CELL_SIZE > dist) {
 		//Particles
 		world.addEntity(new Fragment(sf::Vector2f(xx, yy)), world.fragments);
+		world.addScore(100);
 		world.removeEntity(this, world.enemies);
 	}
 	return range / Game::CELL_SIZE > dist;

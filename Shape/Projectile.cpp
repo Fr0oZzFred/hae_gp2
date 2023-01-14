@@ -2,13 +2,12 @@
 void Projectile::update() {
 	Entity::baseUpdate();
 	if (collides()) {
-		Player* player = (Player*)world.player;
 		switch (type) {
 			case 0:
 				world.removeEntity(this, world.projectiles);
 			break;
 			case 1:
-				player->addResolution(-1);
+				world.addResolution(-1);
 				world.removeEntity(this, world.enmProjectiles);
 			break;
 			case 2:

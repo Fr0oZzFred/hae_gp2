@@ -7,7 +7,8 @@ enum class GameState : int {
 	Boot,
 	MainMenu,
 	InGame,
-	Pause
+	Pause,
+	GameOver
 };
 
 class World {
@@ -22,6 +23,7 @@ public:
 	std::vector<Entity*> enmProjectiles;
 	std::vector<Entity*> enemies;
 	std::vector<Entity*> fragments;
+	int score = 0;
 
 	bool collides(float x, float y);
 	bool collidesWithWalls(float x, float y);
@@ -34,6 +36,8 @@ public:
 	void update();
 	void draw(sf::RenderWindow& window);
 	void changeState(GameState nuState);
+	void addScore(int v);
+	void addResolution(int v);
 	void quitGame();
 };
 
