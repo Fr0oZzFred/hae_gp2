@@ -154,8 +154,9 @@ void World::reset() {
 	fragments.clear();
 	particles.clear();
 	score = 0;
-	player->load();
-	player->setPixelPos(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f));
+	Player* _player = (Player*)player;
+	_player->load();
+	_player->init();
 };
 void World::quitGame() {
 	window->close();

@@ -150,6 +150,7 @@ void Player::shoot() {
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 		shootTime = currentShotRate;
 		sf::Vector2f dir = (sf::Vector2f)sf::Mouse::getPosition() - shp->getPosition();
+		soundManager.playShoot();
 		switch (shotPattern) {
 			case 0:
 				world.addEntity(
@@ -217,7 +218,7 @@ void Player::activateSkill(int index) {
 	break;
 	case 1:
 		if (shotPattern == 10) return;
-		if (resolution <= 3) return;
+		if (resolution < 6) return;
 		currentColor[0] = triangleColor[0];
 		currentColor[1] = triangleColor[1];
 		currentColor[2] = triangleColor[2];
@@ -230,7 +231,7 @@ void Player::activateSkill(int index) {
 	break;
 	case 2:
 		if (shotPattern == 10) return;
-		if (resolution <= 4) return;
+		if (resolution < 7) return;
 		currentColor[0] = squareColor[0];
 		currentColor[1] = squareColor[1];
 		currentColor[2] = squareColor[2];
@@ -243,7 +244,7 @@ void Player::activateSkill(int index) {
 	break;
 	case 3:
 		if (shotPattern == 10) return;
-		if (resolution <= 20) return;
+		if (resolution < 23) return;
 		currentColor[0] = circleColor[0];
 		currentColor[1] = circleColor[1];
 		currentColor[2] = circleColor[2];
@@ -298,4 +299,11 @@ bool Player::isCollided(float gx, float gy) {
 	float dist = dist2.x * dist2.x + dist2.y * dist2.y;
 	dist = sqrt(dist);
 	return range / Game::CELL_SIZE > dist;
+}
+void Player::init() {
+	activateSkill(0);
+	displayedResolution = resolution;
+	updateShape();
+	convexShape->setFillColor(sf::Color(mainColor[0] * 255.0f, mainColor[1] * 255.0f, mainColor[2] * 255.0f));
+	setPixelPos(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f));
 };

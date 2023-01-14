@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "Lib.hpp"
 #include "Projectile.hpp"
-
+#include "SoundManager.hpp"
 class Player : public Entity {
 public:
 
@@ -55,9 +55,7 @@ public:
 
 	Player() : Entity(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f), new sf::ConvexShape()) {
 		convexShape = (sf::ConvexShape*)this->shp;
-		activateSkill(0);
-		updateShape();
-		convexShape->setFillColor(sf::Color(mainColor[0] * 255.0f, mainColor[1] * 255.0f, mainColor[2] * 255.0f));
+		init();
 	};
 	void im();
 	void update();
@@ -70,4 +68,5 @@ public:
 	void load(FILE* file);
 	void addResolution(int value);
 	bool isCollided(float gx, float gy);
+	void init();
 };

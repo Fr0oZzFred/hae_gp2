@@ -8,6 +8,7 @@
 #include "Fragment.hpp"
 #include "Projectile.hpp"
 #include "Particle.hpp"
+#include "SoundManager.hpp"
 
 class Enemy : public Entity {
 public:
