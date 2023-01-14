@@ -27,7 +27,11 @@ void Button::draw(sf::RenderWindow& window) {
 	if(displayText)		window.draw(text);
 };
 void Button::update() {
-	updateColor();
+	if (usingSkill)
+		box->setFillColor(sf::Color(buttonPressed[0] * 255.0f, buttonPressed[1] * 255.0f, buttonPressed[2] * 255.0f));
+	else updateColor();
+
+
 	text.setFillColor(sf::Color(textColor[0] * 255.0f, textColor[1] * 255.0f, textColor[2] * 255.0f)); 
 
 

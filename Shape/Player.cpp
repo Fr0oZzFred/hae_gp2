@@ -197,6 +197,12 @@ void Player::shoot() {
 
 }
 void Player::activateSkill(int index) {
+	auto triangleButton = (Button*)ui.getText("CompTriangle");
+	auto squareButton = (Button*)ui.getText("CompSquare");
+	auto circleButton = (Button*)ui.getText("CompCircle");
+	bool t = (triangleButton != nullptr);
+	bool s = (squareButton != nullptr);
+	bool c = (circleButton != nullptr);
 	switch (index) {
 	case 0:
 		currentColor[0] = mainColor[0];
@@ -205,6 +211,9 @@ void Player::activateSkill(int index) {
 		world.addResolution(0);
 		shotPattern = upgradedPattern;
 		currentShotRate = shotRate;
+		if(t) triangleButton->usingSkill = false;
+		if(s) squareButton->usingSkill = false;
+		if(c) circleButton->usingSkill = false;
 	break;
 	case 1:
 		if (shotPattern == 10) return;
@@ -217,6 +226,7 @@ void Player::activateSkill(int index) {
 		displayedResolution = 3;
 		shotPattern = 10;
 		currentShotRate = triangleShotRate;
+		if (t) triangleButton->usingSkill = true;
 	break;
 	case 2:
 		if (shotPattern == 10) return;
@@ -229,6 +239,7 @@ void Player::activateSkill(int index) {
 		displayedResolution = 4;
 		shotPattern = 10;
 		currentShotRate = squareShotRate;
+		if (s) squareButton->usingSkill = true;
 	break;
 	case 3:
 		if (shotPattern == 10) return;
@@ -241,6 +252,7 @@ void Player::activateSkill(int index) {
 		displayedResolution = 100;
 		shotPattern = 10;
 		currentShotRate = circleShotRate;
+		if (c) circleButton->usingSkill = true;
 	break;
 	default:
 	break;

@@ -16,6 +16,7 @@ public:
 	sf::FloatRect collider;
 	bool pressedPrevFrame = false;
 	int pressedFunc = 0;
+	bool usingSkill = false;
 
 	//Text
 	bool displayText = true;
