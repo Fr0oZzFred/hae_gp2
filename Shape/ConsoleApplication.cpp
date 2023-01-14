@@ -11,6 +11,8 @@
 #include "Enemy.hpp"
 #include "A_etoile.hpp"
 #include "EnemySpawner.hpp"
+#include <filesystem>
+
 
 static HotReloadShader* bloomShader = nullptr;
 static HotReloadShader* blurShader = nullptr;
@@ -37,6 +39,7 @@ void addAreaNodes(std::vector<Node>& area) {
 	}
 };
 int main(){
+	std::cout << "Current working directory: " << std::filesystem::current_path() << endl;
 	sf::RenderWindow window(sf::VideoMode(Game::WIDTH, Game::HEIGHT), Game::NAME, sf::Style::Fullscreen);
 	world.window = &window;
 
@@ -59,7 +62,6 @@ int main(){
 
 	window.setFramerateLimit(60);
 	window.setVerticalSyncEnabled(true);
-
 	ImGui::SFML::Init(window);
 	/*
 	* Lag de ouf demander à david
@@ -91,19 +93,19 @@ int main(){
 				world.changeState(GameState::Pause);
 			}
 		}
-
 		bool t = true;
 		ImGui::SFML::Update(window, dt);
 		{
-			using namespace ImGui;
-			ImGui::Begin("Player", &t);
-			world.player->im();
-			ImGui::End();
-			
-			enemySpawner.im();
-			ui.im();
-		}
+			if (Game::DEBUG) {
+				using namespace ImGui;
+				ImGui::Begin("Player", &t);
+				world.player->im();
+				ImGui::End();
 
+				enemySpawner.im();
+				ui.im();
+			}
+		}
 		world.update();
 		ui.update();
 

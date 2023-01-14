@@ -3,6 +3,7 @@
 struct Game {
 public:
 	static inline const sf::String NAME = "Shape !";
+	static inline const bool DEBUG = true;
 	static inline constexpr float WIDTH = 1920;
 	static inline constexpr float HEIGHT = 1080;
 	static inline constexpr float CELL_SIZE = 60;
