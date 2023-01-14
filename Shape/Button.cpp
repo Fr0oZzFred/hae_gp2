@@ -53,6 +53,7 @@ void Button::update() {
 		yy + offsetY * Game::CELL_SIZE);
 }
 void Button::callPressedFunc() {
+	auto p = (Player*)world.player;
 	switch (pressedFunc) {
 		case -1:
 		break;
@@ -64,6 +65,15 @@ void Button::callPressedFunc() {
 		break;
 		case 2:
 			world.quitGame();
+		break;
+		case 3:
+			p->activateSkill(1);
+		break;
+		case 4:
+			p->activateSkill(2);
+		break;
+		case 5:
+			p->activateSkill(3);
 		break;
 		default:
 		throw "Index out of Range";

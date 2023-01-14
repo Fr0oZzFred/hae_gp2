@@ -133,6 +133,7 @@ void World::addScore(int v) {
 };
 void World::addResolution(int v) {
 	Player* _player = (Player*)player;
+	if (_player == nullptr) return;
 	if (_player->resolution + v < 3) {
 		changeState(GameState::GameOver);
 		return;

@@ -89,8 +89,21 @@ int main(){
 			ImGui::SFML::ProcessEvent(window, event);
 			if (event.type == sf::Event::Closed)
 				window.close();
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) 
 				world.changeState(GameState::Pause);
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+				auto p = (Player*)world.player;
+				p->activateSkill(1);
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+				auto p = (Player*)world.player;
+				p->activateSkill(2);
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+				auto p = (Player*)world.player;
+				p->activateSkill(3);
 			}
 		}
 		bool t = true;
