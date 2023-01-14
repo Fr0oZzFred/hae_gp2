@@ -180,7 +180,6 @@
     <ClInclude Include="Background.hpp" />
     <ClInclude Include="Bloom.hpp" />
     <ClInclude Include="Button.hpp" />
-    <ClInclude Include="ConsoleApplication.h" />
     <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="EnemySpawner.hpp" />
     <ClInclude Include="Entities.hpp" />

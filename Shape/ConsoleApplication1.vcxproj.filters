@@ -149,9 +149,6 @@
     <ClInclude Include="SoundManager.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="ConsoleApplication.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Background.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>

@@ -87,6 +87,7 @@ int main(){
 	debugGrid(grid);
 
 	sf::Clock time;
+	world.time = &time;
 	BackGround bg(0, &time);
 
 	sf::Clock dtTime;

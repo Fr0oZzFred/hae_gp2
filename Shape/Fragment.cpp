@@ -1,6 +1,8 @@
 #include "Fragment.hpp"
 
 void Fragment::update() {
+	float scale = 1 + (std::cos(world.time->getElapsedTime().asSeconds() * 5.0f) + 1) * 0.5f;
+	shp->setScale(sf::Vector2f(scale, scale));
 	Entity::baseUpdate();
 	collider.left = shp->getPosition().x - 5.0f;
 	collider.top = shp->getPosition().y - 5.0f;

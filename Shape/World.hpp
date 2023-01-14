@@ -16,6 +16,7 @@ class World {
 public:
 	World();
 
+	sf::Clock* time = nullptr;
 	GameState currentState = GameState::Boot;
 	GameState oldState = GameState::Boot;
 	Entity* player = nullptr;
