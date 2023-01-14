@@ -77,7 +77,7 @@ int main(){
 
 
 	world.player = new Player();
-	world.player->load();
+	//world.player->load();
 	world.changeState(GameState::MainMenu);
 	sf::Clock time;
 	while (window.isOpen()) {

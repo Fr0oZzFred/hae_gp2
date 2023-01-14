@@ -18,8 +18,20 @@ void Player::im() {
 	DragInt("Shot Pattern", &shotPattern, 1.0f, 0, 3);
 	DragFloat("Range", &range, 1.0f, 0.0001f, 1000.0f);
 	DragInt("Resolution", &resolution, 1.0f, 3, 100);
-	if (ImGui::TreeNode("Projectile Color")) {
-		ImGui::ColorPicker3("Projectile Color", &projectileColor[0]);
+	if (ImGui::TreeNode("Main Color")) {
+		ImGui::ColorPicker3("Main Color", &mainColor[0]);
+		TreePop();
+	}
+	if (ImGui::TreeNode("Triangle Color")) {
+		ImGui::ColorPicker3("Triangle Color", &triangleColor[0]);
+		TreePop();
+	}
+	if (ImGui::TreeNode("Square Color")) {
+		ImGui::ColorPicker3("Square Color", &squareColor[0]);
+		TreePop();
+	}
+	if (ImGui::TreeNode("Circle Color")) {
+		ImGui::ColorPicker3("Square Color", &circleColor[0]);
 		TreePop();
 	}
 	if (ImGui::Button("Save")) save();
@@ -124,7 +136,7 @@ void Player::shoot() {
 				world.addEntity(
 					new Projectile(
 						this, dir,
-						sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f),
+						sf::Color(mainColor[0] * 255.0f, mainColor[1] * 255.0f, mainColor[2] * 255.0f),
 						0), world.projectiles
 				);
 			break;
@@ -135,7 +147,7 @@ void Player::shoot() {
 				world.addEntity(
 					new Projectile(
 						this, rotateVec2(getAngle(t), getAngle(shp->getRotation() * ((3.14159f * 2.0f) / 360.0f))),
-						sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f),
+						sf::Color(mainColor[0] * 255.0f, mainColor[1] * 255.0f, mainColor[2] * 255.0f),
 						0), world.projectiles
 				);
 			}
@@ -146,14 +158,14 @@ void Player::shoot() {
 			world.addEntity(
 				new Projectile(
 					this, dir,
-					sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f),
+					sf::Color(mainColor[0] * 255.0f, mainColor[1] * 255.0f, mainColor[2] * 255.0f),
 					0), world.projectiles
 			);
 			//Back
 			world.addEntity(
 				new Projectile(
 					this, -dir,
-					sf::Color(projectileColor[0] * 255.0f, projectileColor[1] * 255.0f, projectileColor[2] * 255.0f, 255.0f),
+					sf::Color(mainColor[0] * 255.0f, mainColor[1] * 255.0f, mainColor[2] * 255.0f),
 					0), world.projectiles
 			);
 			break;
@@ -168,18 +180,24 @@ void Player::save() {
 	Data::savePlayer("res/player.txt");
 };
 void Player::save(FILE* file) {
-	fprintf_s(file, "%f %f %f %f %f %i %i %f %f %f \n",
+	fprintf_s(file, "%f %f %f %f %f %i %i %f %f %f %f %f %f %f %f %f %f %f %f \n",
 		frictX, frictY, speed, range, shotRate, shotPattern, resolution,
-		projectileColor[0], projectileColor[1], projectileColor[2]
+		mainColor[0], mainColor[1], mainColor[2],
+		triangleColor[0], triangleColor[1], triangleColor[2],
+		squareColor[0], squareColor[1], squareColor[2],
+		circleColor[0], circleColor[1], circleColor[2]
 	);
 };
 void Player::load() {
 	if(!Data::loadPlayer("res/player.txt")) throw "Player was not able to load correctly";
 };
 void Player::load(FILE* file) {
-	fscanf_s(file, "%f %f %f %f %f %i %i %f %f %f \n",
+	fscanf_s(file, "%f %f %f %f %f %i %i %f %f %f %f %f %f %f %f %f %f %f %f \n",
 		&frictX, &frictY, &speed, &range, &shotRate, &shotPattern, &resolution,
-		&projectileColor[0], &projectileColor[1], &projectileColor[2]
+		&mainColor[0], &mainColor[1], &mainColor[2],
+		&triangleColor[0], &triangleColor[1], &triangleColor[2],
+		&squareColor[0], &squareColor[1], &squareColor[2],
+		&circleColor[0], &circleColor[1], &circleColor[2]
 	);
 };
 
@@ -192,11 +210,5 @@ bool Player::isCollided(float gx, float gy) {
 	sf::Vector2f dist2(gx - (cx + rx), gy - (cy + ry));
 	float dist = dist2.x * dist2.x + dist2.y * dist2.y;
 	dist = sqrt(dist);
-	if (range / Game::CELL_SIZE > dist) {
-		shp->setFillColor(sf::Color::Magenta);
-	}
-	else {
-		shp->setFillColor(sf::Color::Cyan);
-	}
 	return range / Game::CELL_SIZE > dist;
 };

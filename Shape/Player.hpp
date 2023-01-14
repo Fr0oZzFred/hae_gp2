@@ -19,7 +19,10 @@ public:
 	int resolution = 3;
 	float angle = 0.0f;
 
-	float projectileColor[3] = { 0.0f, 0.0f, 0.0f };
+	float mainColor[3]		 = { 0.0f, 1.0f, 1.0f };
+	float triangleColor[3]	 = { 0.0f, 1.0f, 0.0f };
+	float squareColor[3]	 = { 1.0f, 0.0f, 1.0f };
+	float circleColor[3]	 = { 1.0f, 0.0f, 0.0f };
 
 	int shotPattern = 0;
 	sf::ConvexShape* convexShape;
@@ -40,8 +43,7 @@ public:
 	Player() : Entity(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f), new sf::ConvexShape()) {
 		convexShape = (sf::ConvexShape*)this->shp;
 		updateShape();
-
-		convexShape->setFillColor(sf::Color::Cyan);
+		convexShape->setFillColor(sf::Color(mainColor[0] * 255.0f, mainColor[1] * 255.0f, mainColor[2] * 255.0f));
 	};
 	void im();
 	void update();

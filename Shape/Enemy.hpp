@@ -38,7 +38,7 @@ public:
 		}
 
 
-		rect->setFillColor(sf::Color::Red);
+		rect->setFillColor(sf::Color(255.0f, 0.0f, 150.0f, 255.0f));
 		shp->setPosition(pixelPos);
 
 		shotRate = _shotRate;

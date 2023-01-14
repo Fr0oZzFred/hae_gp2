@@ -18,7 +18,7 @@ void Enemy::shoot() {
 	world.addEntity(
 		new Projectile(
 			this, world.player->shp->getPosition() - shp->getPosition(),
-			sf::Color::Red,
+			sf::Color(255.0f, 0.0f, 150.0f, 255.0f),
 			1), world.enmProjectiles
 	);
 };
