@@ -62,6 +62,7 @@ void World::update() {
 			for (int i = 0; i < enmProjectiles.size(); i++)	enmProjectiles[i]->update();
 			for (int i = 0; i < enemies.size(); i++)		enemies[i]->update();
 			for (int i = 0; i < fragments.size(); i++)		fragments[i]->update();
+			for (int i = 0; i < particles.size(); i++)		particles[i]->update();
 		break;
 		case GameState::Pause:
 
@@ -84,6 +85,7 @@ void World::draw(sf::RenderWindow& window) {
 			for (auto& entity : fragments)		entity->draw(window);
 			for (auto& entity : enmProjectiles)	entity->draw(window);
 			for (auto& entity : enemies)		entity->draw(window);
+			for (auto& entity : particles)		entity->draw(window);
 			player->draw(window);
 		break;
 		case GameState::Pause:
@@ -91,6 +93,7 @@ void World::draw(sf::RenderWindow& window) {
 			for (auto& entity : fragments)		entity->draw(window);
 			for (auto& entity : enmProjectiles)	entity->draw(window);
 			for (auto& entity : enemies)		entity->draw(window);
+			for (auto& entity : particles)		entity->draw(window);
 			player->draw(window);
 		break;
 		case GameState::GameOver:
@@ -149,6 +152,7 @@ void World::reset() {
 	enmProjectiles.clear();
 	enemies.clear();
 	fragments.clear();
+	particles.clear();
 	score = 0;
 	player->load();
 	player->setPixelPos(sf::Vector2f(Game::WIDTH * 0.5f, Game::HEIGHT * 0.5f));

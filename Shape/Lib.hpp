@@ -255,6 +255,14 @@ public:
 		diff.y *= t;
 		return a + diff;
 	};
+	static sf::Color lerp(sf::Color a, sf::Color b, float t) {
+		return sf::Color(
+			a.r + (b.r - a.r) * t,
+			a.g + (b.g - a.g) * t,
+			a.b + (b.b - a.b) * t,
+			a.a + (b.a - a.a) * t
+		);
+	};
 
 	static double getTimestamp() {
 		std::chrono::nanoseconds ns =
@@ -290,6 +298,12 @@ public:
 		float angle = std::atan2(dir.y, dir.x);
 		angle *= 180.0f / 3.14159f;
 		return angle;
+	};
+	auto getAngle(float a) {
+		return sf::Vector2f(
+			std::cos(a),
+			std::sin(a)
+		);
 	};
 };
 

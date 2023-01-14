@@ -1,15 +1,394 @@
-﻿  Fragment.cpp
+﻿  Button.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(14,103): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(14,76): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(14,49): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(19,105): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(19,77): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(19,49): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(23,95): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(23,70): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(23,45): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(31,102): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(31,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(31,48): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(35,89): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(35,66): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(35,43): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(49,24): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+  ConsoleApplication.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(37,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(41,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(41,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(41,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(41,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\ConsoleApplication.cpp(42,59): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\ConsoleApplication.cpp(42,46): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\ConsoleApplication.cpp(60,38): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+  Data.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  Enemy.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.cpp(14,22): warning C4305: '-=': truncation from 'double' to 'float'
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.cpp(21,36): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.cpp(21,28): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.cpp(21,22): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.cpp(21,14): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.cpp(30,84): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.cpp(30,76): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.cpp(30,70): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.cpp(30,62): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  EnemySpawner.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  Entities.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Entities.cpp(19,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Entities.cpp(20,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Entities.cpp(25,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Entities.cpp(26,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Entities.cpp(62,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Entities.cpp(63,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Fragment.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  Particle.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.cpp(5,35): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Player.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(15,45): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(56,106): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(56,80): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(56,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(59,10): warning C4804: '-': unsafe use of type 'bool' in operation
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(59,60): warning C4804: '-': unsafe use of type 'bool' in operation
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(61,10): warning C4804: '-': unsafe use of type 'bool' in operation
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(61,58): warning C4804: '-': unsafe use of type 'bool' in operation
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(68,22): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(68,19): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(80,17): warning C4305: '*=': truncation from 'double' to 'float'
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(81,17): warning C4305: '*=': truncation from 'double' to 'float'
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(122,7): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(126,7): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(141,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(145,23): warning C4305: '-=': truncation from 'double' to 'float'
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(147,23): warning C4305: '-=': truncation from 'double' to 'float'
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(158,85): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(158,59): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(158,33): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(168,84): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(168,58): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(168,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(175,84): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(175,58): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(175,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(186,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(187,85): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(187,59): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.cpp(187,33): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  Projectile.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  SoundManager.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  UI.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  World.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,98): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Player.hpp(60,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(38,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(42,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
   Generating code
-  1 of 2685 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  7 of 2698 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     38 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

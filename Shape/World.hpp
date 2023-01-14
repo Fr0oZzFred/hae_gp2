@@ -25,6 +25,7 @@ public:
 	std::vector<Entity*> enmProjectiles;
 	std::vector<Entity*> enemies;
 	std::vector<Entity*> fragments;
+	std::vector<Entity*> particles;
 	int score = 0;
 
 	bool collides(float x, float y);

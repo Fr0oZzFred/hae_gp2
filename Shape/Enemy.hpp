@@ -7,6 +7,7 @@
 #include "World.hpp"
 #include "Fragment.hpp"
 #include "Projectile.hpp"
+#include "Particle.hpp"
 
 class Enemy : public Entity {
 public:

@@ -132,6 +132,8 @@ int main(){
 		ui.update();
 		bg.update();
 
+
+
 		window.clear();
 		if (world.currentState == GameState::MainMenu)	bg.draw(window);
 		if (world.currentState == GameState::InGame || world.currentState == GameState::Pause)	window.draw(grid);

@@ -167,6 +167,7 @@
     <ClCompile Include="libs\imgui\imgui_draw.cpp" />
     <ClCompile Include="libs\imgui\imgui_tables.cpp" />
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Particle.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="Data.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="imconfig.h" />
     <ClInclude Include="imgui-SFML_export.h" />
     <ClInclude Include="Lib.hpp" />
+    <ClInclude Include="Particle.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Projectile.hpp" />
     <ClInclude Include="Data.hpp" />
