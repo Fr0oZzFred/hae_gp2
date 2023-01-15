@@ -126,9 +126,10 @@ void World::changeState(GameState nuState) {
 		break;
 		case GameState::GameOver:
 			ui.load("res/gameOver.txt");
+			addScore(0);
 		break;
 		case GameState::Credit:
-		ui.load("res/credit.txt");
+			ui.load("res/credit.txt");
 		break;
 	}
 };
