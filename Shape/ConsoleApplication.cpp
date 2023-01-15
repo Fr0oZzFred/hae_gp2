@@ -56,8 +56,11 @@ int main(){
 	destFinal->create(window.getSize().x, window.getSize().y);
 	destFinal->clear(sf::Color(0, 0, 0, 0));
 
-	float bloomWidth = 48;
-	sf::Glsl::Vec4 bloomMul(2, 2, 2, 0.8);
+	float widthBase = 24;
+	float bloomWidth = 24;
+	sf::Glsl::Vec4 bloomMul(2, 2, 2, 0.9f);
+	float widthSpeed = 5.0f;
+	float widthIntensity = 5.0f;
 
 	window.setFramerateLimit(60);
 	window.setVerticalSyncEnabled(true);
@@ -123,6 +126,13 @@ int main(){
 				ImGui::Begin("Player", &t);
 				world.player->im();
 				ImGui::End();
+				ImGui::Begin("Bloom", &t);
+				DragFloat("Width Base", &widthBase);
+				DragFloat("Bloom Width", &bloomWidth);
+				DragFloat4("Bloom Power", &bloomMul.x, 0.01f);
+				DragFloat("Width Speed", &widthSpeed);
+				DragFloat("Width Intensity", &widthIntensity);
+				ImGui::End();
 
 				enemySpawner.im();
 				ui.im();
@@ -132,6 +142,7 @@ int main(){
 		ui.update();
 		bg.update();
 
+		bloomWidth = widthBase * 1 + (std::sin(time.getElapsedTime().asSeconds() * widthSpeed ) + 1.0f) * 0.5f * widthIntensity;
 
 
 		window.clear();

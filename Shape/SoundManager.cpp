@@ -14,7 +14,7 @@ void SoundManager::init() {
 
 	inGame.setBuffer(inGameBuffer);
 	inGame.setLoop(true);
-	inGame.setVolume(75);
+	inGame.setVolume(65);
 };
 void SoundManager::playSound() {
 	switch (world.currentState) {
