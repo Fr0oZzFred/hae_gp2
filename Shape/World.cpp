@@ -157,6 +157,7 @@ void World::reset() {
 	fragments.clear();
 	particles.clear();
 	score = 0;
+	enemySpawner.restart();
 	Player* _player = (Player*)player;
 	_player->load();
 	_player->init();

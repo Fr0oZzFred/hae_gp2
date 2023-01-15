@@ -86,10 +86,10 @@ void EnemySpawner::im() {
 		TreePop();
 	}
 
-	if (ImGui::Button("Sort"))		sort();
-	if (ImGui::Button("Save"))		save();
-	if (ImGui::Button("Load"))		load();
-	if (ImGui::Button("Restart"))	restart();
+	if (ImGui::Button("Sort"))			sort();
+	if (ImGui::Button("Save"))			save();
+	if (ImGui::Button("Load"))			load();
+	if (ImGui::Button("Restart"))		restart();
 	if (ImGui::Button("Update Index"))	updateIdxToTime();
 	ImGui::End();
 };
