@@ -20,8 +20,8 @@ D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,46): warning C4244: 'ar
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
   Generating code
-  3 of 2751 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+  0 of 2751 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    45 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   ConsoleApplication1.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\Shape\x64\Release\ConsoleApplication1.exe
