@@ -62,6 +62,7 @@ void Button::callPressedFunc() {
 		case -1:
 		break;
 		case 0:
+			world.reset();
 			world.changeState(GameState::MainMenu);
 		break;
 		case 1:
@@ -82,6 +83,9 @@ void Button::callPressedFunc() {
 		case 6:
 			world.reset();
 			world.changeState(GameState::InGame);
+		break;
+		case 7:
+		//Credit
 		break;
 		default:
 		throw "Index out of Range";

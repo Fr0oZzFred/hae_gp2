@@ -14,7 +14,7 @@ void UI::remove(UiElement* elem) {
 		else
 			iter++;
 	}
-}
+};
 UiElement* UI::getText(const char* buttonName) {
 	for (auto& e : elements)
 		if (Lib::StrCmp(e->name, buttonName) == 0) return e;
