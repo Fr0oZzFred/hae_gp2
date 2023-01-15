@@ -73,8 +73,6 @@ void World::update() {
 	}
 };
 void World::draw(sf::RenderWindow& window) {
-	sf::RectangleShape mask(sf::Vector2f(Game::WIDTH, Game::HEIGHT));
-	mask.setFillColor(sf::Color(0, 0, 0, 150.0f));
 	switch (currentState) {
 		case GameState::Boot:
 
@@ -97,7 +95,6 @@ void World::draw(sf::RenderWindow& window) {
 			for (auto& entity : enemies)		entity->draw(window);
 			for (auto& entity : particles)		entity->draw(window);
 			player->draw(window);
-			window.draw(mask);
 		break;
 		case GameState::GameOver:
 
@@ -129,6 +126,9 @@ void World::changeState(GameState nuState) {
 		break;
 		case GameState::GameOver:
 			ui.load("res/gameOver.txt");
+		break;
+		case GameState::Credit:
+		ui.load("res/credit.txt");
 		break;
 	}
 };

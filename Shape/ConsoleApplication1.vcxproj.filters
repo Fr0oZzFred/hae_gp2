@@ -21,7 +21,7 @@
     <ClCompile Include="Lib.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="ConsoleApplication.cpp">
+    <ClCompile Include="Shape.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Entities.cpp">

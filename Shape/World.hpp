@@ -9,7 +9,8 @@ enum class GameState : int {
 	MainMenu,
 	InGame,
 	Pause,
-	GameOver
+	GameOver,
+	Credit
 };
 
 class World {

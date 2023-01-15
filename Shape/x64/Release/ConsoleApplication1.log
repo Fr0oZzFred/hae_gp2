@@ -1,9 +1,8 @@
-﻿  UI.cpp
+﻿  Button.cpp
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
@@ -19,31 +18,26 @@ D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,54): warning C4244: 'ar
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-  World.cpp
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(39,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\World.cpp(77,39): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(14,103): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(14,76): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(14,49): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(19,105): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(19,77): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(19,49): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(23,95): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(23,70): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(23,45): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(31,102): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(31,75): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(31,48): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(35,89): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(35,66): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(35,43): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(49,24): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
   Generating code
-  0 of 2749 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  2 of 2749 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    38 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   ConsoleApplication1.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\Shape\x64\Release\ConsoleApplication1.exe

@@ -85,7 +85,7 @@ void Button::callPressedFunc() {
 			world.changeState(GameState::InGame);
 		break;
 		case 7:
-		//Credit
+			world.changeState(GameState::Credit);
 		break;
 		default:
 		throw "Index out of Range";
@@ -168,4 +168,5 @@ void Button::load(FILE* file) {
 	displayText = textBool;
 	Lib::MemcpyRec(name, _name, 64);
 	text.setString(content);
+	update();
 };
