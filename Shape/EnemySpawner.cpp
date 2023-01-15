@@ -28,7 +28,7 @@ void EnemySpawner::checkSpawn() {
 		stop();
 		return;
 	}
-	while (enemies[idx].time < time.getElapsedTime().asSeconds()) {
+	while (enemies[idx].time < time) {
 		Spawn(enemies[idx++]);
 		if (idx >= enemies.size()) {
 			stop();
@@ -37,7 +37,7 @@ void EnemySpawner::checkSpawn() {
 	}
 };
 void EnemySpawner::restart() {
-	enemySpawner.time.restart();
+	time = 0;
 	idx = 0;
 	enabled = true;
 };
@@ -47,14 +47,24 @@ void EnemySpawner::stop() {
 };
 void EnemySpawner::update() {
 	if (!enabled) return;
-
+	time += 0.016667;
 	checkSpawn();
+}
+void EnemySpawner::updateIdxToTime() {
+	while (enemies[idx].time < time) {
+		idx++;
+		if (idx >= enemies.size()) {
+			stop();
+			return;
+		}
+	}
 };
 void EnemySpawner::im() {
 	using namespace ImGui;
 	bool t = true;
 	ImGui::Begin("EnemySpawner", &t);
-	Value("Time", enemySpawner.time.getElapsedTime().asSeconds());
+	ImGui::Checkbox("Enabled", &enabled);
+	DragFloat("Time", &time);
 
 	if (TreeNode("Show Enemies list")) {
 		int i = 0;
@@ -80,6 +90,7 @@ void EnemySpawner::im() {
 	if (ImGui::Button("Save"))		save();
 	if (ImGui::Button("Load"))		load();
 	if (ImGui::Button("Restart"))	restart();
+	if (ImGui::Button("Update Index"))	updateIdxToTime();
 	ImGui::End();
 };
 void EnemySpawner::save() {

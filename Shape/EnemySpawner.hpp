@@ -17,7 +17,7 @@ enum class Side : int {
 class EnemySpawner {
 public:
 
-	sf::Clock time;
+	float time;
 	int idx = 0;
 	bool enabled = false;
 
@@ -31,6 +31,7 @@ public:
 	void restart();
 	void stop();
 	void update();
+	void updateIdxToTime();
 	void im();
 	void save();
 	void load();
