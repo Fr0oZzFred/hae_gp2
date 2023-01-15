@@ -128,8 +128,10 @@ void Button::im() {
 		Value("pos x", xx + offsetX * Game::CELL_SIZE);
 		Value("pos y", yy + offsetY * Game::CELL_SIZE);
 		DragFloat("Font Size", &fontSize);
-		if (ImGui::InputText("Content", content, IM_ARRAYSIZE(content), ImGuiInputTextFlags_CharsNoBlank))
+		if (ImGui::InputText("Content", _content, IM_ARRAYSIZE(_content), ImGuiInputTextFlags_CharsNoBlank)) {
+			Lib::MemcpyRecWhiteSpaces(content, _content, 128);
 			text.setString(content);
+		}
 		if (ImGui::TreeNode("TextColor")) {
 			ImGui::ColorPicker3("TextColor", &textColor[0]);
 			TreePop();
@@ -145,7 +147,7 @@ void Button::save(FILE* file) {
 		buttonSelected[0], buttonSelected[1], buttonSelected[2],
 		buttonPressed[0], buttonPressed[1], buttonPressed[2],
 		sizeX, sizeY,
-		offsetX, offsetY, fontSize, content,
+		offsetX, offsetY, fontSize, _content,
 		textColor[0], textColor[1], textColor[2],
 		displayButton, displayText, pressedFunc
 	);
@@ -160,13 +162,14 @@ void Button::load(FILE* file) {
 		&buttonSelected[0], &buttonSelected[1], &buttonSelected[2],
 		&buttonPressed[0], &buttonPressed[1], &buttonPressed[2],
 		&sizeX, &sizeY,
-		&offsetX, &offsetY, &fontSize, &content, 128,
+		&offsetX, &offsetY, &fontSize, _content, 128,
 		&textColor[0], &textColor[1], &textColor[2],
 		&buttonBool, &textBool, &pressedFunc
 	);
 	displayButton = buttonBool;
 	displayText = textBool;
 	Lib::MemcpyRec(name, _name, 64);
+	Lib::MemcpyRecWhiteSpaces(content, _content, 128);
 	text.setString(content);
 	update();
 };

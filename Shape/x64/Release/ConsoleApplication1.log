@@ -1,8 +1,8 @@
 ﻿  Button.cpp
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(263,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(262,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(261,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(260,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(276,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(275,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(274,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(273,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
@@ -36,7 +36,7 @@ D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(35,66): warning C4244: 'a
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(35,43): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.cpp(49,24): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
   Generating code
-  2 of 2749 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  1 of 2750 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     38 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

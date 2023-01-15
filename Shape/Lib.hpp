@@ -60,6 +60,19 @@ public:
 		//on retourne
 		return;
 	};
+	static void MemcpyRecWhiteSpaces(char* dest, char* src, int size) {
+		//cas initial ( p(0) => p(1) )
+		if (size <= 0)
+			return;
+		//cas recurrent ( p(n) => pn+1)
+		if (*src == '_') *dest = ' ';
+		else *dest = *src;
+		MemcpyRecWhiteSpaces(dest + 1, src + 1, size - 1);
+		//combine
+		;
+		//on retourne
+		return;
+	};
 
 
 	static const char* StrChrRec(const char* src, char c) {

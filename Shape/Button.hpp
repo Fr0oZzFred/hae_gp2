@@ -52,4 +52,5 @@ public:
 	void load(FILE* file);
 private:
 	char _name[64] = {};
+	char _content[128] = {};
 };
