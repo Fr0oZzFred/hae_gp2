@@ -1,4 +1,4 @@
-﻿  Fragment.cpp
+﻿  EnemySpawner.cpp
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(276,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(275,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(274,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
@@ -19,9 +19,10 @@ D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,54): warning C4244: 'ar
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
 D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\Shape\Fragment.cpp(4,18): warning C4305: '-=': truncation from 'double' to 'float'
+D:\Projet cours\Visual Studio\hae_gp2\Shape\EnemySpawner.cpp(36,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\EnemySpawner.cpp(91,18): warning C4305: '+=': truncation from 'double' to 'float'
   Generating code
-  1 of 2767 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  3 of 2767 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     38 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

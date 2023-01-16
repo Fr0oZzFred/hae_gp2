@@ -33,7 +33,7 @@ void EnemySpawner::checkSpawn() {
 		if (idx >= enemies.size()) {
 			int nuPattern = currentPattern;
 			while (nuPattern == currentPattern) {
-				nuPattern = std::fmod(Lib::rand(), 3);
+				nuPattern = std::fmod(Lib::rand(), 4);
 			}
 			currentPattern = nuPattern;
 			if (world.score < 20000) {
@@ -46,6 +46,9 @@ void EnemySpawner::checkSpawn() {
 					break;
 					case 2:
 						load("res/patternLosange.txt");
+					break;
+					case 3:
+						load("res/patternCircle.txt");
 					break;
 					default:
 					break;
@@ -61,6 +64,9 @@ void EnemySpawner::checkSpawn() {
 					break;
 					case 2:
 						load("res/patternLosangeHard.txt");
+					break;
+					case 3:
+						load("res/patternHard.txt");
 					break;
 					default:
 					break;
