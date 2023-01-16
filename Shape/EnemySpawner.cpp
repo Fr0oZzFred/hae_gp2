@@ -36,18 +36,35 @@ void EnemySpawner::checkSpawn() {
 				nuPattern = std::fmod(Lib::rand(), 3);
 			}
 			currentPattern = nuPattern;
-			switch (nuPattern) {
-				case 0:
-					load("res/patternTriangle.txt");
-				break;
-				case 1:
-					load("res/patternSquare.txt");
-				break;
-				case 2:
-					load("res/patternLosange.txt");
-				break;
-				default:
-				break;
+			if (world.score < 20000) {
+				switch (nuPattern) {
+					case 0:
+						load("res/patternTriangle.txt");
+					break;
+					case 1:
+						load("res/patternSquare.txt");
+					break;
+					case 2:
+						load("res/patternLosange.txt");
+					break;
+					default:
+					break;
+				}
+			}
+			else {
+				switch (nuPattern) {
+					case 0:
+						load("res/patternTriangleHard.txt");
+					break;
+					case 1:
+						load("res/patternSquareHard.txt");
+					break;
+					case 2:
+						load("res/patternLosangeHard.txt");
+					break;
+					default:
+					break;
+				}
 			}
 			restart();
 			return;

@@ -318,6 +318,7 @@ bool Player::isCollided(float gx, float gy) {
 	return range / Game::CELL_SIZE > dist;
 }
 void Player::init() {
+	skillTime = 0;
 	activateSkill(0);
 	displayedResolution = resolution;
 	updateShape();
