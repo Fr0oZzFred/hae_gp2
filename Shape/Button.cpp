@@ -82,6 +82,8 @@ void Button::callPressedFunc() {
 		break;
 		case 6:
 			world.reset();
+			enemySpawner.load("res/firstWave.txt");
+
 			world.changeState(GameState::InGame);
 		break;
 		case 7:

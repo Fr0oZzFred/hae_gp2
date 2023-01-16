@@ -20,6 +20,7 @@ public:
 	float time;
 	int idx = 0;
 	bool enabled = false;
+	int currentPattern = -1;
 
 	std::vector<SpawnEnemy> enemies;
 	SpawnEnemy enemy{ 0,0,0 };

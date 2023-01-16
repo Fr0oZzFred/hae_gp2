@@ -115,8 +115,11 @@ void World::changeState(GameState nuState) {
 			ui.load("res/mainMenu.txt");
 		break;
 		case GameState::InGame:
-			if(oldState != GameState::Pause)
+			if (oldState != GameState::Pause) {
+				enemySpawner.load("res/firstWave.txt");
 				enemySpawner.restart();
+				enemySpawner.currentPattern = -1;
+			}
 			ui.load("res/inGame.txt");
 			addResolution(0);
 			addScore(0);

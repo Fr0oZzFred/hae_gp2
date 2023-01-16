@@ -31,7 +31,25 @@ void EnemySpawner::checkSpawn() {
 	while (enemies[idx].time < time) {
 		Spawn(enemies[idx++]);
 		if (idx >= enemies.size()) {
-			stop();
+			int nuPattern = currentPattern;
+			while (nuPattern == currentPattern) {
+				nuPattern = std::fmod(Lib::rand(), 3);
+			}
+			currentPattern = nuPattern;
+			switch (nuPattern) {
+				case 0:
+					load("res/patternTriangle.txt");
+				break;
+				case 1:
+					load("res/patternSquare.txt");
+				break;
+				case 2:
+					load("res/patternLosange.txt");
+				break;
+				default:
+				break;
+			}
+			restart();
 			return;
 		}
 	}
@@ -102,6 +120,7 @@ void EnemySpawner::load() {
 };
 void EnemySpawner::load(const char* path) {
 	enemies = Data::loadEnemySpawner(path);
+	sort();
 };
 void EnemySpawner::add() {
 	enemies.push_back(enemy);
@@ -117,7 +136,7 @@ void EnemySpawner::remove(int idx) {
 		else
 			iter++;
 	}
-}
+};
 void EnemySpawner::sort() {
 	std::sort(enemies.begin(), enemies.end());
 };
