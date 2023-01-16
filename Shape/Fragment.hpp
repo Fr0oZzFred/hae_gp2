@@ -7,6 +7,7 @@ class Fragment : public Entity {
 public:
 
 	sf::FloatRect collider;
+	float time = 15.0f;
 
 	Fragment(sf::Vector2f pixelPos) : Entity(pixelPos, new sf::RectangleShape(sf::Vector2f(10, 10))) {
 		shp->setFillColor(sf::Color::Yellow);
