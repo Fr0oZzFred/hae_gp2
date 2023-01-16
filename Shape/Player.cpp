@@ -143,7 +143,24 @@ void Player::updateShape() {
 };
 void Player::shoot() {
 	skillTime -= 0.016667;
-	if (skillTime < 0.0f)	activateSkill(0);
+	if (skillTime < 0.0f) {
+		auto text1 = (Button*)ui.getText("SkillTimeText1");
+		auto text2 = (Button*)ui.getText("SkillTimeText2");
+		auto time = (Button*)ui.getText("SkillTime");
+		text1->displayText = true;
+		text2->displayText = true;
+		time->displayText = false;
+		activateSkill(0);
+	}
+	else {
+		auto text1 = (Button*)ui.getText("SkillTimeText1");
+		auto text2 = (Button*)ui.getText("SkillTimeText2");
+		auto time = (Button*)ui.getText("SkillTime");
+		text1->displayText = false;
+		text2->displayText = false;
+		time->displayText = true;
+		time->setText(std::to_string(skillTime).c_str());
+	}
 	shootTime -= 0.016667;
 	if (shootTime > 0.0f)	return;
 
