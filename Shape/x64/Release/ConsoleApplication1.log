@@ -1,1 +1,30 @@
-﻿  ConsoleApplication1.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\Shape\x64\Release\ConsoleApplication1.exe
+﻿  Main.cpp
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(276,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(275,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(274,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Lib.hpp(273,8): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Button.hpp(41,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Particle.hpp(26,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(39,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,54): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,40): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Enemy.hpp(43,32): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Main.cpp(42,59): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Main.cpp(42,46): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+D:\Projet cours\Visual Studio\hae_gp2\Shape\Main.cpp(98,39): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  Generating code
+  1 of 2757 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    37 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  ConsoleApplication1.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\Shape\x64\Release\ConsoleApplication1.exe

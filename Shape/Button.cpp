@@ -4,6 +4,11 @@
 void Button::setText(const char* nuContent) {
 	Lib::Memcpy(content, nuContent, 128);
 	text.setString(content);
+}
+void Button::setPrivateText(const char* nuContent) {
+	Lib::Memcpy(_content, nuContent, 128);
+	Lib::Memcpy(content, _content, 128);
+	text.setString(content);
 };
 void Button::updateColor() {
 	sf::Mouse mouse;

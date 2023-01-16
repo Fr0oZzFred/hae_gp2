@@ -128,6 +128,8 @@ void World::changeState(GameState nuState) {
 			ui.load("res/pause.txt");
 		break;
 		case GameState::GameOver:
+			saveHighScore();
+			ui.save("res/inGame.txt");
 			ui.load("res/gameOver.txt");
 			addScore(0);
 		break;
@@ -154,6 +156,21 @@ void World::addResolution(int v) {
 	if (button != nullptr)
 		button->setText(std::to_string(_player->resolution).c_str());
 }
+void World::saveHighScore() {
+	int currentScore = score;
+	for (int i = 1; i < 6; i++) {
+		std::string name("HighScore");
+		name.append(std::to_string(i));
+		auto highScore = (Button*)ui.getText(name.c_str());
+		if (highScore != nullptr) {
+			int hScore = std::stoi(highScore->content);
+			if (currentScore > hScore) {
+				highScore->setPrivateText(std::to_string(currentScore).c_str());
+				currentScore = hScore;
+			}
+		}
+	}
+};
 void World::reset() {
 	projectiles.clear();
 	enmProjectiles.clear();

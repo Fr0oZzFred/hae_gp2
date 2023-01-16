@@ -42,6 +42,7 @@ public:
 	void changeState(GameState nuState);
 	void addScore(int v);
 	void addResolution(int v);
+	void saveHighScore();
 	void reset();
 	void quitGame();
 };

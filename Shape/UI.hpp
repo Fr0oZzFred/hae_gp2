@@ -17,6 +17,7 @@ public:
 	void im();
 	void draw(sf::RenderWindow& window);
 	void save();
+	void save(const char* path);
 	void load();
 	void load(const char* path);
 private:

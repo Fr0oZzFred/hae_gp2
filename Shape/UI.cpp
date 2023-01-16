@@ -65,6 +65,9 @@ void UI::draw(sf::RenderWindow& window) {
 void UI::save() {
 	Data::saveUI("res/ui.txt", elements);
 };
+void UI::save(const char* path) {
+	Data::saveUI(path, elements);
+};
 void UI::load() {
 	elements = Data::loadUI("res/ui.txt");
 }

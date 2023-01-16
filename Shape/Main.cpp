@@ -109,15 +109,15 @@ int main(){
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) 
 				world.changeState(GameState::Pause);
 
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1)) {
 				auto p = (Player*)world.player;
 				p->activateSkill(1);
 			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2)) {
 				auto p = (Player*)world.player;
 				p->activateSkill(2);
 			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad3)) {
 				auto p = (Player*)world.player;
 				p->activateSkill(3);
 			}

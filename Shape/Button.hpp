@@ -43,6 +43,7 @@ public:
 	};
 
 	void setText(const char* nuContent);
+	void setPrivateText(const char* nuContent);
 	void updateColor();
 	void draw(sf::RenderWindow& window);
 	void update();
