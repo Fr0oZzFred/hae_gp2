@@ -18,9 +18,9 @@ public:
 		shp->setOrigin(5, 5);
 		shp->setRotation(45);
 	};
-	~Fragment() {
-		std::cout << "fragment";
-	};
+	//~Fragment() {
+	//	std::cout << "fragment";
+	//};
 	void update();
 
 	bool collides(Entity* player);

@@ -11,15 +11,11 @@ void BackGround::update() {
 };
 float BackGround::getTime() {
 	return time->getElapsedTime().asSeconds();
-}
-
-
+};
 void BackGround::Lines() {
 	for (int i = 0; i < Game::WIDTH; i++)
 		background[i].position = background[i].position + sf::Vector2f(0, std::cos(getTime() + i) * 2.0f);
 };
-
-
 void BackGround::draw(sf::RenderWindow& win) {
 	win.draw(background);
 };

@@ -47,9 +47,9 @@ public:
 		moving = _moving == 1;
 	};
 
-	~Enemy() {
-		std::cout << "enemy";
-	};
+	//~Enemy() {
+	//	std::cout << "enemy";
+	//};
 	void im();
 	void update();
 	void shoot();

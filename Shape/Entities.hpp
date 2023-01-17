@@ -26,9 +26,9 @@ public:
 	float collisionAccuracy = 0.1f;
 
 	Entity(sf::Vector2f pixelPos, sf::Shape* shp);
-	virtual ~Entity() {
-		std::cout << " child of entity as been deleted" << "\n";
-	}
+	//virtual ~Entity() {
+	//	std::cout << " child of entity as been deleted" << "\n";
+	//}
 
 	sf::Vector2f getGridPosition();
 	void setPixelPos(sf::Vector2f npos);

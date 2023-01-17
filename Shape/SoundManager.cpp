@@ -21,6 +21,7 @@ void SoundManager::playSound() {
 		case GameState::Boot:
 		break;
 		case GameState::MainMenu:
+			if (world.oldState == GameState::Credit) return;
 			inGame.stop();
 			mainMenu.play();
 		break;

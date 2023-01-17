@@ -32,9 +32,9 @@ public:
 		type = _type;
 	};
 
-	~Projectile() {
-		std::cout << "projectile";
-	};
+	//~Projectile() {
+	//	std::cout << "projectile";
+	//};
 	void update();
 	bool collides();
 	bool isCollided(float gx, float gy);
