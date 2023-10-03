@@ -39,6 +39,16 @@ int main() {
         objCase.append(sf::Vertex(sf::Vector2f(pos.x * Cst::CELL_SIZE, (pos.y + .9) * Cst::CELL_SIZE), col));
     };
 
+    float color[4] = { 1.0,1.0,1.0,1.0 };
+    
+    float mat4_Array[16] = {
+            0.3588, 0.7044, 0.1368, 0.0,
+            0.2990, 0.5870, 0.1140, 0.0,
+            0.2392, 0.4696, 0.0912 ,0.0,
+            0,      0,      0,      1.0 
+    };
+    
+
     while (window.isOpen()) {
         sf::Time dt = t.restart();
         sf::Event event;
@@ -101,6 +111,21 @@ int main() {
 
         toCase(obj);
 
+        ImGui::Begin("Shader", &b);
+        using namespace ImGui;
+        ColorPicker4("Color", &color[0]);
+        Spacing();
+        Spacing();
+        Spacing();
+        Text("Matrix");
+        DragFloat4("0", &mat4_Array[0]);
+        DragFloat4("1", &mat4_Array[4]);
+        DragFloat4("2", &mat4_Array[8]);
+        DragFloat4("3", &mat4_Array[12]);
+
+        ImGui::End();
+
+
         sf::Texture tex;
         tex.loadFromFile("Eevee.png");
         sf::RectangleShape circleShape(sf::Vector2f(tex.getSize()));
@@ -108,11 +133,12 @@ int main() {
         sf::Shader shader;
         circleShape.setTexture(&tex);
         if (shader.loadFromFile("vertex_shader.vert", "fragment_shader.frag")) {
+            shader.setUniform("time", time);
+            shader.setUniform("color", sf::Glsl::Vec4(color[0],color[1],color[2],color[3]));
+            shader.setUniform("matrix", sf::Glsl::Mat4(mat4_Array));
             shader.setUniform("texture", sf::Shader::CurrentTexture);
             time += dt.asSeconds();
-            shader.setUniform("time", time);
         }
-
 
 
 
