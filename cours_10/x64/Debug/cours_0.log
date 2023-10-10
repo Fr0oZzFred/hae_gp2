@@ -1,169 +1,169 @@
 ﻿  main.cpp
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Catmull.hpp(30,11): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Catmull.hpp(30,11): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Catmull.hpp(29,11): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Catmull.hpp(29,11): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(42,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(42,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(42,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(42,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(43,77): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(43,77): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(43,53): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(43,53): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(44,84): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(44,84): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(44,53): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(44,53): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(45,77): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(45,77): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(45,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(45,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(54,76): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(54,76): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(54,52): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(54,52): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(55,83): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(55,83): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(55,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(55,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(56,90): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(56,90): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(56,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(56,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(57,83): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(57,83): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(57,52): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(57,52): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(106,20): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(106,20): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(111,20): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(111,20): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(116,20): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(116,20): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\Dijkstra.hpp(121,20): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\Dijkstra.hpp(121,20): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(19,52): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(19,43): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(36,78): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(19,52): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(19,43): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(36,78): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(36,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(36,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(37,85): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(37,85): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(37,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(37,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(38,92): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(38,92): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(38,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(38,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(39,85): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(39,85): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(39,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(39,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(49,5): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(81,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(81,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(93,17): warning C4804: '-': unsafe use of type 'bool' in operation
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(95,17): warning C4804: '-': unsafe use of type 'bool' in operation
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(97,28): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(47,5): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Projet Human\hae_gp2\cours_10\main.cpp(85,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(85,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(97,17): warning C4804: '-': unsafe use of type 'bool' in operation
+C:\Projet Human\hae_gp2\cours_10\main.cpp(99,17): warning C4804: '-': unsafe use of type 'bool' in operation
+C:\Projet Human\hae_gp2\cours_10\main.cpp(101,28): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Projet cours\Visual Studio\hae_gp2\cours_10\main.cpp(97,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(101,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-  cours_0.vcxproj -> D:\Projet cours\Visual Studio\hae_gp2\cours_10\x64\Debug\cours_0.exe
+  cours_0.vcxproj -> C:\Projet Human\hae_gp2\cours_10\x64\Debug\cours_0.exe

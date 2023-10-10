@@ -38,8 +38,6 @@ int main() {
         objCase.append(sf::Vertex(sf::Vector2f((pos.x + .9) * Cst::CELL_SIZE, (pos.y + .9) * Cst::CELL_SIZE), col));
         objCase.append(sf::Vertex(sf::Vector2f(pos.x * Cst::CELL_SIZE, (pos.y + .9) * Cst::CELL_SIZE), col));
     };
-
-    float color[4] = { 1.0,1.0,1.0,1.0 };
     
     float mat4_Array[16] = {
             0.3588, 0.7044, 0.1368, 0.0,
@@ -47,6 +45,12 @@ int main() {
             0.2392, 0.4696, 0.0912 ,0.0,
             0,      0,      0,      1.0 
     };
+
+    float offsetBeforeMVP[4] = {0.0,0.0,0.0,0.0};
+    float offsetAfterMVP[4] = {0.0,0.0,0.0,0.0 };
+    sf::Glsl::Vec4 colorAdd(0.0, 0.0, 0.0, 0.0);
+    sf::Glsl::Vec4 colorMul(1.0, 1.0, 1.0, 1.0);
+    float timeScale = 1.0f;
     
 
     while (window.isOpen()) {
@@ -113,7 +117,14 @@ int main() {
 
         ImGui::Begin("Shader", &b);
         using namespace ImGui;
-        ColorPicker4("Color", &color[0]);
+        Text("Misc");
+        DragFloat("TimeScale", &timeScale);
+        Text("Vert Shader");
+        DragFloat4("Offset before MVP", &offsetBeforeMVP[0]);
+        DragFloat4("Offset after MVP", &offsetAfterMVP[0], 0.1f);
+        Text("Frag Shader");
+        ColorPicker4("Color Add", &colorAdd.x);
+        ColorPicker4("Color Mul", &colorMul.x);
         Spacing();
         Spacing();
         Spacing();
@@ -133,10 +144,13 @@ int main() {
         sf::Shader shader;
         circleShape.setTexture(&tex);
         if (shader.loadFromFile("vertex_shader.vert", "fragment_shader.frag")) {
-            shader.setUniform("time", time);
-            shader.setUniform("color", sf::Glsl::Vec4(color[0],color[1],color[2],color[3]));
+            shader.setUniform("time", time * timeScale + 1.0f);
+            shader.setUniform("colorAdd", colorAdd);
+            shader.setUniform("colorMul", colorMul);
             shader.setUniform("matrix", sf::Glsl::Mat4(mat4_Array));
             shader.setUniform("texture", sf::Shader::CurrentTexture);
+            shader.setUniform("offsetBeforeMVP", sf::Glsl::Vec4(offsetBeforeMVP[0], offsetBeforeMVP[1], offsetBeforeMVP[2], offsetBeforeMVP[3]));
+            shader.setUniform("offsetAfterMVP", sf::Glsl::Vec4(offsetAfterMVP[0], offsetAfterMVP[1], offsetAfterMVP[2], offsetAfterMVP[3]));
             time += dt.asSeconds();
         }
 
