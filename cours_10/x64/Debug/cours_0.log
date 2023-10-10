@@ -152,16 +152,16 @@ C:\Projet Human\hae_gp2\cours_10\main.cpp(39,54): warning C4244: 'argument': con
               T=float
           ]
 C:\Projet Human\hae_gp2\cours_10\main.cpp(47,5): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Projet Human\hae_gp2\cours_10\main.cpp(85,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Projet Human\hae_gp2\cours_10\main.cpp(85,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Projet Human\hae_gp2\cours_10\main.cpp(97,17): warning C4804: '-': unsafe use of type 'bool' in operation
-C:\Projet Human\hae_gp2\cours_10\main.cpp(99,17): warning C4804: '-': unsafe use of type 'bool' in operation
-C:\Projet Human\hae_gp2\cours_10\main.cpp(101,28): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(92,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(92,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(104,17): warning C4804: '-': unsafe use of type 'bool' in operation
+C:\Projet Human\hae_gp2\cours_10\main.cpp(106,17): warning C4804: '-': unsafe use of type 'bool' in operation
+C:\Projet Human\hae_gp2\cours_10\main.cpp(108,28): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Projet Human\hae_gp2\cours_10\main.cpp(101,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projet Human\hae_gp2\cours_10\main.cpp(108,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float

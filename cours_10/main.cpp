@@ -51,6 +51,13 @@ int main() {
     sf::Glsl::Vec4 colorAdd(0.0, 0.0, 0.0, 0.0);
     sf::Glsl::Vec4 colorMul(1.0, 1.0, 1.0, 1.0);
     float timeScale = 1.0f;
+    float distortionPower = 1.0f;
+
+    sf::Texture tex;
+    tex.loadFromFile("Eevee.png");
+    sf::Texture noiseTex;
+    noiseTex.loadFromFile("Noise.jpg");
+
     
 
     while (window.isOpen()) {
@@ -119,6 +126,7 @@ int main() {
         using namespace ImGui;
         Text("Misc");
         DragFloat("TimeScale", &timeScale);
+        DragFloat("DistortionPower", &distortionPower, 0.1f);
         Text("Vert Shader");
         DragFloat4("Offset before MVP", &offsetBeforeMVP[0]);
         DragFloat4("Offset after MVP", &offsetAfterMVP[0], 0.1f);
@@ -137,18 +145,19 @@ int main() {
         ImGui::End();
 
 
-        sf::Texture tex;
-        tex.loadFromFile("Eevee.png");
+        
         sf::RectangleShape circleShape(sf::Vector2f(tex.getSize()));
         circleShape.setPosition(Cst::SCREEN_SIZE_X * .5f, Cst::SCREEN_SIZE_Y * .5f);
         sf::Shader shader;
         circleShape.setTexture(&tex);
         if (shader.loadFromFile("vertex_shader.vert", "fragment_shader.frag")) {
             shader.setUniform("time", time * timeScale + 1.0f);
+            shader.setUniform("distortionPower", distortionPower);
             shader.setUniform("colorAdd", colorAdd);
             shader.setUniform("colorMul", colorMul);
             shader.setUniform("matrix", sf::Glsl::Mat4(mat4_Array));
             shader.setUniform("texture", sf::Shader::CurrentTexture);
+            shader.setUniform("noiseTexture", noiseTex);
             shader.setUniform("offsetBeforeMVP", sf::Glsl::Vec4(offsetBeforeMVP[0], offsetBeforeMVP[1], offsetBeforeMVP[2], offsetBeforeMVP[3]));
             shader.setUniform("offsetAfterMVP", sf::Glsl::Vec4(offsetAfterMVP[0], offsetAfterMVP[1], offsetAfterMVP[2], offsetAfterMVP[3]));
             time += dt.asSeconds();
