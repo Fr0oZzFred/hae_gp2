@@ -59,6 +59,9 @@ int main() {
     noiseTex.loadFromFile("Noise.jpg");
 
     sf::Glsl::Vec2 blurOffsetFactor(0.005f,0.005f);
+    sf::Glsl::Vec2 spherizeCenter(0.5f,0.5f);
+    sf::Glsl::Vec2 spherizeOffset(0.0f, 0.0f);
+    float spherizeStrength = 1.0f;
 
     
 
@@ -136,6 +139,9 @@ int main() {
         ColorEdit4("Color Add", &colorAdd.x);
         ColorEdit4("Color Mul", &colorMul.x);
         DragFloat2("Blur Offset Factor", &blurOffsetFactor.x, 0.001f);
+        DragFloat2("Spherize Center", &spherizeCenter.x);
+        DragFloat2("Spherize Offset", &spherizeOffset.x);
+        DragFloat("Spherize Strength", &spherizeStrength);
         Text("Matrix");
         DragFloat4("0", &mat4_Array[0]);
         DragFloat4("1", &mat4_Array[4]);
@@ -160,7 +166,10 @@ int main() {
             shader.setUniform("noiseTexture", noiseTex);
             shader.setUniform("offsetBeforeMVP", sf::Glsl::Vec4(offsetBeforeMVP[0], offsetBeforeMVP[1], offsetBeforeMVP[2], offsetBeforeMVP[3]));
             shader.setUniform("offsetAfterMVP", sf::Glsl::Vec4(offsetAfterMVP[0], offsetAfterMVP[1], offsetAfterMVP[2], offsetAfterMVP[3]));
-            shader.setUniform("offsetFactor", blurOffsetFactor); // need to add imgui
+            shader.setUniform("blurOffsetFactor", blurOffsetFactor);
+            shader.setUniform("spherizeCenter", spherizeCenter);
+            shader.setUniform("spherizeOffset", spherizeOffset);
+            shader.setUniform("spherizeStrength", spherizeStrength);
             time += dt.asSeconds();
         }
 
