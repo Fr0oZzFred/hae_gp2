@@ -1,18 +1,27 @@
 uniform float time;
-uniform float distortionPower;
 uniform sampler2D texture;
-uniform sampler2D noiseTexture;
+
 uniform vec4 colorAdd;
 uniform vec4 colorMul;
 uniform mat4 matrix;
 
+uniform float distortionPower;
+uniform sampler2D noiseTexture;
+
+//varying vec2 pos; How to get a var from vertex shader
 
 #define COLOR_ADD
 #define COLOR_MUL
 //#define COLOR_MAT
-//#define TEX_DISTORTION
+
+#define TEX_DISTORTION
 //#define WAVE_DISTORTION
 
+//#define COLOR_WITH_UV
+
+#define BLUR
+
+uniform vec2 		offsetFactor;
 
 void main()
 {
@@ -53,5 +62,25 @@ void main()
 
 #ifdef COLOR_MAT
     gl_FragColor *= matrix;
+#endif
+
+#ifdef COLOR_WITH_UV
+    gl_FragColor += gl_TexCoord[0];
+#endif
+
+#ifdef BLUR
+vec2 uv = gl_TexCoord[0].xy;
+vec4 color = vec4(0.0);
+color += texture2D(texture, uv - 4.0 * offsetFactor) * 0.0162162162;
+color += texture2D(texture, uv - 3.0 * offsetFactor) * 0.0540540541;
+color += texture2D(texture, uv - 2.0 * offsetFactor) * 0.1216216216;
+color += texture2D(texture, uv - offsetFactor) * 0.1945945946;
+color += texture2D(texture, uv) * 0.2270270270;
+color += texture2D(texture, uv + offsetFactor) * 0.1945945946;
+color += texture2D(texture, uv + 2.0 * offsetFactor) * 0.1216216216;
+color += texture2D(texture, uv + 3.0 * offsetFactor) * 0.0540540541;
+color += texture2D(texture, uv + 4.0 * offsetFactor) * 0.0162162162;
+gl_FragColor = color;
+
 #endif
 }

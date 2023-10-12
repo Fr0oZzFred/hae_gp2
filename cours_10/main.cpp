@@ -58,6 +58,8 @@ int main() {
     sf::Texture noiseTex;
     noiseTex.loadFromFile("Noise.jpg");
 
+    sf::Glsl::Vec2 blurOffsetFactor(0.005f,0.005f);
+
     
 
     while (window.isOpen()) {
@@ -105,11 +107,11 @@ int main() {
                 sf::Keyboard::isKeyPressed(sf::Keyboard::Right);
         int y = -sf::Keyboard::isKeyPressed(sf::Keyboard::Up) +
                 sf::Keyboard::isKeyPressed(sf::Keyboard::Down);
-        sf::Vector2f dir(x,y);
-        float len = sqrt(dir.x * dir.x + dir.y * dir.y);
+        sf::Vector2f blurDir(x,y);
+        float len = sqrt(blurDir.x * blurDir.x + blurDir.y * blurDir.y);
         if (len) {
-            cube.dx += dir.x * sp;
-            cube.dy += dir.y * sp;
+            cube.dx += blurDir.x * sp;
+            cube.dy += blurDir.y * sp;
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))    cube.jump();
 
@@ -131,11 +133,9 @@ int main() {
         DragFloat4("Offset before MVP", &offsetBeforeMVP[0]);
         DragFloat4("Offset after MVP", &offsetAfterMVP[0], 0.1f);
         Text("Frag Shader");
-        ColorPicker4("Color Add", &colorAdd.x);
-        ColorPicker4("Color Mul", &colorMul.x);
-        Spacing();
-        Spacing();
-        Spacing();
+        ColorEdit4("Color Add", &colorAdd.x);
+        ColorEdit4("Color Mul", &colorMul.x);
+        DragFloat2("Blur Offset Factor", &blurOffsetFactor.x, 0.001f);
         Text("Matrix");
         DragFloat4("0", &mat4_Array[0]);
         DragFloat4("1", &mat4_Array[4]);
@@ -151,7 +151,7 @@ int main() {
         sf::Shader shader;
         circleShape.setTexture(&tex);
         if (shader.loadFromFile("vertex_shader.vert", "fragment_shader.frag")) {
-            shader.setUniform("time", time * timeScale + 1.0f);
+            shader.setUniform("time", time * timeScale);
             shader.setUniform("distortionPower", distortionPower);
             shader.setUniform("colorAdd", colorAdd);
             shader.setUniform("colorMul", colorMul);
@@ -160,6 +160,7 @@ int main() {
             shader.setUniform("noiseTexture", noiseTex);
             shader.setUniform("offsetBeforeMVP", sf::Glsl::Vec4(offsetBeforeMVP[0], offsetBeforeMVP[1], offsetBeforeMVP[2], offsetBeforeMVP[3]));
             shader.setUniform("offsetAfterMVP", sf::Glsl::Vec4(offsetAfterMVP[0], offsetAfterMVP[1], offsetAfterMVP[2], offsetAfterMVP[3]));
+            shader.setUniform("offsetFactor", blurOffsetFactor); // need to add imgui
             time += dt.asSeconds();
         }
 
