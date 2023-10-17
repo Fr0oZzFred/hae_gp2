@@ -30,9 +30,19 @@ uniform float davidBlurFactor;
 //#define BLUR
 //#define DAVID_3X3
 
+#define NOISE
+
 #ifdef DAVID_3X3
 float luma(vec4 col) {
   return col.a *(col.r * .3 + col.g * 0.59 + col.b * 0.11);
+}
+#endif
+
+#ifdef NOISE
+float random (vec2 uv) {
+    return fract(sin(dot(uv.xy,
+                         vec2(12.9898,78.233)))*
+        43758.5453123);
 }
 #endif
 
@@ -80,6 +90,10 @@ void main()
     pixel += texture2D(texture, gl_TexCoord[0] - vec2((davidBlurFactor / 475), 0.0)) * 0.125f;
     pixel += texture2D(texture, gl_TexCoord[0] + vec2(0.0, (davidBlurFactor / 475))) * 0.125f;
     pixel += texture2D(texture, gl_TexCoord[0] - vec2(0.0, (davidBlurFactor / 475))) * 0.125f;
+#endif
+
+#ifdef NOISE
+    pixel = random(gl_TexCoord[0]);
 #endif
     gl_FragColor = pixel;
 
