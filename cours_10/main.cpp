@@ -63,6 +63,7 @@ int main() {
     sf::Glsl::Vec2 spherizeOffset(0.0f, 0.0f);
     float spherizeStrength = 1.0f;
 
+    float davidBlurFactor = 1.0f;
     
 
     while (window.isOpen()) {
@@ -139,6 +140,7 @@ int main() {
         ColorEdit4("Color Add", &colorAdd.x);
         ColorEdit4("Color Mul", &colorMul.x);
         DragFloat2("Blur Offset Factor", &blurOffsetFactor.x, 0.001f);
+        DragFloat("David Blur Factor", &davidBlurFactor);
         DragFloat2("Spherize Center", &spherizeCenter.x);
         DragFloat2("Spherize Offset", &spherizeOffset.x);
         DragFloat("Spherize Strength", &spherizeStrength);
@@ -170,6 +172,7 @@ int main() {
             shader.setUniform("spherizeCenter", spherizeCenter);
             shader.setUniform("spherizeOffset", spherizeOffset);
             shader.setUniform("spherizeStrength", spherizeStrength);
+            shader.setUniform("davidBlurFactor", davidBlurFactor);
             time += dt.asSeconds();
         }
 

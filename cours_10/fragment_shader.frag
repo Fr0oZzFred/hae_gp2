@@ -13,6 +13,7 @@ uniform vec2 spherizeOffset;
 uniform float spherizeStrength;
 
 uniform vec2 blurOffsetFactor;
+uniform float davidBlurFactor;
 
 //varying vec2 pos; How to get a var from vertex shader
 
@@ -27,8 +28,13 @@ uniform vec2 blurOffsetFactor;
 //#define COLOR_WITH_UV
 
 //#define BLUR
+//#define DAVID_3X3
 
-
+#ifdef DAVID_3X3
+float luma(vec4 col) {
+  return col.a *(col.r * .3 + col.g * 0.59 + col.b * 0.11);
+}
+#endif
 
 void main()
 {
@@ -63,8 +69,18 @@ void main()
     vec4 pixel = textureGrad(texture, uv, duv.xy, duv.zw);
 #endif
 
+#ifdef DAVID_3X3
+    pixel += texture2D(texture, gl_TexCoord[0] + vec2((davidBlurFactor / 475), 0.0));
+    pixel += texture2D(texture, gl_TexCoord[0] - vec2((davidBlurFactor / 475), 0.0));
+
+    pixel*= 0.33;
 
 
+    pixel += texture2D(texture, gl_TexCoord[0] + vec2((davidBlurFactor / 475), 0.0)) * 0.125f;
+    pixel += texture2D(texture, gl_TexCoord[0] - vec2((davidBlurFactor / 475), 0.0)) * 0.125f;
+    pixel += texture2D(texture, gl_TexCoord[0] + vec2(0.0, (davidBlurFactor / 475))) * 0.125f;
+    pixel += texture2D(texture, gl_TexCoord[0] - vec2(0.0, (davidBlurFactor / 475))) * 0.125f;
+#endif
     gl_FragColor = pixel;
 
 #ifdef COLOR_ADD
