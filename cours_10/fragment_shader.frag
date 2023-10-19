@@ -32,7 +32,8 @@ uniform float davidBlurFactor;
 
 //#define NOISE
 
-#define PATTERN_CHECKER
+//#define PATTERN_CHECKER
+ #define DISSOLVE
 
 #ifdef DAVID_3X3
 float luma(vec4 col) {
@@ -105,6 +106,10 @@ void main()
     float resB = 1.0f-(x+y);
     float res = max(resR, resB);
     pixel = vec4(res);
+#endif
+
+#ifdef DISSOLVE
+    pixel.a -= texture2D(noiseTexture, gl_TexCoord[0].xy).r * distortionPower;
 #endif
 
 
