@@ -7,6 +7,7 @@ uniform mat4 matrix;
 
 uniform float distortionPower;
 uniform sampler2D noiseTexture;
+uniform sampler2D flowMapTex;
 
 uniform vec2 spherizeCenter;
 uniform vec2 spherizeOffset;
@@ -33,7 +34,8 @@ uniform float davidBlurFactor;
 //#define NOISE
 
 //#define PATTERN_CHECKER
- #define DISSOLVE
+//#define DISSOLVE
+#define FLOWMAP
 
 #ifdef DAVID_3X3
 float luma(vec4 col) {
@@ -110,6 +112,25 @@ void main()
 
 #ifdef DISSOLVE
     pixel.a -= texture2D(noiseTexture, gl_TexCoord[0].xy).r * distortionPower;
+#endif
+
+#ifdef FLOWMAP
+    vec2 uv = gl_TexCoord[0].xy;
+    vec2 flow = texture2D(flowMapTex, uv).rg;
+    flow.x = lerp(-1,1,flow.x);
+    flow.y = lerp(-1,1,flow.y);
+    flow *= distortionPower;
+    float fracTime = fract(time);
+    float fracTimeOfs = fract(time + 0.5);
+    vec2 flowOfs1 = flow * fracTime;
+    vec2 flowOfs2 = flow * fracTimeOfs;
+
+    pixel = lerp(
+      texture2D(texture, uv + flowOfs1),
+      texture2D(texture, uv + flowOfs2),
+      abs((fracTimeOfs * 2) - 1)
+      );
+
 #endif
 
 

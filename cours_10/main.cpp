@@ -57,6 +57,8 @@ int main() {
     tex.loadFromFile("Eevee.png");
     sf::Texture noiseTex;
     noiseTex.loadFromFile("Noise.jpg");
+    sf::Texture flowMapTex;
+    flowMapTex.loadFromFile("FlowMap.png");
 
     sf::Glsl::Vec2 blurOffsetFactor(0.005f,0.005f);
     sf::Glsl::Vec2 spherizeCenter(0.5f,0.5f);
@@ -173,6 +175,7 @@ int main() {
             shader.setUniform("spherizeOffset", spherizeOffset);
             shader.setUniform("spherizeStrength", spherizeStrength);
             shader.setUniform("davidBlurFactor", davidBlurFactor);
+            shader.setUniform("flowMapTex", flowMapTex);
             time += dt.asSeconds();
         }
 
