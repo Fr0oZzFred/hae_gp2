@@ -30,7 +30,9 @@ uniform float davidBlurFactor;
 //#define BLUR
 //#define DAVID_3X3
 
-#define NOISE
+//#define NOISE
+
+#define PATTERN_CHECKER
 
 #ifdef DAVID_3X3
 float luma(vec4 col) {
@@ -95,7 +97,24 @@ void main()
 #ifdef NOISE
     pixel = random(gl_TexCoord[0]);
 #endif
+
+#ifdef PATTERN_CHECKER
+    float x = step(fract(gl_TexCoord[0].x * distortionPower), 0.5f);
+    float y = step(fract(gl_TexCoord[0].y * distortionPower), 0.5f);
+    float resR = x * y;
+    float resB = 1.0f-(x+y);
+    float res = max(resR, resB);
+    pixel = vec4(res);
+#endif
+
+
+
+
+
     gl_FragColor = pixel;
+
+
+
 
 #ifdef COLOR_ADD
     gl_FragColor += (colorAdd * (cos(time) + 1.0) * 0.5);
